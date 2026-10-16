@@ -33,3 +33,5 @@
  if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const c=entry.target;const title=c.querySelector('.spec-model-title');if(title){location.textContent='READING / '+title.textContent.trim();$$('.toc-submodel-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c.id))}}})},{rootMargin:'-110px 0px -60% 0px',threshold:0});$$('.model-card').forEach(c=>observer.observe(c))}
  $$('input').forEach(i=>{if(!i.getAttribute('aria-label')&&!i.labels?.length)i.setAttribute('aria-label',i.placeholder||'Filter models')});
 })();
+
+{const s=document.createElement('script');s.src='reference-upgrade.js';document.body.appendChild(s)}
