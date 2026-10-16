@@ -20,3 +20,18 @@ html[data-lang="zh"] .lang-en{display:none!important}html[data-lang="en"] .lang-
 @media(max-width:380px){.brand-light{display:none}.nav-actions{gap:13px}.hero-inner{padding-left:18px;padding-right:18px}.hero h1{font-size:41px}.hero-proof{gap:15px}.hero .button{font-size:11px;padding:10px 17px}.hero-art{height:290px;min-height:290px}.explorer-toolbar{gap:6px}.sort-select{width:100px}.explorer-layout .tile-visual{height:120px}.explorer-layout .tile-body{padding:15px 12px}.explorer-layout .tile-title{font-size:18px}.tray-models{width:100%}.tray-actions{width:100%;justify-content:flex-end}.family-tile{padding:20px 15px}.family-tile strong{font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js-reveal .reveal{opacity:1;transform:none}}
 @media print{.global-nav,.site-footer,.reader-actions,.reader-tabs,.reader-nav,.compare-tray,.hero-art{display:none!important}.reader-content{border:0}.reader-shell{padding:0}body{background:white;color:black}.spec-blueprint-grid,.spec-dual-band{display:block!important}.arch-figure-img{max-height:300px!important}}
+
+/* 2.1.2: bounded panels, safe areas, and touch targets in both orientations. */
+html{scrollbar-gutter:stable}
+.global-nav{padding-left:max(20px,calc((100vw - 1380px)/2),env(safe-area-inset-left));padding-right:max(20px,calc((100vw - 1380px)/2),env(safe-area-inset-right))}
+.mobile-navigation{max-height:calc(100dvh - 62px);overflow-y:auto;overscroll-behavior:contain;padding-bottom:max(20px,env(safe-area-inset-bottom))}
+.filter-sidebar{max-height:calc(100dvh - 100px);overflow-y:auto;overscroll-behavior:contain}
+.reader-tabs{scroll-padding-inline:16px;overscroll-behavior-inline:contain}
+dialog{max-height:calc(100dvh - 24px);overscroll-behavior:contain}
+.image-dialog{overflow:hidden}.image-stage{height:min(70svh,calc(100dvh - 90px));touch-action:none}
+.compare-tray{bottom:max(16px,env(safe-area-inset-bottom))}
+@media(pointer:coarse){.icon-button,.language-button,.dialog-x,.image-toolbar button,.reader-tabs button,.family-filter,.close-filters{min-width:44px;min-height:44px}.nav-actions{gap:6px}}
+@media(max-width:700px){.filter-sidebar.mobile-open{top:0;max-height:100dvh;height:100dvh;padding-bottom:max(24px,env(safe-area-inset-bottom))}.explorer-search input{font-size:16px}}
+@media(orientation:landscape) and (max-height:540px){.global-nav{height:54px}.mobile-navigation{top:54px;max-height:calc(100dvh - 54px)}.reader-tabs,.explorer-toolbar{top:54px}.reader-shell{padding-top:24px}.search-dialog{margin-top:8px}.search-box{padding-block:12px}#command-results{max-height:calc(100dvh - 170px)}.image-stage{height:calc(100dvh - 80px)}.filter-sidebar{top:64px;max-height:calc(100dvh - 74px)}.filter-sidebar.mobile-open{top:0;max-height:100dvh}.hero-inner{padding-top:32px;padding-bottom:65px}}
+
+body.mobile-panel-open{overflow:hidden}

@@ -64,6 +64,34 @@ else{for(let i=0;i<6;i++){const z=-160+i*64,dx=Math.sin(i*.7)*30;plane(z,58,'#b9
 ctx.font='8px Consolas,monospace';ctx.fillStyle='#71815e';ctx.textAlign='center';const a=project(0,140,-145),b=project(0,140,160);ctx.fillText('INPUT',a[0],a[1]+20);ctx.fillText(artMode==='cnn'?'FEATURES':artMode==='attention'?'CONTEXT':'STATE',b[0],b[1]+20)}
 function animate(time){if(!visible||document.hidden){frame=0;return}if(time-last>32){draw(time);last=time}frame=requestAnimationFrame(animate)}const start=()=>{if(!reduced&&!frame&&visible&&!document.hidden)frame=requestAnimationFrame(animate);else if(reduced)draw(0)};const onMove=e=>{const r=canvas.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;if(reduced)draw(0)},onLeave=()=>{tx=ty=0},onVisibility=()=>start();canvas.addEventListener('pointermove',onMove);canvas.addEventListener('pointerleave',onLeave);document.addEventListener('visibilitychange',onVisibility);const resize=new ResizeObserver(scale);resize.observe(canvas);const visibility=new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)start()});visibility.observe(canvas);artRedraw=()=>draw(performance.now());scale();start();setArtMode(artMode);canvasCleanup=()=>{cancelAnimationFrame(frame);resize.disconnect();visibility.disconnect();canvas.removeEventListener('pointermove',onMove);canvas.removeEventListener('pointerleave',onLeave);document.removeEventListener('visibilitychange',onVisibility);artRedraw=null}}
 document.addEventListener('keydown',e=>{const tab=e.target.closest('.reader-tabs [role="tab"]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const tabs=$$('.reader-tabs [role="tab"]');let i=tabs.indexOf(tab);i=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[i].focus();tabs[i].click()});
+// Keep transient mobile panels consistent when rotating or changing routes.
+function closeMobileNavigation(){
+  $('#mobile-navigation').hidden=true;
+  $('.mobile-menu').setAttribute('aria-expanded','false');
+}
+document.addEventListener('click',e=>{
+  if(!$('#mobile-navigation').hidden&&!e.target.closest('.global-nav,#mobile-navigation'))closeMobileNavigation();
+  if(e.target.closest('#mobile-navigation a'))closeMobileNavigation();
+  const tab=e.target.closest('.reader-tabs button');
+  if(tab)tab.scrollIntoView({block:'nearest',inline:'nearest',behavior:'auto'});
+});
+const narrowViewport=matchMedia('(max-width:700px)');
+narrowViewport.addEventListener('change',()=>{closeMobileNavigation();closeFilters()});
+const panelIsOpen=()=>!$('#mobile-navigation').hidden||!!$('.filter-sidebar.mobile-open');
+const syncPanelScroll=()=>{document.body.classList.toggle('mobile-panel-open',panelIsOpen())};
+new MutationObserver(syncPanelScroll).observe($('#mobile-navigation'),{attributes:true,attributeFilter:['hidden']});
+new MutationObserver(syncPanelScroll).observe($('#main'),{attributes:true,attributeFilter:['class'],childList:true,subtree:true});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Tab'||document.querySelector('dialog[open]'))return;
+  const panel=$('.filter-sidebar.mobile-open')||(!$('#mobile-navigation').hidden?$('#mobile-navigation'):null);
+  if(!panel)return;
+  const items=Array.from(panel.querySelectorAll('a[href],button,input,select')).filter(el=>!el.disabled&&el.getClientRects().length);
+  if(!items.length)return;
+  const first=items[0],last=items[items.length-1];
+  if(!panel.contains(document.activeElement)||(e.shiftKey&&document.activeElement===first)||(!e.shiftKey&&document.activeElement===last)){
+    e.preventDefault();(e.shiftKey?last:first).focus();
+  }
+});
 window.addEventListener('hashchange',()=>renderRoute());applyPreferences();
 fetch('catalog.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{state.models=data.models;state.families=data.families;state.models.forEach(m=>m._hay=[m.title,m.num_str,m.year,m.venue,m.family_short,m.family_en,m.core_mech,m.core_mech_en,...Object.values(m.attrs),...Object.values(m.attrs_en||{})].join(' ').toLowerCase());renderRoute()}).catch(()=>{$('#main').innerHTML=`<div class="load-error"><h1>${t('loadFailed')}</h1><p>${t('loadFailedDesc')}</p><button class="button button-dark" onclick="location.reload()">${t('retry')}</button> <a class="text-link" href="reference.html">${t('fullEdition')} ↗</a></div>`});
 })();

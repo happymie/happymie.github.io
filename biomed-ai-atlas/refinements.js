@@ -9,7 +9,7 @@
  const originalToggle=window.toggleSidebarToc;
  function closeIndex(){sidebar.classList.remove('mobile-open');scrim.classList.remove('visible');$('.toc-drawer-btn').setAttribute('aria-expanded','false')}
  window.toggleSidebarToc=function(){if(mobile()){sidebar.classList.remove('collapsed');const open=sidebar.classList.toggle('mobile-open');scrim.classList.toggle('visible',open);$('.toc-drawer-btn').setAttribute('aria-expanded',String(open));if(open)$('#toc-filter-input').focus()}else{originalToggle();$('.toc-drawer-btn').setAttribute('aria-expanded',String(!sidebar.classList.contains('collapsed')))}};
- scrim.addEventListener('click',closeIndex);sidebar.addEventListener('click',e=>{if(mobile()&&e.target.closest('a'))closeIndex()});
+ matchMedia('(max-width:1120px)').addEventListener('change',closeIndex);scrim.addEventListener('click',closeIndex);sidebar.addEventListener('click',e=>{if(mobile()&&e.target.closest('a'))closeIndex()});
  const closeIndexButton=document.createElement('button');closeIndexButton.className='btn-hairline mobile-index-close';closeIndexButton.textContent='关闭 / Close';closeIndexButton.onclick=closeIndex;sidebar.querySelector('.toc-header').prepend(closeIndexButton);
  const indexStyle=document.createElement('style');indexStyle.textContent='.mobile-index-close{display:none}@media(max-width:1120px){.mobile-index-close{display:flex;margin-bottom:16px}}';document.head.append(indexStyle);
  $('.toc-drawer-btn').setAttribute('aria-controls','sidebar-toc');$('.toc-drawer-btn').setAttribute('aria-expanded',String(!mobile()));
@@ -34,4 +34,6 @@
  $$('input').forEach(i=>{if(!i.getAttribute('aria-label')&&!i.labels?.length)i.setAttribute('aria-label',i.placeholder||'Filter models')});
 })();
 
-{const s=document.createElement('script');s.src='reference-upgrade.js';document.body.appendChild(s)}
+
+
+{const s=document.createElement('script');s.src='reference-upgrade.js?v=2.1.2';document.body.appendChild(s)}
