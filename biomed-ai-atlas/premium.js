@@ -1,4 +1,5 @@
 (()=>{'use strict';
+const officialURL=new URL(location.href);if(officialURL.searchParams.has('v')||officialURL.searchParams.has('release')){officialURL.searchParams.delete('v');officialURL.searchParams.delete('release');history.replaceState(null,'',officialURL.pathname+officialURL.search+officialURL.hash)}
 const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
 const read=(key,fallback)=>{try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback}catch{return fallback}},write=(key,v)=>{try{localStorage.setItem(key,JSON.stringify(v))}catch{}};
 const state={lang:read('atlas_premium_lang','zh'),appearance:read('atlas_premium_appearance','light'),saved:read('medai_bookmarks',{}),mastered:read('medai_mastered',{}),compare:[],models:[],families:[],family:'all',query:'',sort:'curated',onlyCode:false,onlyMastered:false,limit:18,route:'home',reader:null,readerTab:'all',searchIndex:0,searchResults:[],nodeIndex:0,auto:null};
