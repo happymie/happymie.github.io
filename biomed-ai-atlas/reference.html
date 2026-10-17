@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<script src="../site-assets/preferences.js?v=2.3.0"></script>
+<script src="../site-assets/preferences.js?v=2.3.1"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
@@ -19,7 +19,7 @@
 <meta name="citation_author_email" content="20246389@stu.neu.edu.cn" />
 <meta name="citation_author_orcid" content="https://orcid.org/0009-0002-4863-5761" />
 <title>医学影像与生物医学 AI 架构图谱（2012–2026）：137 个模型详细结构与原理 · Bilingual Atlas</title>
-<link rel="stylesheet" href="reference-base.css?v=2.3.0">
+<link rel="stylesheet" href="reference-base.css?v=2.3.1">
 <link rel="stylesheet" href="editorial.css" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
@@ -13856,32 +13856,34 @@
       <button type="button" class="modal-close-btn" data-call-click="closeDeployModal()" aria-label="Close">✕</button>
     </div>
     <div class="modal-body">
-      <div class="mono-kicker">STATIC SINGLE-FILE + GITHUB ACTIONS WORKFLOW // ZERO EXTERNAL DEPENDENCIES</div>
+      <div class="mono-kicker">PROJECT &amp; UPDATES // 项目与更新</div>
       <p style="margin:6px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-secondary)">
-        本图谱已构建为<strong>零外部运行时依赖</strong>的标准静态站点（内嵌全部 137 张高清原论文架构图、137 组命名空间隔离的矢量公式与完整中英双语语料），可直接通过 GitHub Pages 托管为永久公开访问的学术网站。
+        本站的源文件与维护记录位于 <a href="https://github.com/happymie/happymie.github.io" target="_blank" rel="noopener noreferrer">happymie/happymie.github.io</a>，由 GitHub Pages 发布。<br>
+        Source files and maintenance records are available in this repository. The site is published through GitHub Pages.
       </p>
       <div class="deploy-grid">
         <div class="deploy-card">
-          <div class="mono-kicker">OPTION 01 // ONE-COMMAND TERMINAL PUSH</div>
-          <h4>终端一键推送到 GitHub Pages</h4>
-          <p style="font-size:12.5px;color:var(--ink-secondary);margin:0">解压配套的 <code>biomed-ai-atlas-github-pages.zip</code> 部署包，进入目录后执行：</p>
-          <pre class="deploy-code-pre" id="deploy-cmd-1">git init -b main
-git add index.html README.md LICENSE .nojekyll .github/
-git commit -m "feat: publish bilingual 137 Biomedical AI Architecture Atlas (2012-2026)"
-git remote add origin https://github.com/xiaoyangaizxx-dev/biomed-ai-atlas.git
-git push -u origin main</pre>
-          <div style="margin-top:10px">
-            <button type="button" class="btn-hairline" data-call-click="copyDeployCode('deploy-cmd-1')"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="1.5"/><path d="M5 15H4a1.5 1.5 0 0 1-1.5-1.5V4A1.5 1.5 0 0 1 4 2.5h9.5A1.5 1.5 0 0 1 15 4v1"/></svg><span>COPY GIT COMMANDS</span></button>
-          </div>
+          <div class="mono-kicker">EXPLORE // 浏览</div>
+          <h4>网站入口 / Explore the site</h4>
+          <p style="font-size:12.5px;color:var(--ink-secondary);margin:0">
+            <a href="../">首页 / Home</a> · <a href="./">模型图谱 / Atlas</a> · <a href="../teaching/">教学实验室 / Teaching Lab</a>
+          </p>
+          <p style="font-size:12.5px;color:var(--ink-secondary);line-height:1.65;margin:10px 0 0">
+            维护或部署时请保留仓库完整目录结构，确保页面、课程与资源链接有效。<br>
+            Preserve the repository’s full directory structure when maintaining or deploying the site so that pages, lessons and assets remain available.
+          </p>
         </div>
         <div class="deploy-card">
-          <div class="mono-kicker">OPTION 02 // GITHUB WEB UPLOAD (NO CLI NEEDED)</div>
-          <h4>网页端直接拖拽上传启用 Pages</h4>
-          <ol style="font-size:12.5px;color:var(--ink-secondary);line-height:1.65;margin:6px 0 0;padding-left:18px">
-            <li>在 GitHub 新建公开仓库（例如 <code>biomed-ai-atlas</code>，勾选 <strong>Public</strong>）。</li>
-            <li>点击 <strong>Add file → Upload files</strong>，将部署包内的 <code>index.html</code>、<code>README.md</code>、<code>.nojekyll</code> 拖入并点击 <strong>Commit changes</strong>（单文件约 18 MB，低于 GitHub 网页上传 25 MB 上限）。</li>
-            <li>进入仓库 <strong>Settings → Pages</strong>，在 <strong>Build and deployment</strong> 下选择 <strong>Deploy from a branch → main / /(root)</strong>，保存后 60 秒即可通过 <code>https://xiaoyangaizxx-dev.github.io/biomed-ai-atlas/</code> 全球公开访问。</li>
-          </ol>
+          <div class="mono-kicker">MAINTENANCE // 维护</div>
+          <h4>更新与发布 / Updates and publishing</h4>
+          <p style="font-size:12.5px;color:var(--ink-secondary);line-height:1.65;margin:0">
+            按维护说明依次完成构建（build）、发布准备（prepare）和检查（check），再通过已连接的 GitHub 提交更新，触发现有 Pages 发布流程。<br>
+            Follow the maintenance guide to build, prepare and check, then submit through the connected GitHub integration to trigger the existing Pages deployment.
+          </p>
+          <p style="font-size:12.5px;color:var(--ink-secondary);line-height:1.65;margin:10px 0 0">
+            <a href="https://github.com/happymie/happymie.github.io/blob/main/teaching/docs/DAILY_MAINTENANCE.md" target="_blank" rel="noopener noreferrer">维护说明 / Maintenance guide</a> · <a href="https://github.com/happymie/happymie.github.io/actions/workflows/site-quality.yml" target="_blank" rel="noopener noreferrer">检查结果 / Actions</a><br>
+            发布状态以工作流结果和实际页面为准。 / Confirm publication using the workflow result and the live pages.
+          </p>
         </div>
       </div>
     </div>
@@ -13927,11 +13929,11 @@ git push -u origin main</pre>
   </div>
 </div>
 
-<script src="../site-assets/security.js?v=2.3.0" defer></script>
-<script src="reference-data.js?v=2.3.0" defer></script>
-<script src="reference-runtime.js?v=2.3.0" defer></script>
-<script src="reference-lazy.js?v=2.3.0" defer></script>
-<script src="refinements.js?v=2.3.0" defer></script>
-<script src="reference-upgrade.js?v=2.3.0" defer></script>
+<script src="../site-assets/security.js?v=2.3.1" defer></script>
+<script src="reference-data.js?v=2.3.1" defer></script>
+<script src="reference-runtime.js?v=2.3.1" defer></script>
+<script src="reference-lazy.js?v=2.3.1" defer></script>
+<script src="refinements.js?v=2.3.1" defer></script>
+<script src="reference-upgrade.js?v=2.3.1" defer></script>
 </body>
 </html>

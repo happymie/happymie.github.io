@@ -214,7 +214,7 @@ function jumpToModelCard(modelId) {
     setModelViewMode('cards');
   }
   if (card) {
-    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    card.scrollIntoView({ behavior: 'instant', block: 'start' });
     card.style.outline = '2px solid var(--accent-secondary)';
     setTimeout(function() {
       card.style.outline = '';

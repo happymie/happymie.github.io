@@ -58,7 +58,33 @@
     const original=window[name];window[name]=async function(id){if(await quiet(id))return original.call(this,id);};
   }
   const jump=window.jumpToModelCard;
-  window.jumpToModelCard=function(id){quiet(id);return jump.call(this,id);};
+  let jumpGeneration=0;
+  const nextFrame=()=>new Promise(resolve=>requestAnimationFrame(resolve));
+  const cancelJump=()=>{jumpGeneration++;};
+  // Explicit input cancels pending positioning; a completed fetch must not pull the reader back.
+  for(const type of ['wheel','touchstart','pointerdown'])document.addEventListener(type,cancelJump,{capture:true,passive:true});
+  document.addEventListener('keydown',event=>{
+    if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' ','Enter','Escape'].includes(event.key))cancelJump();
+  },true);
+  window.jumpToModelCard=async function(id){
+    const generation=++jumpGeneration;
+    if(!await quiet(id)||generation!==jumpGeneration)return;
+    jump.call(this,id);
+    const card=document.getElementById(id);
+    if(!card)return;
+    // Allow content-visibility and the nearby-body observer to settle after the instant jump.
+    await nextFrame();await nextFrame();
+    if(generation!==jumpGeneration)return;
+    card.scrollIntoView({behavior:'instant',block:'start'});
+    const above=[...pending].filter(([otherId])=>{
+      const other=document.getElementById(otherId);
+      return other&&!!(card.compareDocumentPosition(other)&Node.DOCUMENT_POSITION_PRECEDING);
+    }).slice(0,3).map(([,job])=>job);
+    if(!above.length)return;
+    // Await only a few requests already in flight above this card; this starts no extra loads.
+    await Promise.allSettled(above);await nextFrame();
+    if(generation===jumpGeneration)card.scrollIntoView({behavior:'instant',block:'start'});
+  };
   const compare=window.renderCompareModalBody;let compareGeneration=0;
   window.renderCompareModalBody=async function(){
     const generation=++compareGeneration;
@@ -68,20 +94,27 @@
   document.addEventListener('click',event=>{
     const button=event.target.closest('[data-load-model]');if(button)quiet(button.dataset.loadModel);
   });
+  function showFullText(){
+    cancelJump();
+    switchWorkspace('all');resetAllModelFilters();setModelViewMode('cards');
+    for(const container of document.querySelectorAll('.family-models-container'))container.style.display='';
+  }
   allButton.addEventListener('click',async()=>{
+    showFullText();
     allButton.disabled=true;allButton.textContent='正在载入… / Loading…';
+    status.textContent='已切换完整阅读，正在载入全部模型正文… / Full reading view selected. Loading all model text…';
     const ids=[...document.querySelectorAll('[data-lazy-model]')].map(n=>n.dataset.lazyModel);
     let complete=0;
     const result=await Promise.all(ids.map(async id=>{const ok=await quiet(id);complete++;status.textContent=`全文载入 / Loading full text: ${complete} / ${ids.length}`;return ok;}));
     const failed=result.filter(x=>!x).length;
     if(failed){allButton.disabled=false;allButton.textContent='重试未载入内容 / Retry remaining';status.textContent=`${failed} 个模型尚未载入，请重试。 / ${failed} model(s) still need to load.`;}
-    else{allButton.textContent='全文已载入 / Full text ready';status.textContent='完整模型正文已载入，可以使用浏览器全文查找与打印。 / All model text is ready for browser find and print.';document.documentElement.dataset.fullText='ready';}
+    else{showFullText();allButton.textContent='全文已载入 / Full text ready';status.textContent='已切换完整阅读，全部模型正文已展开，可以使用浏览器全文查找与打印。 / Full reading view is active. All model text is expanded for browser find and print.';document.documentElement.dataset.fullText='ready';}
   });
   if('IntersectionObserver'in window){
     observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)quiet(entry.target.dataset.lazyModel);},{rootMargin:'700px 0px'});
     document.querySelectorAll('[data-lazy-model]').forEach(body=>observer.observe(body));
   }
-  function loadHash(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(isId(id))quiet(id);}
+  function loadHash(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}if(isId(id))window.jumpToModelCard(id);}
   window.addEventListener('hashchange',loadHash);loadHash();
   // Autoplay is an explicit reading control; it should not use CPU in a hidden tab.
   document.addEventListener('visibilitychange',()=>{
