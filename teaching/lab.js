@@ -89,7 +89,7 @@
   }
   function closeLesson(){lessonRequestId++;current=null;$('#lesson-dialog').close();if(location.hash.startsWith('#model='))history.replaceState(null,'','#catalog');}
   function route(){const n=Number(/^#model=(\d+)$/.exec(location.hash)?.[1]);if(n){const m=all.find(x=>x.num===n);if(m)openLesson(m,false);}else if($('#lesson-dialog').open){lessonRequestId++;current=null;$('#lesson-dialog').close();}}
-  $('#language').addEventListener('click',()=>{lang=lang==='en'?'zh':'en';storage.set('biomed_lab_lang',lang);translate();});
+  document.addEventListener('atlas:language',e=>{lang=e.detail.language==='en'?'en':'zh';storage.set('biomed_lab_lang',lang);translate();});
   let searchTimer;['search','family','status'].forEach(id=>$('#'+id).addEventListener(id==='search'?'input':'change',()=>{limit=24;clearTimeout(searchTimer);if(id==='search')searchTimer=setTimeout(render,120);else render();}));
   $('#clear').addEventListener('click',()=>{$('#search').value='';$('#family').value='all';$('#status').value='all';limit=24;render();});
   $('#more').addEventListener('click',()=>{limit+=24;render();});

@@ -1,7 +1,8 @@
 /* Apply a stored preference before the first paint; storage can be unavailable. */
 (function(){
   'use strict';
-  const html=document.documentElement;
+  const html=document.documentElement;html.dataset.localePending='';
+  try{const locale=localStorage.getItem('atlas.language');if(['zh','zh-Hant','en'].includes(locale)){html.dataset.lang=locale;html.lang=locale==='zh'?'zh-CN':locale==='zh-Hant'?'zh-Hant':'en';html.dataset.localePending='';}}catch{}
   try {
     const parsed=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
     const appearance=parsed('atlas_premium_appearance');
@@ -15,4 +16,5 @@
       const lang=parsed('atlas_premium_lang');if(['en','zh','bilingual'].includes(lang)){html.dataset.lang=lang;html.lang=lang==='en'?'en':'zh-CN';}
     }
   }catch{/* Private browsing still has a usable default. */}
+  try{const locale=localStorage.getItem('atlas.language');if(['zh','zh-Hant','en'].includes(locale)){html.dataset.lang=locale;html.lang=locale==='zh'?'zh-CN':locale==='zh-Hant'?'zh-Hant':'en';}}catch{}
 })();

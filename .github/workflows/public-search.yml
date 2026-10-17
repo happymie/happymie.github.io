@@ -1,0 +1,66 @@
+name: Build language-specific public search
+on:
+  push:
+    branches: ['publication/**']
+    paths: ['site-release.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: localized-search-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned publication indexer
+        run: npm install --prefix "$RUNNER_TEMP/atlas-search" pagefind@1.5.2 parse5@7.3.0 opencc-js@1.0.5 --no-audit --no-fund
+      - name: Build three search editions from public display content
+        run: |
+          cat > "$RUNNER_TEMP/atlas-search/build.mjs" <<'JS'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          import {spawnSync} from 'node:child_process';
+          import {parse} from 'parse5';
+          import {Converter} from 'opencc-js/cn2t';
+          const ROOT=process.cwd();
+          const dist=path.join(ROOT,'biomed-ai-atlas'),scratch=path.join(ROOT,'.locale-search'),traditional=Converter({from:'cn',to:'t'});
+          const pairs=JSON.parse(await fs.readFile(path.join(dist,'locales/dictionary.json'),'utf8')),forward=new Map(pairs),reverse=new Map(pairs.map(([zh,en])=>[en,zh]));
+          const normalize=s=>s.replace(/\s+/g,' ').trim(),escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+          const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
+          const walk=async d=>(await fs.readdir(d,{withFileTypes:true})).flatMap(e=>e.isDirectory()?[]:[path.join(d,e.name)]);
+          async function htmlFiles(d){const result=[];for(const e of await fs.readdir(d,{withFileTypes:true})){if(e.isDirectory())result.push(...await htmlFiles(path.join(d,e.name)));else if(e.name.endsWith('.html'))result.push(path.join(d,e.name));}return result;}
+          export function editionText(doc,lang){
+           function visit(n){if(['script','style','noscript','svg','math'].includes(n.tagName))return '';const cls=(attr(n,'class')||'').split(' ');if(cls.some(s=>(lang==='en'?['zh','lang-zh']:['en','lang-en']).includes(s)))return '';
+            if(n.nodeName==='#text'){const key=normalize(n.value);let value=(lang==='en'?forward:reverse).get(key)||key;if(lang==='en'&&/[\u3400-\u9fff]/.test(value)){const split=value.split(/\s+(?:\/\/|\/|·)\s+/),en=split.filter(s=>/[A-Za-z]{2}/.test(s)&&!/[\u3400-\u9fff]/.test(s));if(en.length)value=en.join(' · ');}return lang==='zh-Hant'?traditional(value):value;}
+            return (n.childNodes||[]).map(visit).filter(Boolean).join(' ');
+           }return visit(doc);
+          }
+          await fs.mkdir(scratch,{recursive:true});
+          const pages=await htmlFiles(dist);
+          for(const lang of ['zh','zh-Hant','en']){
+           const folder=path.join(scratch,lang);await fs.mkdir(folder,{recursive:true});
+           for(const file of pages){const source=await fs.readFile(file,'utf8');if(!source.includes('data-pagefind-body'))continue;const doc=parse(source);let body,title;function find(n){if(attr(n,'data-pagefind-body')!==undefined)body=n;if(n.tagName==='title')title=n;for(const c of n.childNodes||[])find(c);}find(doc);if(!body)continue;const dest=path.join(folder,path.relative(dist,file));await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,`<!doctype html><html lang="${lang==='zh'?'zh-CN':lang}"><head><title>${escape(editionText(title,lang))}</title></head><body><main data-pagefind-body>${escape(editionText(body,lang))}</main></body></html>`);}
+           const output=path.join(dist,'pagefind',lang);
+           const binary=path.join(import.meta.dirname,'node_modules/@pagefind',process.platform==='win32'?'windows-x64':'linux-x64','bin',process.platform==='win32'?'pagefind_extended.exe':'pagefind_extended');
+           const result=spawnSync(binary,['--site',folder,'--output-path',output],{stdio:'inherit'});if(result.status!==0)throw Error('Localized search build failed: '+lang);
+          }
+          // Only generated text is stored in this temporary folder; never include it in publication.
+          if(!scratch.startsWith(ROOT+path.sep))throw Error('Invalid search scratch path');await fs.rm(scratch,{recursive:true,force:true});
+          JS
+          node "$RUNNER_TEMP/atlas-search/build.mjs"
+      - name: Record verified search resources
+        run: |
+          test -f biomed-ai-atlas/pagefind/en/pagefind.js
+          test -f biomed-ai-atlas/pagefind/zh/pagefind.js
+          test -f biomed-ai-atlas/pagefind/zh-Hant/pagefind.js
+          git config user.name "Atlas publication"
+          git config user.email "actions@users.noreply.github.com"
+          git add biomed-ai-atlas/pagefind
+          git diff --cached --quiet && exit 0
+          git commit -m "Build separate Simplified Chinese, Traditional Chinese and English search indexes"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

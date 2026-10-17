@@ -12,7 +12,7 @@ const safeURL=(value,asset=false)=>escape(SiteSecurity.safeURL(value,{asset}));
 const bi=(zh,en)=>`<span class="lang-zh">${escape(zh)}</span><span class="lang-en">${escape(en)}</span>`;
 const icons={bookmark:'<svg viewBox="0 0 20 20"><path d="M5 3h10v14l-5-3-5 3Z"/></svg>',search:'<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>',filter:'<svg viewBox="0 0 20 20"><path d="M3 5h14M6 10h8M8 15h4"/></svg>'};
 let renderGeneration=0,canvasCleanup=null,revealObserver=null,routeAbort=null;const modelCache=new Map();
-function applyPreferences(){document.documentElement.dataset.lang=state.lang;document.documentElement.dataset.appearance=state.appearance;document.documentElement.lang=state.lang==='en'?'en':'zh-CN';$('.language-button').textContent=state.lang==='zh'?'中 / EN':state.lang==='en'?'EN / 中':'中英对照';$$('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));$('#command-search').placeholder=t('search')}
+function applyPreferences(){document.documentElement.dataset.lang=state.lang;document.documentElement.dataset.appearance=state.appearance;document.documentElement.lang=state.lang==='en'?'en':'zh-CN';const languageControl=$('.language-button');if(languageControl&&languageControl.tagName!=='SELECT')languageControl.textContent=state.lang==='en'?'English':'简体中文';$$('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));$('#command-search').placeholder=t('search')}
 function toast(text){const box=$('.toast-region');box.innerHTML=`<div class="premium-toast">${escape(text)}</div>`;clearTimeout(toast.timer);toast.timer=setTimeout(()=>box.innerHTML='',2500)}
 function byId(id){return state.models.find(m=>m.id===id)}
 function routeTo(path){if(location.hash==='#'+path)renderRoute();else location.hash=path}
@@ -98,6 +98,6 @@ document.addEventListener('keydown',e=>{
   }
 });
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.auto){clearInterval(state.auto);state.auto=null;$$('[data-play-id]').forEach(b=>{b.classList.remove('playing');b.textContent='AUTO'})}});
-window.addEventListener('hashchange',()=>renderRoute());applyPreferences();
+document.addEventListener('atlas:language',e=>{state.lang=e.detail.language==='en'?'en':'zh';renderRoute(true);});window.addEventListener('hashchange',()=>renderRoute());applyPreferences();
 fetch('catalog.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{if(!Array.isArray(data.models)||!Array.isArray(data.families)||data.models.some(m=>!/^architecture_model_\d{3}_[a-z0-9_]+$/.test(m.id)))throw Error('Invalid catalog');state.models=data.models;state.families=data.families;$$('[data-live-count]').forEach(n=>n.textContent=state.models.length);state.models.forEach(m=>m._hay=[m.title,m.num_str,m.year,m.venue,m.family_short,m.family_en,m.core_mech,m.core_mech_en,...Object.values(m.attrs),...Object.values(m.attrs_en||{})].join(' ').toLowerCase());renderRoute()}).catch(()=>{$('#main').innerHTML=`<div class="load-error"><h1>${t('loadFailed')}</h1><p>${t('loadFailedDesc')}</p><button class="button button-dark" data-action="reload">${t('retry')}</button> <a class="text-link" href="reference.html">${t('fullEdition')} ↗</a></div>`});
 })();
