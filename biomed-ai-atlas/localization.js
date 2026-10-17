@@ -1,6 +1,7 @@
 /* One locale for the atlas, compendium and teaching studio. Text-only translation preserves original figures and formulas. */
 (()=>{'use strict';
  const root=document.documentElement,BASE='/biomed-ai-atlas/',valid=l=>['zh','zh-Hant','en'].includes(l),normalize=s=>s.replace(/\s+/g,' ').trim();
+ let inferencePrepared=false;
  let locale='zh',ready=false,convert=s=>s,converter=null,observer,changing=false,scheduled=false;
  const originals=new WeakMap(),attributes=new WeakMap(),forward=new Map(),reverse=new Map(),pending=new Set();
  const skip='script,style,pre,code,.katex,math,#paper-citation,[translate="no"],.locale-selector';
@@ -66,6 +67,12 @@
   window.setLanguageMode=mode=>setLanguage(mode);
   document.querySelectorAll('[data-lang-btn="bilingual"]').forEach(b=>b.remove());
   document.querySelectorAll('[data-lang-btn]').forEach(b=>{if(b.dataset.langBtn==='zh'){const t=b.cloneNode(true);t.dataset.langBtn='zh-Hant';t.removeAttribute('data-call-click');t.textContent='繁體中文';t.addEventListener('click',()=>setLanguage('zh-Hant'));b.after(t);}});
+  // Enable lazy model controls only after the module has attached its handlers and prepared the sample.
+  const inferenceControls=()=>['real-run','real-sample','real-file'].map(id=>document.getElementById(id)).filter(Boolean);
+  document.addEventListener('click',event=>{if(!inferencePrepared&&event.target.closest('[data-studio-tab="inference"]'))inferenceControls().forEach(n=>n.disabled=true);},{capture:true});
+  const statusNode=document.getElementById('real-status');
+  if(statusNode&&/Sample ready|示例已就绪|示例已就緒/.test(statusNode.textContent))inferencePrepared=true;
+  if(statusNode)new MutationObserver(()=>{if(inferencePrepared)return;const text=statusNode.textContent;if(/Sample ready|示例已就绪|示例已就緒|示例加载失败|示例加載失敗|Sample could not load/.test(text)){inferencePrepared=true;inferenceControls().forEach(n=>n.disabled=false);}}).observe(statusNode,{childList:true,subtree:true,characterData:true});
   observer=new MutationObserver(records=>{for(const r of records){if(r.type==='characterData')schedule(r.target);else if(r.type==='attributes')schedule(r.target);else for(const n of r.addedNodes)schedule(n);}});
   await setLanguage(locale);
   window.AtlasLocale={set:setLanguage,refresh:apply,t:(zh,en)=>locale==='en'?en:locale==='zh-Hant'?convert(glossary(zh)):glossary(zh),get language(){return locale;},untranslated:()=>[...unknown]};
