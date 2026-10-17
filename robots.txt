@@ -9,7 +9,7 @@ Disallow: /biomed-ai-atlas/models/
 # Publisher opt-out for the automated clients listed below. These requests
 # include training crawlers and user-triggered clients; they do not all have
 # the same purpose. The policy is voluntary, not access control or a rate limit.
-# Browser-required files are public; source, datasets and weights are not site assets.
+# Browser-required files are public; application source and raw datasets are private; approved demo weights are public.
 User-agent: GPTBot
 Disallow: /
 User-agent: ChatGPT-User

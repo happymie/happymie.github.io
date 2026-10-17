@@ -26,8 +26,9 @@ jobs:
           forbidden=re.compile(r'\.(onnx|pt|pth|safetensors|sqlite3?|db|py|map|ipynb|bundle|csv|tsv|toml|lock)$',re.I)
           for p in root.rglob('*'):
               if not p.is_file() or '.git' in p.parts: continue
-              if p.as_posix()=='.github/workflows/public-pages.yml': continue
-              assert not forbidden.search(p.name),p
+              if p.as_posix() in ('.github/workflows/public-pages.yml','.github/workflows/public-model.yml'): continue
+              approved=p.as_posix()=='biomed-ai-atlas/inference/resnet18-imagenet.onnx'
+              assert approved or not forbidden.search(p.name),p
               assert not {'private','service','vendor','node_modules','content','maintenance','notebooks'}.intersection(p.parts),p
               assert p.suffix not in ('.yaml','.yml'),p
           release=json.loads(Path('site-release.json').read_text())
@@ -35,10 +36,14 @@ jobs:
           book=Path('biomed-ai-atlas/reference.html').read_text()
           assert sync['count']==release['models']
           assert len(re.findall(r'<article\b[^>]*\bid="architecture_model_',book))==sync['count']
-          assert not Path('biomed-ai-atlas/inference').exists()
+          import hashlib
+          model=Path('biomed-ai-atlas/inference/resnet18-imagenet.onnx')
+          manifest=json.loads(Path('biomed-ai-atlas/inference/manifest.json').read_text())
+          assert manifest['weights']=='ResNet18_Weights.IMAGENET1K_V1'
+          assert hashlib.sha256(model.read_bytes()).hexdigest()==manifest['sha256']
           assert not Path('teaching/data').exists()
           assert '<meta name="atlas-version" content="3.1.0"' in Path('biomed-ai-atlas/index.html').read_text()
-          print('Public artifact verified:',sync['count'],'models, synchronized original compendium, no private resources')
+          print('Public artifact verified:',sync['count'],'models, synchronized original compendium, approved official browser model, no private application resources')
           PY
       - name: Remove retired public model previews and source attachments
         env:
