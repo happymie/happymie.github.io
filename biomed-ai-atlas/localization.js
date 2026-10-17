@@ -26,8 +26,9 @@
     if(english.length&&parts.some(s=>/[\u3400-\u9fff]/.test(s)))value=english.join(' · ');
    }
   }else{
-   value=reverse.get(canonical)||reverse.get(canonical.toLowerCase())||canonical;
-   if(!/[\u3400-\u9fff]/.test(value)&&(/^[^a-z\u3400-\u9fff]+$/.test(value)||terms[value.toLowerCase()]))value=glossary(value);
+   value=reverse.get(canonical)||reverse.get(canonical.toLowerCase())||(forward.has(canonical)?reverse.get(forward.get(canonical)):null)||canonical;
+   value=value.split(/(\s*(?:\/\/|·)\s*)/).map(part=>reverse.get(normalize(part))||reverse.get(normalize(part).toLowerCase())||part).join('');
+   if(!/[\u3400-\u9fff]/.test(value)&&(/^[^a-z\u3400-\u9fff]+$/.test(value)||/^(SECTION|FAMILY|MODEL|SPEC|STATUS|SORT|STAGE)\b/.test(value)||terms[value.toLowerCase()]))value=glossary(value);
    value=value.replace(/^([^:]+):/,(_,label)=>(reverse.get(label)||label)+':');
    value=value.replace(/(\d+) channels?/gi,'$1 个通道').replace(/(\d+) models?/gi,'$1 个模型').replace(/(\d+) READING NODES/gi,'$1 个阅读节点').replace(/EXPERIMENT \/ (\d+)/g,'实验 / $1').replace(/^CH (\d+)/,'通道 $1').replace(/^Layer (\d+)/,'第 $1 层');
    if(!/[\u3400-\u9fff]/.test(value)){
@@ -58,7 +59,7 @@
  }
  function selector(old){const s=document.createElement('select');s.className='locale-selector'+(old.classList.contains('language-button')?' language-button':'');s.setAttribute('aria-label','Language');s.setAttribute('translate','no');if(old.id)s.id=old.id;for(const [value,label]of [['zh','简体中文'],['zh-Hant','繁體中文'],['en','English']])s.append(new Option(label,value));s.value=locale;s.addEventListener('change',()=>setLanguage(s.value));old.replaceWith(s);return s;}
  async function init(){
-  const response=await fetch(BASE+'locales/dictionary.json');if(!response.ok)throw Error('Language resources unavailable');for(const [zh,en]of await response.json()){forward.set(normalize(zh),en);if(!reverse.has(normalize(en)))reverse.set(normalize(en),zh);if(!reverse.has(normalize(en).toLowerCase()))reverse.set(normalize(en).toLowerCase(),zh);}
+  const response=await fetch(BASE+'locales/dictionary.json');if(!response.ok)throw Error('Language resources unavailable');for(const [zh,en]of await response.json()){forward.set(normalize(zh),en);for(const key of [normalize(en),normalize(en).toLowerCase()]){const previous=reverse.get(key);if(!previous||(zh.match(/[A-Za-z]/g)||[]).length<(previous.match(/[A-Za-z]/g)||[]).length)reverse.set(key,zh);}}
   ready=true;
   for(const old of document.querySelectorAll('#language-toggle,#language,.language-button,.reference-nav select'))selector(old);
   // Legacy state is kept in sync without changing the retained chapter or image assets.
