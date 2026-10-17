@@ -1,0 +1,4 @@
+Contact: https://github.com/happymie/happymie.github.io/security/advisories/new
+Preferred-Languages: en, zh
+Canonical: https://happymie.github.io/.well-known/security.txt
+Policy: https://github.com/happymie/happymie.github.io/security/policy
