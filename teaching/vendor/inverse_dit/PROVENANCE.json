@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/facebookresearch/DiT",
+  "commit": "ed81ce2229091fd4ecc9a223645f95cf379d582b",
+  "license": "CC-BY-NC-4.0",
+  "retrieved_date": "2026-10-17",
+  "adaptation": "No source edits. Noncommercial license applies to this copied code. timm 1.0.11 supplies architecture utilities.",
+  "files": [
+    {
+      "upstream_path": "models.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/DiT/ed81ce2229091fd4ecc9a223645f95cf379d582b/models.py",
+      "sha256": "1b8031a1340a3d1045c0bdb382334068f5f20e32edf67b3e6aba961ba91846ca",
+      "bytes": 14995
+    },
+    {
+      "upstream_path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/facebookresearch/DiT/ed81ce2229091fd4ecc9a223645f95cf379d582b/LICENSE.txt",
+      "sha256": "7c6858d0e71dc8b858255270ad4b5004e80b5b058bf5bbc408a28430d6ddbf4b",
+      "bytes": 19334
+    }
+  ]
+}

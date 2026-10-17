@@ -1,0 +1,1374 @@
+{
+  "models": [
+    {
+      "num": 1,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 2,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 3,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 4,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 81,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 82,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 83,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 84,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 85,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 5,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 6,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 7,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 8,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 9,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 10,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 11,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 12,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 13,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 14,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 23,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 86,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 87,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 88,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 91,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 15,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 16,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 17,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 18,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 19,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 20,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 21,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 22,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 89,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 90,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 24,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 25,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 26,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 27,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 28,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 29,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 92,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 93,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 94,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 32,
+      "bytes": 81920,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "prompt_shapes"
+    },
+    {
+      "num": 33,
+      "bytes": 81920,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "prompt_shapes"
+    },
+    {
+      "num": 34,
+      "bytes": 81920,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "prompt_shapes"
+    },
+    {
+      "num": 30,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 31,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 35,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 36,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 37,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 38,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 95,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 96,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 97,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 98,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 99,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 100,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 101,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 102,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 103,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 104,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "image_text"
+    },
+    {
+      "num": 39,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 40,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 41,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 105,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 106,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 107,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 108,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "patch_bags"
+    },
+    {
+      "num": 42,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 109,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 110,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 111,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 112,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "phantoms3d"
+    },
+    {
+      "num": 43,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 44,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 45,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 46,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 55,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 56,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 57,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 58,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 59,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 60,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 61,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 62,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 63,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 64,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 65,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 119,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 120,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 121,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 122,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 123,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "shapes2d"
+    },
+    {
+      "num": 47,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 48,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 49,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 50,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 51,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 117,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 118,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "inverse_phantoms"
+    },
+    {
+      "num": 52,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 53,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 54,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 113,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 114,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 115,
+      "bytes": 57344,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 116,
+      "bytes": 61440,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "noisy_shapes"
+    },
+    {
+      "num": 66,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 67,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 68,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 69,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 70,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 124,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 125,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 126,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 127,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "registration_pairs"
+    },
+    {
+      "num": 71,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 72,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 73,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 74,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 128,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 129,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 130,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 131,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "field_samples"
+    },
+    {
+      "num": 75,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "graphs"
+    },
+    {
+      "num": 76,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "graphs"
+    },
+    {
+      "num": 132,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "graphs"
+    },
+    {
+      "num": 133,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "graphs"
+    },
+    {
+      "num": 134,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "graphs"
+    },
+    {
+      "num": 135,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "graphs"
+    },
+    {
+      "num": 77,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 78,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 79,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 80,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 136,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    },
+    {
+      "num": 137,
+      "bytes": 131072,
+      "counts": {
+        "test": 4,
+        "train": 16,
+        "validation": 4
+      },
+      "kind": "waves"
+    }
+  ]
+}

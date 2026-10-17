@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/facebookresearch/fastMRI",
+  "commit": "91f2df4711adbb6d643df1810f234e4abcf5881b",
+  "license": "MIT",
+  "retrieved_date": "2026-10-17",
+  "adaptation": "Files unchanged. VarNet and Unet run from these files; installed fastmri 0.3.0 supplies Fourier and data transform utilities.",
+  "files": [
+    {
+      "upstream_path": "fastmri/models/varnet.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastMRI/91f2df4711adbb6d643df1810f234e4abcf5881b/fastmri/models/varnet.py",
+      "sha256": "dd2ccddfc899b346558b35e2a1fb23e2a1e2e2c0c81b7f62a71974bd98c63942",
+      "bytes": 10666
+    },
+    {
+      "upstream_path": "fastmri/models/unet.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastMRI/91f2df4711adbb6d643df1810f234e4abcf5881b/fastmri/models/unet.py",
+      "sha256": "b0c097adaa5c086ea93cdc34774bd508bd93dbf6146d74aad1024304ccec47a8",
+      "bytes": 5981
+    },
+    {
+      "upstream_path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastMRI/91f2df4711adbb6d643df1810f234e4abcf5881b/LICENSE.md",
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "bytes": 1086
+    }
+  ]
+}

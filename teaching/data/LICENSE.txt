@@ -1,0 +1,7 @@
+Synthetic teaching data: CC0 1.0 Universal
+
+To the extent possible under law, the authors have waived all copyright and related or neighboring rights to the original synthetic observations, labels and database metadata generated for this teaching project. This dedication does not cover third-party source code, papers, model weights or third-party trademarks.
+
+Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The data are provided without warranty. They are procedural dimensionless teaching examples and contain no patient observations.

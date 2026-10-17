@@ -1,0 +1,56 @@
+{
+  "upstream_repo": "facebookresearch/segment-anything",
+  "commit": "dca509fe793f601edb92606367a655c15ac00fdf",
+  "checked_on": "2026-10-17",
+  "modifications": "None to upstream files. Import adapter and teaching loss are outside this directory.",
+  "files": [
+    {
+      "path": "__init__.py",
+      "upstream_path": "segment_anything/modeling/__init__.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/__init__.py",
+      "sha256": "47f6363b86c0bfaa7a6abf723975136d17fae4a5f002d2814a5cce8834d18980"
+    },
+    {
+      "path": "common.py",
+      "upstream_path": "segment_anything/modeling/common.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/common.py",
+      "sha256": "59a53bfa5d0a4d446df7f2bb57d2e95808b130601592b934600fb663d256ce17"
+    },
+    {
+      "path": "image_encoder.py",
+      "upstream_path": "segment_anything/modeling/image_encoder.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/image_encoder.py",
+      "sha256": "1665ada2902722c9a8cd566c840e324d623ef2b12f7d9ae9f38b24aed0e39886"
+    },
+    {
+      "path": "mask_decoder.py",
+      "upstream_path": "segment_anything/modeling/mask_decoder.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/mask_decoder.py",
+      "sha256": "6a2455e990515c67a061187c92c236b879b189f21ef6ebfce1627cae9a6b2f93"
+    },
+    {
+      "path": "prompt_encoder.py",
+      "upstream_path": "segment_anything/modeling/prompt_encoder.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/prompt_encoder.py",
+      "sha256": "bd8f2f5903f0647f55c21c608bcbb334eec2901ebe76aa41061b1c513df4a06f"
+    },
+    {
+      "path": "sam.py",
+      "upstream_path": "segment_anything/modeling/sam.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/sam.py",
+      "sha256": "2d501173b7345f6829f745a2ade240c98026f6b3237bf6cf8e9473405e86c54e"
+    },
+    {
+      "path": "transformer.py",
+      "upstream_path": "segment_anything/modeling/transformer.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/segment_anything/modeling/transformer.py",
+      "sha256": "566a8f6db8b608398de939548bd0f485b21752fda2bdda36900e6444ef938d11"
+    },
+    {
+      "path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/dca509fe793f601edb92606367a655c15ac00fdf/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  ]
+}

@@ -35,3 +35,33 @@ dialog{max-height:calc(100dvh - 24px);overscroll-behavior:contain}
 @media(orientation:landscape) and (max-height:540px){.global-nav{height:54px}.mobile-navigation{top:54px;max-height:calc(100dvh - 54px)}.reader-tabs,.explorer-toolbar{top:54px}.reader-shell{padding-top:24px}.search-dialog{margin-top:8px}.search-box{padding-block:12px}#command-results{max-height:calc(100dvh - 170px)}.image-stage{height:calc(100dvh - 80px)}.filter-sidebar{top:64px;max-height:calc(100dvh - 74px)}.filter-sidebar.mobile-open{top:0;max-height:100dvh}.hero-inner{padding-top:32px;padding-bottom:65px}}
 
 body.mobile-panel-open{overflow:hidden}
+
+/* 2.2.0: teaching companion, sharing the Atlas palette and language settings. */
+.desktop-nav a{white-space:nowrap}
+.desktop-nav .nav-teaching{color:var(--accent);font-weight:650}
+.footer-bottom>div{flex-wrap:wrap}
+.teaching-feature{background:var(--page);border-bottom:1px solid var(--line)}
+.teaching-inner{max-width:1380px;margin:0 auto;padding:88px 65px;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:90px}
+.teaching-copy{min-width:0}.teaching-copy .eyebrow{color:var(--accent)}
+.teaching-copy h2{font-size:clamp(31px,3.3vw,48px);line-height:1.25;letter-spacing:-.055em;font-weight:650;margin:22px 0}
+.teaching-copy>p{font-size:14px;line-height:1.95;color:var(--muted);max-width:560px;margin:0 0 25px}
+.teaching-cta{min-height:48px;padding:13px 25px;font-size:14px}
+.teaching-copy>.teaching-boundary{font-size:11px;line-height:1.85;margin:23px 0 0;max-width:510px}
+.teaching-notebook{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px 30px;box-shadow:0 15px 45px #00000005;min-width:0}
+.teaching-notebook-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;color:var(--muted);padding-bottom:22px;border-bottom:1px solid var(--line)}
+.teaching-notebook-mark{display:flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;background:var(--lime);color:#18220c;font-size:17px}
+.teaching-course-count{padding:24px 0 28px;display:flex;flex-direction:column;gap:8px}
+.teaching-course-count strong{font-size:88px;line-height:1;letter-spacing:-.07em;font-weight:550;color:var(--ink)}
+.teaching-course-count>span{font-size:11px;color:var(--muted)}
+.teaching-details{margin:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.teaching-details>div{padding:22px 18px 22px 0}.teaching-details>div+div{padding-left:23px;border-left:1px solid var(--line)}
+.teaching-details dt{font-family:var(--font-mono);font-size:16px;color:var(--accent);letter-spacing:-.02em}
+.teaching-details dd{margin:7px 0 0;font-size:11px;line-height:1.8;color:var(--muted)}
+.teaching-learning-steps{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:9px;color:var(--muted);padding-top:22px}.teaching-learning-steps>span[aria-hidden]{color:var(--accent)}
+html[data-lang="bilingual"] .teaching-copy h2 .lang-en{display:block;font-size:.6em;color:var(--muted);margin-top:12px}
+html[data-lang="bilingual"] .teaching-copy p .lang-en,html[data-lang="bilingual"] .teaching-course-count .lang-en,html[data-lang="bilingual"] .teaching-details .lang-en,html[data-lang="bilingual"] .teaching-learning-steps .lang-en{display:block;margin-top:6px}
+html[data-lang="bilingual"] .teaching-cta{flex-wrap:wrap;gap:5px 12px;white-space:normal}
+@media(max-width:1040px){.desktop-nav{display:none}.mobile-menu{display:flex}.teaching-inner{padding:70px 36px;gap:45px}}
+@media(min-width:701px) and (max-width:1040px){.mobile-navigation{top:72px;max-height:calc(100dvh - 72px)}}
+@media(max-width:700px){.teaching-inner{grid-template-columns:1fr;padding:55px 24px;gap:32px}.teaching-copy h2{font-size:32px}.teaching-copy>p{font-size:13px}.teaching-copy>.teaching-boundary{font-size:11px}.teaching-cta{font-size:13px}.teaching-notebook{padding:23px 24px;border-radius:16px}.teaching-course-count strong{font-size:76px}.teaching-details>div{padding-right:14px}.teaching-details>div+div{padding-left:18px}.teaching-learning-steps{font-size:9px;gap:6px}}
+@media(orientation:landscape) and (max-height:540px) and (max-width:1040px){.mobile-navigation{top:54px;max-height:calc(100dvh - 54px)}}

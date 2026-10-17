@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/locuslab/TCN",
+  "commit": "2f8c2b817050206397458dfd1f5a25ce8a32fe65",
+  "license": "MIT",
+  "changes": [],
+  "files": {
+    "tcn.py": "f9d8e3ec037ac60ab906053a90cb04fa62803fd644ab81d3cb08ef65eddc4dd7"
+  }
+}

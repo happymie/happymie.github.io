@@ -1,0 +1,59 @@
+{
+  "source": "https://github.com/huggingface/transformers",
+  "source_kind": "canonical_library",
+  "commit": "052e652d6d53c2b26ffde87e039b723949a53493",
+  "package": "transformers",
+  "version": "4.46.3",
+  "license_spdx": "Apache-2.0",
+  "evidence_checked": "2026-10-17",
+  "files": [],
+  "installed_files": [
+    {
+      "module": "transformers.models.align.modeling_align",
+      "installed_relative_path": "transformers/models/align/modeling_align.py",
+      "upstream_path": "src/transformers/models/align/modeling_align.py",
+      "url": "https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/align/modeling_align.py",
+      "sha256": "9c1b8a33cf54c57def7c1b06932e72d8e9bf4e2906209f3284a8945be01a582e"
+    },
+    {
+      "module": "transformers.models.align.configuration_align",
+      "installed_relative_path": "transformers/models/align/configuration_align.py",
+      "upstream_path": "src/transformers/models/align/configuration_align.py",
+      "url": "https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/align/configuration_align.py",
+      "sha256": "43a22f7b2d148e5de671076677abb10a755cd0c052289d2a15933b756c93e542"
+    },
+    {
+      "module": "transformers.models.blip_2.modeling_blip_2",
+      "installed_relative_path": "transformers/models/blip_2/modeling_blip_2.py",
+      "upstream_path": "src/transformers/models/blip_2/modeling_blip_2.py",
+      "url": "https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/blip_2/modeling_blip_2.py",
+      "sha256": "015ab850e14977f4e0241849068a836d90fbc2911988366028d8842f986abdde"
+    },
+    {
+      "module": "transformers.models.blip_2.configuration_blip_2",
+      "installed_relative_path": "transformers/models/blip_2/configuration_blip_2.py",
+      "upstream_path": "src/transformers/models/blip_2/configuration_blip_2.py",
+      "url": "https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/blip_2/configuration_blip_2.py",
+      "sha256": "0ae5e81604cb8c48c981ab93f0d2bf447ccdcd7931d7b9941a2cc6d66e4b2899"
+    },
+    {
+      "module": "transformers.models.opt.modeling_opt",
+      "installed_relative_path": "transformers/models/opt/modeling_opt.py",
+      "upstream_path": "src/transformers/models/opt/modeling_opt.py",
+      "url": "https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/opt/modeling_opt.py",
+      "sha256": "cb1a8a514e9723fd9b376ec8308abe1c6da8524f2e94199bd611df3abeb42cfd"
+    },
+    {
+      "module": "transformers.models.opt.configuration_opt",
+      "installed_relative_path": "transformers/models/opt/configuration_opt.py",
+      "upstream_path": "src/transformers/models/opt/configuration_opt.py",
+      "url": "https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/opt/configuration_opt.py",
+      "sha256": "78fc0912437d8cdcb8e50de214c891f53333353357fb73d8a2b4614db7f528a9"
+    }
+  ],
+  "notes": [
+    "Architecture is imported from the pinned installed package, not vendored. Installed file hashes are independently checked by tests.",
+    "The local LICENSE copy retains the upstream grant. All class implementations remain unmodified."
+  ],
+  "upstream_bytes_verified": true
+}

@@ -1,0 +1,34 @@
+{
+  "repository": "https://github.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration",
+  "commit": "6357a1d7fc44c36db9b1d1ccaa372409253142cf",
+  "license": "MIT",
+  "retrieved_date": "2026-10-17",
+  "adaptation": "Files unchanged on disk. Runtime loader replaces only import models.configs_TransMorph as configs with isolated module alias import biomed_lab_upstream_transmorph_configs as configs. ml-collections 0.1.1 provides original ConfigDict. Original CUDA-only optional sinusoidal embeddings remain disabled as in baseline config. Original Grad3d loss is used directly. Sizes/widths/depth/window/drop-path are configuration changes, not architecture edits.",
+  "training_reference": "https://github.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration/blob/6357a1d7fc44c36db9b1d1ccaa372409253142cf/TransMorph/train_TransMorph.py",
+  "files": [
+    {
+      "upstream_path": "TransMorph/models/TransMorph.py",
+      "url": "https://raw.githubusercontent.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration/6357a1d7fc44c36db9b1d1ccaa372409253142cf/TransMorph/models/TransMorph.py",
+      "sha256": "988ef4181ae173c7d77fb8409fb87dae6d13ff1a236330e506ee8915ecf64076",
+      "bytes": 38672
+    },
+    {
+      "upstream_path": "TransMorph/models/configs_TransMorph.py",
+      "url": "https://raw.githubusercontent.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration/6357a1d7fc44c36db9b1d1ccaa372409253142cf/TransMorph/models/configs_TransMorph.py",
+      "sha256": "7cc3f82026b95d5887195ef27147cca4c244a8030f593ea38ec18b7a64d32a31",
+      "bytes": 10318
+    },
+    {
+      "upstream_path": "TransMorph/losses.py",
+      "url": "https://raw.githubusercontent.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration/6357a1d7fc44c36db9b1d1ccaa372409253142cf/TransMorph/losses.py",
+      "sha256": "e25b9ef9b9fa8623ee35aea201433e7b5892a38dd1dfaa2cd82b63f61aa5e00f",
+      "bytes": 23692
+    },
+    {
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration/6357a1d7fc44c36db9b1d1ccaa372409253142cf/LICENSE",
+      "sha256": "47b39efd556809b2d5ac1f7468ae5da0286c0dd28fb828e79523a41d98f96b1b",
+      "bytes": 1067
+    }
+  ]
+}

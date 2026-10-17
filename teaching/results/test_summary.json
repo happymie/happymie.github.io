@@ -1,0 +1,1042 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-17T04:44:26.330631+00:00",
+  "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python -m pytest",
+  "scope": "Structure, equation, gradient/state, dataset and budget regression checks; not a paper-performance reproduction",
+  "source_code_sha256": "be350c3bd871a460e555b6d4cf47624481174c03a0d82b5c1941b15b2997e6eb",
+  "summary": {
+    "tests": "205",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "43.616"
+  },
+  "warnings": 6,
+  "cases": [
+    {
+      "name": "test_all_models_have_valid_independent_databases",
+      "module": "tests.test_data_and_runner",
+      "seconds": 0.466
+    },
+    {
+      "name": "test_noise_views_have_independent_realizations",
+      "module": "tests.test_data_and_runner",
+      "seconds": 0.046
+    },
+    {
+      "name": "test_no_dataset_contains_pickle_payloads",
+      "module": "tests.test_data_and_runner",
+      "seconds": 0.146
+    },
+    {
+      "name": "test_unknown_model_refuses_substitution",
+      "module": "tests.test_data_and_runner",
+      "seconds": 0.005
+    },
+    {
+      "name": "test_final_training_step_cannot_report_completed_after_time_budget",
+      "module": "tests.test_data_and_runner",
+      "seconds": 2.098
+    },
+    {
+      "name": "test_validation_memory_updates_peak_and_enforces_budget",
+      "module": "tests.test_data_and_runner",
+      "seconds": 0.097
+    },
+    {
+      "name": "test_foundation_architecture_training_and_evaluation_paths[79]",
+      "module": "tests.test_extended_models",
+      "seconds": 1.735
+    },
+    {
+      "name": "test_foundation_architecture_training_and_evaluation_paths[80]",
+      "module": "tests.test_extended_models",
+      "seconds": 0.129
+    },
+    {
+      "name": "test_foundation_architecture_training_and_evaluation_paths[137]",
+      "module": "tests.test_extended_models",
+      "seconds": 1.836
+    },
+    {
+      "name": "test_waveform_renderer_has_fixed_scale_and_preserves_observed_input",
+      "module": "tests.test_extended_models",
+      "seconds": 0.009
+    },
+    {
+      "name": "test_labram_channel_identity_follows_declared_montage_permutation",
+      "module": "tests.test_extended_models",
+      "seconds": 0.038
+    },
+    {
+      "name": "test_ecgfounder_same_padding_supports_odd_lengths[31]",
+      "module": "tests.test_extended_models",
+      "seconds": 0.005
+    },
+    {
+      "name": "test_ecgfounder_same_padding_supports_odd_lengths[32]",
+      "module": "tests.test_extended_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_ecgfounder_same_padding_supports_odd_lengths[65]",
+      "module": "tests.test_extended_models",
+      "seconds": 0.003
+    },
+    {
+      "name": "test_ecgfounder_missing_observed_channels_are_not_repeated",
+      "module": "tests.test_extended_models",
+      "seconds": 0.039
+    },
+    {
+      "name": "test_extended_sources_match_preserved_blob_bytes",
+      "module": "tests.test_extended_models",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_original_architecture_has_finite_backward_and_optimizer_step[30]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.059
+    },
+    {
+      "name": "test_original_architecture_has_finite_backward_and_optimizer_step[31]",
+      "module": "tests.test_foundation_models",
+      "seconds": 1.8
+    },
+    {
+      "name": "test_original_architecture_has_finite_backward_and_optimizer_step[32]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.348
+    },
+    {
+      "name": "test_original_architecture_has_finite_backward_and_optimizer_step[33]",
+      "module": "tests.test_foundation_models",
+      "seconds": 4.39
+    },
+    {
+      "name": "test_original_architecture_has_finite_backward_and_optimizer_step[95]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.795
+    },
+    {
+      "name": "test_clip_reads_eos_embedding_and_cannot_read_future_padding_tokens",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.021
+    },
+    {
+      "name": "test_clip_preserves_original_forward_and_symmetric_pair_objective",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.363
+    },
+    {
+      "name": "test_clip_rejects_missing_end_token_and_reserved_high_id",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.309
+    },
+    {
+      "name": "test_clip_short_context_discards_only_empty_padding",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.016
+    },
+    {
+      "name": "test_sam_matches_unmodified_author_inference_on_each_prompted_image",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.06
+    },
+    {
+      "name": "test_paired_batch_does_not_expand_to_b_squared_or_mix_images[32]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.081
+    },
+    {
+      "name": "test_paired_batch_does_not_expand_to_b_squared_or_mix_images[33]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.086
+    },
+    {
+      "name": "test_sam_prediction_responds_to_point_location_and_dense_mask_prompt",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.258
+    },
+    {
+      "name": "test_sam_interactive_training_reaches_dense_prompt_and_single_mask_heads",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.193
+    },
+    {
+      "name": "test_sam_ambiguity_loss_backpropagates_only_best_mask_candidate",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.003
+    },
+    {
+      "name": "test_correction_clicks_are_errors_with_correct_foreground_labels",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.002
+    },
+    {
+      "name": "test_medsam_freezes_prompt_encoder_and_keeps_original_input_convention",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.07
+    },
+    {
+      "name": "test_invalid_reduced_shapes_fail_before_silent_architecture_changes[30-overrides0]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_invalid_reduced_shapes_fail_before_silent_architecture_changes[32-overrides1]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_invalid_reduced_shapes_fail_before_silent_architecture_changes[33-overrides2]",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_source_manifests_retain_original_files_and_licenses",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.008
+    },
+    {
+      "name": "test_align_uses_mbconv_se_bert_and_actual_smoothed_symmetric_loss",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.098
+    },
+    {
+      "name": "test_blip2_trains_queries_and_crossattention_while_both_towers_stay_frozen",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.061
+    },
+    {
+      "name": "test_blip2_caption_loss_ignores_padding_and_visual_prefix_and_is_causal",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.051
+    },
+    {
+      "name": "test_canonical_foundation_library_is_pinned_and_source_hashes_match",
+      "module": "tests.test_foundation_models",
+      "seconds": 0.005
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[1]",
+      "module": "tests.test_image_models",
+      "seconds": 1.593
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[2]",
+      "module": "tests.test_image_models",
+      "seconds": 1.007
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[3]",
+      "module": "tests.test_image_models",
+      "seconds": 0.08
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[4]",
+      "module": "tests.test_image_models",
+      "seconds": 0.084
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[5]",
+      "module": "tests.test_image_models",
+      "seconds": 0.094
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[6]",
+      "module": "tests.test_image_models",
+      "seconds": 0.114
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[7]",
+      "module": "tests.test_image_models",
+      "seconds": 0.114
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[8]",
+      "module": "tests.test_image_models",
+      "seconds": 4.099
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[10]",
+      "module": "tests.test_image_models",
+      "seconds": 0.691
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[11]",
+      "module": "tests.test_image_models",
+      "seconds": 3.156
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[12]",
+      "module": "tests.test_image_models",
+      "seconds": 1.16
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[13]",
+      "module": "tests.test_image_models",
+      "seconds": 0.063
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[15]",
+      "module": "tests.test_image_models",
+      "seconds": 0.072
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[16]",
+      "module": "tests.test_image_models",
+      "seconds": 0.079
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[17]",
+      "module": "tests.test_image_models",
+      "seconds": 0.122
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[18]",
+      "module": "tests.test_image_models",
+      "seconds": 0.098
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[19]",
+      "module": "tests.test_image_models",
+      "seconds": 0.168
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[20]",
+      "module": "tests.test_image_models",
+      "seconds": 0.037
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[21]",
+      "module": "tests.test_image_models",
+      "seconds": 0.021
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[22]",
+      "module": "tests.test_image_models",
+      "seconds": 0.11
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[23]",
+      "module": "tests.test_image_models",
+      "seconds": 0.052
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[81]",
+      "module": "tests.test_image_models",
+      "seconds": 0.067
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[82]",
+      "module": "tests.test_image_models",
+      "seconds": 0.531
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[83]",
+      "module": "tests.test_image_models",
+      "seconds": 0.297
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[84]",
+      "module": "tests.test_image_models",
+      "seconds": 0.549
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[85]",
+      "module": "tests.test_image_models",
+      "seconds": 0.227
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[86]",
+      "module": "tests.test_image_models",
+      "seconds": 0.094
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[87]",
+      "module": "tests.test_image_models",
+      "seconds": 0.112
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[88]",
+      "module": "tests.test_image_models",
+      "seconds": 0.167
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[89]",
+      "module": "tests.test_image_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[90]",
+      "module": "tests.test_image_models",
+      "seconds": 0.075
+    },
+    {
+      "name": "test_each_declared_lesson_runs_real_backward[91]",
+      "module": "tests.test_image_models",
+      "seconds": 0.101
+    },
+    {
+      "name": "test_unavailable_frameworks_fail_explicitly",
+      "module": "tests.test_image_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_mamba_batch_scan_matches_independent_streaming_step",
+      "module": "tests.test_image_models",
+      "seconds": 0.015
+    },
+    {
+      "name": "test_s4_uses_full_dplr_and_is_causal",
+      "module": "tests.test_image_models",
+      "seconds": 0.02
+    },
+    {
+      "name": "test_vmamba_orders_restore_non_square_grid_without_axis_swap",
+      "module": "tests.test_image_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_transformer_target_mask_prevents_future_token_leakage",
+      "module": "tests.test_image_models",
+      "seconds": 0.019
+    },
+    {
+      "name": "test_mask2former_set_loss_is_query_permutation_invariant",
+      "module": "tests.test_image_models",
+      "seconds": 0.015
+    },
+    {
+      "name": "test_unetplusplus_deep_heads_all_receive_supervision",
+      "module": "tests.test_image_models",
+      "seconds": 0.07
+    },
+    {
+      "name": "test_genesis_corruptions_preserve_clean_target",
+      "module": "tests.test_image_models",
+      "seconds": 0.013
+    },
+    {
+      "name": "test_distillation_updates_both_tokens_and_heads",
+      "module": "tests.test_image_models",
+      "seconds": 0.017
+    },
+    {
+      "name": "test_original_vendor_bytes_match_github_blob_identifiers",
+      "module": "tests.test_image_models",
+      "seconds": 0.01
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[43]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.019
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[44]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.013
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[45]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.177
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[46]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.38
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[47]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.054
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[48]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.069
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[49]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.039
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[50]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.093
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[51]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.25
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[52]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.057
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[53]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[54]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.023
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[55]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[56]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.025
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[57]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.025
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[59]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.024
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[60]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.022
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[62]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.024
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[63]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.023
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[64]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.045
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[65]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.056
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[66]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.016
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[67]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.11
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[68]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.167
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[70]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.045
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[71]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.127
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[72]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[73]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[74]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.021
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[113]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.034
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[114]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.039
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[115]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.254
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[116]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.623
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[117]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.028
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[118]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.047
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[119]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[120]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.011
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[121]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.044
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[122]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[123]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.037
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[124]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.136
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[125]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.652
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[126]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.038
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[128]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.039
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[129]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_each_declared_implementation_trains_and_evaluates[131]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.018
+    },
+    {
+      "name": "test_ct_forward_adjoint_inner_product",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.013
+    },
+    {
+      "name": "test_fbp_disk_has_the_correct_physical_amplitude",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.026
+    },
+    {
+      "name": "test_complex_mri_adjoint_and_complete_acquisition_identity",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.008
+    },
+    {
+      "name": "test_cg_matches_independent_dense_linear_solve_and_backpropagates",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.006
+    },
+    {
+      "name": "test_blind_spot_prediction_cannot_read_any_held_out_pixel[False]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.007
+    },
+    {
+      "name": "test_blind_spot_prediction_cannot_read_any_held_out_pixel[True]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.006
+    },
+    {
+      "name": "test_noise2noise_does_not_read_clean_targets",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.017
+    },
+    {
+      "name": "test_gan_generator_objective_does_not_update_discriminator",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.011
+    },
+    {
+      "name": "test_ddim_eta_zero_does_not_depend_on_reverse_noise",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.051
+    },
+    {
+      "name": "test_one_step_diffusion_starts_at_the_terminal_trained_time",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.012
+    },
+    {
+      "name": "test_shortened_beta_tables_cannot_silently_assume_gaussian_terminal_data",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.002
+    },
+    {
+      "name": "test_score_ode_time_grid_converges_to_an_independent_gaussian_solution",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.017
+    },
+    {
+      "name": "test_ddpm_and_ddim_share_the_same_training_objective",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.024
+    },
+    {
+      "name": "test_sit_sampling_integrates_velocity_not_epsilon",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.012
+    },
+    {
+      "name": "test_ddnm_preserves_range_and_leaves_the_null_space_unchanged",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.014
+    },
+    {
+      "name": "test_ddrm_implements_distinct_spectral_noise_regimes",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_dps_guidance_differentiates_the_measurement_path",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.008
+    },
+    {
+      "name": "test_flow_velocity_is_the_time_derivative_of_its_path[62]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_flow_velocity_is_the_time_derivative_of_its_path[63]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.003
+    },
+    {
+      "name": "test_consistency_boundary_is_exact_and_ema_follows_optimizer",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.018
+    },
+    {
+      "name": "test_flow_inverse_and_logdet_match_a_dense_autograd_jacobian[RealNVP]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.009
+    },
+    {
+      "name": "test_flow_inverse_and_logdet_match_a_dense_autograd_jacobian[Glow]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.017
+    },
+    {
+      "name": "test_pfgm_radial_second_moment_has_the_correct_finite_d_factor",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.008
+    },
+    {
+      "name": "test_identity_warp_and_stn_preserve_coordinates",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_gradicon_penalizes_derivative_not_translation_offset",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.002
+    },
+    {
+      "name": "test_rigid_rotation_and_parallel_ray_physical_units",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.006
+    },
+    {
+      "name": "test_volume_render_matches_constant_medium_beer_lambert_solution",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_naf_density_has_no_view_direction_dependency",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.007
+    },
+    {
+      "name": "test_endonerf_parameterization_can_represent_its_known_synthetic_motion",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_hash_interpolation_preserves_constants_and_coordinate_gradients",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_projected_gaussian_covariances_remain_positive_definite",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.01
+    },
+    {
+      "name": "test_transmorph_voxel_dhw_flow_matches_explicit_normalized_xyz_sampling",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.026
+    },
+    {
+      "name": "test_transmorph_keeps_four_hierarchy_levels_and_shifted_attention",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.022
+    },
+    {
+      "name": "test_single_scene_checkpoints_restore_the_actual_scene[72]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.02
+    },
+    {
+      "name": "test_single_scene_checkpoints_restore_the_actual_scene[73]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.023
+    },
+    {
+      "name": "test_single_scene_checkpoints_restore_the_actual_scene[74]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.007
+    },
+    {
+      "name": "test_single_scene_checkpoints_restore_the_actual_scene[126]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.025
+    },
+    {
+      "name": "test_single_scene_checkpoints_restore_the_actual_scene[129]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.02
+    },
+    {
+      "name": "test_single_scene_checkpoints_restore_the_actual_scene[131]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.016
+    },
+    {
+      "name": "test_unmodified_vendor_files_match_recorded_hashes",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.012
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[45]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.127
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[46]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.269
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[51]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.127
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[52]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.041
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[65]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.03
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[115]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.082
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[116]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.195
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[123]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.027
+    },
+    {
+      "name": "test_upstream_width_setting_really_reduces_parameters[125]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.426
+    },
+    {
+      "name": "test_source_only_workflows_are_not_renamed_substitutes[58]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_source_only_workflows_are_not_renamed_substitutes[61]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.0
+    },
+    {
+      "name": "test_source_only_workflows_are_not_renamed_substitutes[69]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_source_only_workflows_are_not_renamed_substitutes[127]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_source_only_workflows_are_not_renamed_substitutes[130]",
+      "module": "tests.test_inverse_models",
+      "seconds": 0.002
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[24]",
+      "module": "tests.test_research_models",
+      "seconds": 0.047
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[25]",
+      "module": "tests.test_research_models",
+      "seconds": 0.036
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[26]",
+      "module": "tests.test_research_models",
+      "seconds": 0.039
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[27]",
+      "module": "tests.test_research_models",
+      "seconds": 0.052
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[28]",
+      "module": "tests.test_research_models",
+      "seconds": 0.054
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[29]",
+      "module": "tests.test_research_models",
+      "seconds": 0.075
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[75]",
+      "module": "tests.test_research_models",
+      "seconds": 0.929
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[76]",
+      "module": "tests.test_research_models",
+      "seconds": 0.116
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[77]",
+      "module": "tests.test_research_models",
+      "seconds": 0.029
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[78]",
+      "module": "tests.test_research_models",
+      "seconds": 0.045
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[92]",
+      "module": "tests.test_research_models",
+      "seconds": 0.035
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[93]",
+      "module": "tests.test_research_models",
+      "seconds": 0.057
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[94]",
+      "module": "tests.test_research_models",
+      "seconds": 0.06
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[132]",
+      "module": "tests.test_research_models",
+      "seconds": 0.08
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[133]",
+      "module": "tests.test_research_models",
+      "seconds": 0.022
+    },
+    {
+      "name": "test_finite_backward_and_parameter_update[136]",
+      "module": "tests.test_research_models",
+      "seconds": 0.023
+    },
+    {
+      "name": "test_infonce_positives_and_symmetry",
+      "module": "tests.test_research_models",
+      "seconds": 0.003
+    },
+    {
+      "name": "test_teacher_no_grad_and_queue_moves",
+      "module": "tests.test_research_models",
+      "seconds": 0.031
+    },
+    {
+      "name": "test_sinkhorn_balances_assignments",
+      "module": "tests.test_research_models",
+      "seconds": 0.006
+    },
+    {
+      "name": "test_tcn_is_causal",
+      "module": "tests.test_research_models",
+      "seconds": 0.013
+    },
+    {
+      "name": "test_graph_permutation_equivariance",
+      "module": "tests.test_research_models",
+      "seconds": 0.026
+    },
+    {
+      "name": "test_mae_encoder_removes_masked_tokens",
+      "module": "tests.test_research_models",
+      "seconds": 0.018
+    }
+  ]
+}

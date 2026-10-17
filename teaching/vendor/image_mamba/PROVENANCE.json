@@ -1,0 +1,34 @@
+{
+  "fetched_date": "2026-10-17",
+  "sources": [
+    {
+      "key": "mamba_simple",
+      "git_blob_sha": "4c8a388217c4cd4d21d5ea4704a5d571be294781",
+      "commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+      "original_path": "mamba_ssm/modules/mamba_simple.py",
+      "source_url": "https://github.com/state-spaces/mamba/blob/main/mamba_ssm/modules/mamba_simple.py",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "mamba_scan",
+      "git_blob_sha": "271b7b15b3e0046cf2dbc93c0df28198c99bd528",
+      "commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+      "original_path": "mamba_ssm/ops/selective_scan_interface.py",
+      "source_url": "https://github.com/state-spaces/mamba/blob/main/mamba_ssm/ops/selective_scan_interface.py",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "mamba_license",
+      "git_blob_sha": "f4abe24eb520fbb077753ae4f34bfaa43cb3b83f",
+      "commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+      "original_path": "LICENSE",
+      "source_url": "https://github.com/state-spaces/mamba/blob/main/LICENSE",
+      "license": "Apache-2.0"
+    }
+  ],
+  "modifications": [
+    "Backend imports replaced with local upstream selective_scan_ref; CUDA/Triton functions explicitly disabled.",
+    "The exact selective_scan_ref function is extracted into a CPU-importable file with unchanged function body."
+  ]
+}
+

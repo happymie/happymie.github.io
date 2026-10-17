@@ -1,0 +1,20 @@
+{
+  "fetched_date": "2026-10-17",
+  "sources": [
+    {
+      "source_url": "https://github.com/whai362/PVT/blob/v2/classification/pvt.py",
+      "git_blob_sha": "0695dd4db6475186b05236fde1279796ec9005e3",
+      "original_path": "pvt.py"
+    },
+    {
+      "source_url": "https://github.com/whai362/PVT/blob/v2/LICENSE",
+      "git_blob_sha": "b1395e94b016dd1b95b4c7e3ed493e1d0b342917",
+      "original_path": "LICENSE"
+    }
+  ],
+  "license": "Apache-2.0",
+  "modifications": [
+    "Removed timm global model registration decorators to avoid name conflicts; model class unchanged."
+  ]
+}
+

@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/swz30/Restormer",
+  "commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f",
+  "license": "MIT",
+  "retrieved_date": "2026-10-17",
+  "adaptation": "No source edits. Runtime dependency: einops 0.8.0.",
+  "files": [
+    {
+      "upstream_path": "basicsr/models/archs/restormer_arch.py",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/basicsr/models/archs/restormer_arch.py",
+      "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a",
+      "bytes": 11428
+    },
+    {
+      "upstream_path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/swz30/Restormer/68dc6ac472db26f16361150cb7a96a1bc87da93f/LICENSE.md",
+      "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59",
+      "bytes": 1090
+    }
+  ]
+}
