@@ -28,12 +28,8 @@
  function syncDialogs(){const open=modals.filter(m=>m.classList.contains('open'));const next=open[open.length-1]||null;if(next!==active){if(next){if(!active)priorFocus=document.activeElement;active=next;const f=next.querySelector('input,button,a[href],[tabindex="0"]');if(f)f.focus()}else{active=null;if(priorFocus&&priorFocus.isConnected)priorFocus.focus();priorFocus=null}}document.body.style.overflow=next?'hidden':''}
  modals.forEach(m=>{m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');const title=m.querySelector('.modal-title');if(title){if(!title.id)title.id=m.id+'-accessible-title';m.setAttribute('aria-labelledby',title.id)}const close=m.querySelector('.modal-close-btn');if(close)close.setAttribute('aria-label','Close dialog / 关闭');new MutationObserver(syncDialogs).observe(m,{attributes:true,attributeFilter:['class']});m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')})});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeIndex();modals.forEach(m=>m.classList.remove('open'))}if(e.key==='Tab'&&active){const els=Array.from(active.querySelectorAll('button,a[href],input,select,textarea,[tabindex="0"]')).filter(el=>el.getClientRects().length&&!el.disabled);if(!els.length)return;const first=els[0],last=els[els.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
- const search=$('#global-palette-input');if(search)search.addEventListener('keydown',e=>{if(e.key==='Enter'){const row=$('#global-palette-results [onclick]');if(row){e.preventDefault();row.click()}}});
+ const search=$('#global-palette-input');if(search)search.addEventListener('keydown',e=>{if(e.key==='Enter'){const row=$('#global-palette-results [data-call-click]');if(row){e.preventDefault();row.click()}}});
  $$('.arch-figure-img,.gallery-thumb-img').forEach(i=>{i.loading='lazy';i.decoding='async'});
  if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const c=entry.target;const title=c.querySelector('.spec-model-title');if(title){location.textContent='READING / '+title.textContent.trim();$$('.toc-submodel-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c.id))}}})},{rootMargin:'-110px 0px -60% 0px',threshold:0});$$('.model-card').forEach(c=>observer.observe(c))}
  $$('input').forEach(i=>{if(!i.getAttribute('aria-label')&&!i.labels?.length)i.setAttribute('aria-label',i.placeholder||'Filter models')});
 })();
-
-
-
-{const s=document.createElement('script');s.src='reference-upgrade.js?v=2.1.2';document.body.appendChild(s)}

@@ -4494,6 +4494,46 @@
       "github_license_spdx": "MIT",
       "license_path": "LICENSE",
       "license_evidence": "license_text_read"
+    },
+    {
+      "model_id": "architecture_model_138_phydict",
+      "num": 138,
+      "title": "PhyDiCT",
+      "paper_url": "https://papers.miccai.org/miccai-2026/0773-Paper1942.html",
+      "atlas_code_url": "https://github.com/batmanlab/PhyDiCT",
+      "repo_url": "https://github.com/batmanlab/PhyDiCT",
+      "source_url": "https://github.com/batmanlab/PhyDiCT/tree/a5366fd19cc4a44e52445ce6385259f00cf770bb",
+      "source_kind": "original",
+      "commit": "a5366fd19cc4a44e52445ce6385259f00cf770bb",
+      "license_spdx": "Apache-2.0",
+      "license_url": "https://github.com/batmanlab/PhyDiCT/blob/a5366fd19cc4a44e52445ce6385259f00cf770bb/LICENSE.txt",
+      "redistribution": "permitted_with_notice",
+      "evidence_checked": "2026-10-17",
+      "metadata_status": "metadata_and_root_license_verified_source_route",
+      "notes": [
+        "Official MICCAI 2026 landing page and pinned author README, root LICENSE.txt, environment.yml and src/eval_low_PhyDiCT.py were inspected. The full paper PDF could not be retrieved in this check; no full-paper or numerical reproduction claim is made.",
+        "Pinned source calls CUDA directly and needs external pretrained MedSyn weights and report embeddings. No upstream environment, code or model weights were installed or executed by this update.",
+        "The root source-code license is Apache-2.0; this does not settle the separate terms of all bundled dependencies, model checkpoints or datasets. No third-party code or clinical data is redistributed here.",
+        "Conference page dates the work to MICCAI 2026; repository HEAD is dated 2026-09-25 and the arXiv record is dated 2026-10-07. The README BibTeX uses 2027; do not treat that inconsistent field as a new model release."
+      ],
+      "evidence_urls": [
+        "https://papers.miccai.org/miccai-2026/0773-Paper1942.html",
+        "https://arxiv.org/abs/2610.09253",
+        "https://github.com/batmanlab/PhyDiCT/blob/a5366fd19cc4a44e52445ce6385259f00cf770bb/README.md",
+        "https://github.com/batmanlab/PhyDiCT/blob/a5366fd19cc4a44e52445ce6385259f00cf770bb/LICENSE.txt",
+        "https://github.com/batmanlab/PhyDiCT/blob/a5366fd19cc4a44e52445ce6385259f00cf770bb/src/eval_low_PhyDiCT.py",
+        "https://github.com/batmanlab/PhyDiCT/blob/a5366fd19cc4a44e52445ce6385259f00cf770bb/environment.yml",
+        "https://api.github.com/repos/batmanlab/PhyDiCT/git/commits/a5366fd19cc4a44e52445ce6385259f00cf770bb"
+      ],
+      "pin_strategy": "immutable_admission",
+      "code_verification": "source_files_inspected_not_executed",
+      "default_branch": "main",
+      "archived": false,
+      "latest_commit": "a5366fd19cc4a44e52445ce6385259f00cf770bb",
+      "upstream_commit_utc": "2026-09-25T17:01:52Z",
+      "license_path": "LICENSE.txt",
+      "license_evidence": "root_license_full_text_read",
+      "paper_read_scope": "conference abstract and code availability; PDF unavailable"
     }
   ]
 }

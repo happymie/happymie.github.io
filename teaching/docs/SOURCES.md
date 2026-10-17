@@ -1,8 +1,8 @@
 # Source register and reuse rules
 
-This register covers **all 137 model cards** in the Biomedical AI Atlas. Its purpose is to identify the actual source, retain an immutable revision, and make reuse conditions visible before a learner copies or executes code.
+This register covers **all 138 model cards** in the Biomedical AI Atlas. Its purpose is to identify the actual source, retain an immutable revision, and make reuse conditions visible before a learner copies or executes code.
 
-**Checked: 2026-10-17.** The machine-readable authority is [sources.json](../sources.json). It contains 131 immutable upstream revisions, including historical code and Hugging Face releases. These are source-reference counts; they are not counts of fully reproduced models.
+**Checked: 2026-10-17.** The machine-readable authority is [sources.json](../sources.json). It contains 132 immutable upstream revisions, including historical code and Hugging Face releases. These are source-reference counts; they are not counts of fully reproduced models.
 
 ## What was checked
 
@@ -207,7 +207,11 @@ Each immutable commit is in [sources.json](../sources.json); source and license 
 | 136 | GRU | [Canonical library](https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/rnn.py) | [BSD-3-Clause](https://github.com/pytorch/pytorch/blob/4c36a17f2d31b8c882ea38078a4ce9c5fe5e8856/LICENSE) | `permitted_with_notice` |
 | 137 | ECGFounder | [Author / institution](https://github.com/PKUDigitalHealth/ECGFounder) | [MIT](https://github.com/PKUDigitalHealth/ECGFounder/blob/04edac702b61c91face519774ddcc0cd712fef23/LICENSE) | `permitted_with_notice` |
 
+| 138 | PhyDiCT | [Author source, not executed](https://github.com/batmanlab/PhyDiCT/tree/a5366fd19cc4a44e52445ce6385259f00cf770bb) | [Apache-2.0](https://github.com/batmanlab/PhyDiCT/blob/a5366fd19cc4a44e52445ce6385259f00cf770bb/LICENSE.txt) | `permitted_with_notice` |
+
 ## Validation performed
 
 The offline validator matched all 137 IDs, numbers and titles against the actual Atlas catalog and checked mandatory fields, immutable SHA format and permission evidence. The optional network refresh path was exercised against the public BiomedCLIP metadata endpoint without writing changes or downloading weights. GitHub sources were audited through the connected repository interface because the execution environment's unauthenticated public API was rate-limited.
 
+
+The 2026-10-17 maintenance admitted #138 PhyDiCT after reading its official conference page, pinned source metadata, selected inference files and full root license. Its original model was not run and its full PDF was unavailable. The offline identity/database checks now cover 138 entries. Earlier 137-entry source checks and 102 CPU execution records remain historical evidence; they were not repeated by this update. See [maintenance records](../maintenance/history.json).

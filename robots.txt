@@ -1,13 +1,15 @@
-# Search engines may index the public learning materials.
+# Compliant search engines may index the public learning materials.
+# Keep page scripts, styles, and images crawlable for normal rendering.
 User-agent: *
 Allow: /
 Disallow: /teaching/data/
 Disallow: /teaching/vendor/
 Disallow: /biomed-ai-atlas/models/
-Disallow: /biomed-ai-atlas/assets/
 
-# Opt out of bulk AI training crawlers. These directives are voluntary and
-# cannot prevent clients from downloading public files.
+# Publisher opt-out for the automated clients listed below. These requests
+# include training crawlers and user-triggered clients; they do not all have
+# the same purpose. The policy is voluntary, not access control or a rate limit.
+# Public files and the public source repository remain downloadable.
 User-agent: GPTBot
 Disallow: /
 User-agent: ChatGPT-User

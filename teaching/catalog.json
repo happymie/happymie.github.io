@@ -2878,6 +2878,27 @@
       "input_en": "Raw multi-lead (12-lead) or lead-masked single-lead 1D ECG voltage waveform tensor",
       "output_desc": "150 类诊断概率、通用 ECG embedding 与下游微调预测",
       "output_en": "150-class diagnostic probability vector and general-purpose 1D ECG representation"
+    },
+    {
+      "id": "architecture_model_138_phydict",
+      "num": 138,
+      "num_str": "138",
+      "title": "PhyDiCT",
+      "family_code": "14",
+      "family_id": "models_neural_fields_2d3d",
+      "family_short": "2D→3D 与神经辐射场",
+      "family_en": "2D-to-3D & Neural Fields",
+      "year": 2026,
+      "paper_title": "PhyDiCT: Plug-and-Play CT Reconstruction from Sparse X-Rays via Differentiable Rendering and Strong Priors",
+      "paper_url": "https://papers.miccai.org/miccai-2026/0773-Paper1942.html",
+      "code_url": "https://github.com/batmanlab/PhyDiCT",
+      "image": "assets/phydict-source-route.svg",
+      "core_mech": "在固定预训练三维扩散先验上交替施加投影观测约束与去噪更新；文本报告、几何和预训练权重都是显式条件。",
+      "core_mech_en": "A frozen text-conditioned 3D diffusion prior is guided by differentiable projection consistency during inference; reports, geometry and pretrained weights are explicit conditions.",
+      "input_desc": "稀疏 X 光、采集几何、文本报告条件与预训练 MedSyn 权重",
+      "input_en": "Sparse X-rays, acquisition geometry, a report condition and pretrained MedSyn weights",
+      "output_desc": "与观测相容的三维肺部 CT 候选体；仍需验证患者特异性与域外可靠性",
+      "output_en": "A candidate 3D lung CT volume; patient-specific fidelity and external reliability still require validation"
     }
   ],
   "families": [
@@ -2977,7 +2998,7 @@
       "name": "2D→3D 与神经辐射场",
       "en": "2D-to-3D & Neural Fields",
       "code": "14",
-      "count": 8
+      "count": 9
     },
     {
       "id": "models_graph_neural_networks",

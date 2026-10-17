@@ -795,4 +795,4 @@ The exact direct dependencies are in [requirements-cpu.txt](requirements-cpu.txt
 | Transformers | [4.46.3](https://github.com/huggingface/transformers/tree/v4.46.3) |
 | fastMRI | [0.3.0](https://github.com/facebookresearch/fastMRI/tree/v0.3.0) |
 
-The complete 137-item source/license audit, including repositories not copied here, is [sources.json](sources.json). NOASSERTION means that copying permission has not been established, not that a work has no owner. GPL is an open-source copyleft license; its obligations are different from noncommercial restrictions. HeartBEiT includes only the individual architecture file carrying an explicit inherited Microsoft MIT grant, not the whole unlicensed repository.
+The complete 138-item source/license audit, including repositories not copied here, is [sources.json](sources.json). NOASSERTION means that copying permission has not been established, not that a work has no owner. GPL is an open-source copyleft license; its obligations are different from noncommercial restrictions. HeartBEiT includes only the individual architecture file carrying an explicit inherited Microsoft MIT grant, not the whole unlicensed repository.

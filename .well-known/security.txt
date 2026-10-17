@@ -1,4 +1,5 @@
-Contact: https://github.com/happymie/happymie.github.io/security/advisories/new
+Contact: https://github.com/happymie/happymie.github.io/security/policy#reporting-a-vulnerability
+Expires: 2027-04-17T00:00:00Z
 Preferred-Languages: en, zh
 Canonical: https://happymie.github.io/.well-known/security.txt
 Policy: https://github.com/happymie/happymie.github.io/security/policy

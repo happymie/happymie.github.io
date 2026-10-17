@@ -1,13 +1,13 @@
 # Biomedical AI Teaching Lab / 生物医学 AI 教学实验室
 
-[打开教学网站](https://happymie.github.io/teaching/) · [原架构图谱](https://happymie.github.io/biomed-ai-atlas/) · [137 项覆盖清单](docs/COVERAGE.md) · [来源与许可证审计](docs/SOURCES.md)
+[打开教学网站](https://happymie.github.io/teaching/) · [原架构图谱](https://happymie.github.io/biomed-ai-atlas/) · [实时覆盖清单](docs/COVERAGE.md) · [来源与许可证审计](docs/SOURCES.md)
 
-这是 Biomedical AI Atlas 的配套教学子项目。137 个条目与原图谱一一对应，每项都有独立、可检查的 SQLite 合成数据库、论文/代码来源和逐模型课程。可执行部分支持本地 CPU、小批次与缩小配置，并记录实际运行证据。
+这是 Biomedical AI Atlas 的配套教学子项目。实时目录当前含 138 个条目；原 137 项专著保持固定版本，每项都有独立、可检查的 SQLite 合成数据库、论文/代码来源和逐模型课程。可执行部分支持本地 CPU、小批次与缩小配置，并记录实际运行证据。
 
-**覆盖 137 个课程条目，不等于完成 137 个原模型的完整复现。** 页面和课程分别标记：`upstream`（复用上游实现）、`paper_port`（独立实现所列论文结构/方程）、`mechanism_demo`（只实现明确列出的机制）、`source_route`（有原始来源与数据，尚无本地 CPU 适配器）。缩小结构、随机初始化和两步执行检查不能证明原论文性能、预训练能力或临床价值。具体差异逐项列出，不把别的网络冒充为目标模型。
+**覆盖 138 个课程条目，不等于完成 138 个原模型的完整复现。** 页面和课程分别标记：`upstream`（复用上游实现）、`paper_port`（独立实现所列论文结构/方程）、`mechanism_demo`（只实现明确列出的机制）、`source_route`（有原始来源与数据，尚无本地 CPU 适配器）。缩小结构、随机初始化和两步执行检查不能证明原论文性能、预训练能力或临床价值。具体差异逐项列出，不把别的网络冒充为目标模型。
 
 <!-- release-summary:start -->
-137 项课程与 137 个独立数据库（合计 **13.03 MiB**，每库最大 128 KiB）；**102 项本地适配器**：45 复用上游、27 论文结构/方程实现、30 部分机制演示；**35 项原版路径尚无 CPU 适配器**。当前摘要匹配的成功 CPU 执行检查：**102 项**。
+138 项课程与 138 个独立数据库（合计 **13.16 MiB**，每库最大 128 KiB）；**102 项本地适配器**：45 复用上游、27 论文结构/方程实现、30 部分机制演示；**36 项原版路径尚无 CPU 适配器**。完整摘要匹配的成功 CPU 记录 **0 项**；保留原版本的历史成功记录 **102 项**。网页构建不等于模型重跑。
 <!-- release-summary:end -->
 
 ## 1. 安装并完成第一个实验
@@ -90,7 +90,7 @@ CPU 安装清单的 `+cpu` wheel 适用于 Linux/Windows；Apple Silicon 使用�
 
 ## 4. 数据为什么足够轻量
 
-`data/001.sqlite3` 至 `data/137.sqlite3` 各含 **24 个独立合成样本：16 训练、4 验证、4 测试**，共有 3,288 个不同种子。每个数据库都含实际数组与目标、来源/许可证、坐标约定、生成器摘要和逐样本 SHA-256。每个样本使用压缩 NPZ blob；读取时禁用 pickle 并校验哈希。
+`data/001.sqlite3` 至 `data/138.sqlite3` 各含 **24 个独立合成样本：16 训练、4 验证、4 测试**，共有 3,312 个不同种子。每个数据库都含实际数组与目标、来源/许可证、坐标约定、生成器摘要和逐样本 SHA-256。每个样本使用压缩 NPZ blob；读取时禁用 pickle 并校验哈希。
 
 数据覆盖形状分割、三维椭球、波形、图文短序列、图结构和场采样。噪声视图根据同一基础样本的种子确定性生成，两个噪声实现相互独立；划分单位始终是基础样本或完整图，增强视图不跨划分。图像提示框与点用 `[0,1]` 的 `(x,y)` 坐标，场点用 `[-1,1]` 的 `(x,y,z)`，体素数组顺序为 `C,D,H,W`。这些数据没有患者信息，也不代表任何疾病分布；强度无量纲，不是 HU。
 
@@ -130,9 +130,15 @@ python3 -m http.server 8080 --directory ..
 # 浏览 http://localhost:8080/teaching/
 ```
 
-`tools/build_site.py` 将模型目录、来源档案、真实注册表、数据库和验证 JSON 合并为网页 `manifest.json`，并生成 137 项课程、覆盖表和第三方说明。修改运行代码或数据后，应更新相应测试及执行证据；生成器会拒绝把代码/数据摘要不匹配的旧结果标为当前有效验证。
+`tools/build_site.py` 将模型目录、来源档案、真实注册表、数据库和验证 JSON 合并为网页 `manifest.json`，并生成动态数量的课程、覆盖表、第三方说明、轻量网页索引和逐课程 JSON。修改运行代码或数据后，应更新相应测试及执行证据；生成器会拒绝把代码/数据摘要不匹配的旧结果标为当前有效验证。
 
 新增适配器必须提交明确的结构/方程范围、参数缩小方式、实际来源及许可证、任务相关的正确性测试和实测记录；不能只换名称或在模型缺失时默默执行通用网络。尚未解决的条目保留在覆盖表里。
+
+### 每日维护
+
+每日 Asia/Shanghai 09:00 的更新任务从 [DAILY_MAINTENANCE.md](docs/DAILY_MAINTENANCE.md) 开始。记录实际查询、来源、候选决定、验证范围及失败；有证据的无变化也是有效结果。网页构建可以在不安装 PyTorch 的情况下更新来源路径，但必须匹配绑定运行代码摘要的适配器快照；改过模型代码则拒绝离线复用。
+
+[最近状态](maintenance/status.json) · [历史记录](maintenance/history.json) · [138 PhyDiCT 来源学习](docs/PHYDICT_SOURCE_ROUTE.md)。`historical` 是保留原版本、原运行编号的既有 CPU 记录；本次维护没有重跑这些模型。
 
 ## 7. 来源与许可证
 
@@ -142,4 +148,4 @@ python3 -m http.server 8080 --directory ..
 
 ## English overview
 
-This is a source-backed teaching companion to the 137-entry Biomedical AI Atlas. Each entry has an independent SQLite synthetic dataset and a lesson. The coverage table distinguishes adapted upstream code, independent paper-equation/architecture implementations, explicitly incomplete mechanism demos, and source-only routes. Random initialization, reduced capacity and short CPU checks do not establish reproduction of pretrained capabilities or paper metrics. Linux CPU execution is measured; other platforms are documented separately. All differences, sources, pinned dependencies, test scopes and third-party licenses remain inspectable.
+This is a source-backed teaching companion to the growing Biomedical AI Atlas (138 entries; the original 137-model monograph stays versioned). Each entry has an independent SQLite synthetic dataset and a lesson. The coverage table distinguishes adapted upstream code, independent paper-equation/architecture implementations, explicitly incomplete mechanism demos, and source-only routes. Random initialization, reduced capacity and short CPU checks do not establish reproduction of pretrained capabilities or paper metrics. Linux CPU execution is measured; other platforms are documented separately. All differences, sources, pinned dependencies, test scopes and third-party licenses remain inspectable.
