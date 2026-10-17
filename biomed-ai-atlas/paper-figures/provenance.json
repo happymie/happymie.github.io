@@ -1,0 +1,16 @@
+{
+  "model": "phydict",
+  "source_pdf": "https://papers.miccai.org/miccai-2026/paper/1942_paper.pdf",
+  "figure": "Figure 1",
+  "page": 3,
+  "extraction": "Rendered original PDF figure at 3x. No redraw or generated replacements.",
+  "pdf_clip_points": [
+    126,
+    110,
+    488,
+    230
+  ],
+  "source_pdf_sha256": "73db8f925964bb77afb24870313831bc07217f2bff853055d015543e7899c8d4",
+  "asset_sha256": "79a82619b521555a7938f6b320cbd5ced417a6bbb51f34d14fa8d8301d5e5353",
+  "rights": "Original paper authors; not covered by the Atlas teaching-diagram CC BY license."
+}

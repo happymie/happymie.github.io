@@ -1,0 +1,1 @@
+var e=e=>document.getElementById(e),t=(e,t)=>document.documentElement.dataset.lang===`en`?t:e,n=!1;async function r(){n||(n=!0,(t=>e(`real-status`).textContent=t)(t(`服务接入中。可先在前五个工作台探索计算机制。`,`Service connection is being prepared. Explore the first five workbenches in the meantime.`)))}export{r as initRealModel};
