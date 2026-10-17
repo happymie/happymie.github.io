@@ -1,4 +1,0 @@
-include README.md sources.json catalog.json requirements-cpu.txt requirements-macos.txt THIRD_PARTY_NOTICES.md
-recursive-include vendor *.py *.json LICENSE LICENSE* COPYING*
-recursive-include data *.sqlite3 *.json LICENSE.txt
-recursive-include docs *.md

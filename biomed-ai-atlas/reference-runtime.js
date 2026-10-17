@@ -276,7 +276,7 @@ function showConstellationTooltip(evt, modelId) {
 
   tip.innerHTML =
     '<div style="font-family:var(--font-mono);font-size:10px;color:var(--accent-secondary);letter-spacing:0.06em;margin-bottom:4px">' +
-      'SPEC ' + m.num_str + ' / 137 · ' + m.year_str + ' · ' + m.venue +
+      'SPEC ' + m.num_str + ' / ' + window.MODELS_META.length + ' · ' + m.year_str + ' · ' + m.venue +
     '</div>' +
     '<div style="font-family:var(--font-serif);font-size:18px;font-weight:700;margin-bottom:6px">' + m.title + '</div>' +
     (imgSrc ? '<div style="background:#FFF;border:1px solid var(--rule);padding:6px;margin-bottom:8px;text-align:center"><img src="' + imgSrc + '" alt="" style="max-width:100%;max-height:95px;object-fit:contain" /></div>' : '') +
@@ -741,7 +741,7 @@ function copyModelSummary(modelId) {
   var m = MODELS_MAP[modelId];
   if (!m) return;
   var lines = [
-    '### [' + m.num_str + '/137] ' + m.title + ' (' + m.year_str + ' · ' + m.venue + ')',
+    '### [' + m.num_str + '/' + window.MODELS_META.length + '] ' + m.title + ' (' + m.year_str + ' · ' + m.venue + ')',
     '- **架构族：** ' + m.family_label + ' (' + m.archetype + ')',
     '- **核心机制：** ' + m.core_mech,
     '- **输入 → 输出：** ' + m.input_desc + ' → ' + m.output_desc,
@@ -940,7 +940,7 @@ function expandSingleCardModal(modelId) {
   var modalBody = document.getElementById('quickview-modal-body');
   var modalTitle = document.getElementById('quickview-modal-title');
   if (modalTitle) {
-    modalTitle.textContent = 'SPEC ' + m.num_str + ' / 137 // ' + m.title + ' (' + m.year_str + ' · ' + m.venue + ')';
+    modalTitle.textContent = 'SPEC ' + m.num_str + ' / ' + window.MODELS_META.length + ' // ' + m.title + ' (' + m.year_str + ' · ' + m.venue + ')';
   }
   if (modalBody && fullBody) {
     var clone = fullBody.cloneNode(true);

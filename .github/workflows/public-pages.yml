@@ -1,0 +1,60 @@
+name: Verify public artifact and retire source history
+on:
+  push:
+    branches: [main]
+    paths: ['site-release.json', '.github/workflows/public-pages.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: public-artifact-publication
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify public-only boundary and synchronized compendium
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          root=Path('.')
+          forbidden=re.compile(r'\.(onnx|pt|pth|safetensors|sqlite3?|db|py|map|ipynb|bundle|csv|tsv|toml|lock)$',re.I)
+          for p in root.rglob('*'):
+              if not p.is_file() or '.git' in p.parts: continue
+              if p.as_posix()=='.github/workflows/public-pages.yml': continue
+              assert not forbidden.search(p.name),p
+              assert not {'private','service','vendor','node_modules','content','maintenance','notebooks'}.intersection(p.parts),p
+              assert p.suffix not in ('.yaml','.yml'),p
+          release=json.loads(Path('site-release.json').read_text())
+          sync=json.loads(Path('biomed-ai-atlas/atlas-sync.json').read_text())
+          book=Path('biomed-ai-atlas/reference.html').read_text()
+          assert sync['count']==release['models']
+          assert len(re.findall(r'<article\b[^>]*\bid="architecture_model_',book))==sync['count']
+          assert not Path('biomed-ai-atlas/inference').exists()
+          assert not Path('teaching/data').exists()
+          assert '<meta name="atlas-version" content="3.1.0"' in Path('biomed-ai-atlas/index.html').read_text()
+          print('Public artifact verified:',sync['count'],'models, synchronized original compendium, no private resources')
+          PY
+      - name: Remove retired public model previews and source attachments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts" --jq '.artifacts[] | select(.name == "atlas-platform-preview" or .name == "dependency-lock" or .name == "daily-discovery") | .id' > "$RUNNER_TEMP/retired-atlas-artifacts.txt"
+          while IFS= read -r artifact_id; do
+            [ -n "$artifact_id" ] || continue
+            gh api --method DELETE "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id"
+          done < "$RUNNER_TEMP/retired-atlas-artifacts.txt"
+      - name: Prepare verified artifact-only history root
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tree_sha="$(git rev-parse HEAD^{tree})"
+          jq -n --arg tree "$tree_sha" '{message:"Publish verified Atlas 3.1 public pages only",tree:$tree,parents:[]}' > "$RUNNER_TEMP/atlas-root.json"
+          root_sha="$(gh api --method POST "repos/$GITHUB_REPOSITORY/git/commits" --input "$RUNNER_TEMP/atlas-root.json" --jq .sha)"
+          echo "ATLAS_PUBLIC_ROOT=$root_sha"
+          echo "Verified public root: $root_sha. Final ref update uses the owner connection with an expected-head lease." >> "$GITHUB_STEP_SUMMARY"
