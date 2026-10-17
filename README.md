@@ -1,2 +1,2 @@
 # happymie.github.io
-Page for AGE-Net
+Page for biomed-ai=atlas
