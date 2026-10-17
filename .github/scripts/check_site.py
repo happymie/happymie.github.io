@@ -12,8 +12,8 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[2]
 ERRORS: list[str] = []
 WARNINGS: list[str] = []
-MAX_HTML_BYTES = 9 * 1024 * 1024
-MAX_JS_BYTES = 1 * 1024 * 1024
+MAX_HTML_BYTES = 2 * 1024 * 1024
+MAX_JS_BYTES = 256 * 1024
 
 
 def error(message: str) -> None:
@@ -28,6 +28,8 @@ def check_json() -> None:
     for path in ROOT.rglob("*.json"):
         if any(part in {".git", ".venv", "node_modules"} for part in path.parts):
             continue
+        if path.stat().st_size > 512 * 1024:
+            warning(f"Large JSON payload ({path.stat().st_size:,} bytes): {path.relative_to(ROOT)}; consider pagination or lazy loading")
         try:
             json.loads(path.read_text(encoding="utf-8"))
         except Exception as exc:
