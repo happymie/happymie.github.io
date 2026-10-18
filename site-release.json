@@ -1,1 +1,1 @@
-{"version":"3.1.1","languages":["zh","zh-Hant","en"],"models":138,"artifact_only":true,"public_model":"ResNet18_Weights.IMAGENET1K_V1","published_date":"2026-10-18","correction":"author-credit-李骁扬"}
+{"version": "3.1.2", "languages": ["zh", "zh-Hant", "en"], "models": 138, "artifact_only": true, "public_model": "ResNet18_Weights.IMAGENET1K_V1", "published_date": "2026-10-18", "revision": "editorial-copy"}
