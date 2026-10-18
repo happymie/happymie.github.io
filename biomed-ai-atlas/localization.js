@@ -1,6 +1,8 @@
 /* One locale for the atlas, compendium and teaching studio. Text-only translation preserves original figures and formulas. */
 (()=>{'use strict';
  const root=document.documentElement,BASE='/biomed-ai-atlas/',valid=l=>['zh','zh-Hant','en'].includes(l),normalize=s=>s.replace(/\s+/g,' ').trim();
+ // Also release the gate left by older cached preference and CSS files.
+ root.removeAttribute('data-locale-pending');
  let inferencePrepared=false;
  let locale='zh',ready=false,convert=s=>s,converter=null,observer,changing=false,scheduled=false;
  const originals=new WeakMap(),attributes=new WeakMap(),forward=new Map(),reverse=new Map(),pending=new Set();
@@ -81,4 +83,3 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0),{once:true});else setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0);
 })();
-

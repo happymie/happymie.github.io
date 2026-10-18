@@ -1,5 +1,5 @@
 (function(){
-  document.documentElement.dataset.localePending='';
+  document.documentElement.removeAttribute('data-locale-pending');
   try {
     var language=localStorage.getItem('atlas.language')||JSON.parse(localStorage.getItem('atlas_premium_lang')||'"zh"');
     var theme=localStorage.getItem('atlas.theme')||JSON.parse(localStorage.getItem('atlas_premium_appearance')||'"light"');

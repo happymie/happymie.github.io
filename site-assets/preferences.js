@@ -1,8 +1,8 @@
 /* Apply a stored preference before the first paint; storage can be unavailable. */
 (function(){
   'use strict';
-  const html=document.documentElement;html.dataset.localePending='';
-  try{const locale=localStorage.getItem('atlas.language');if(['zh','zh-Hant','en'].includes(locale)){html.dataset.lang=locale;html.lang=locale==='zh'?'zh-CN':locale==='zh-Hant'?'zh-Hant':'en';html.dataset.localePending='';}}catch{}
+  const html=document.documentElement;html.removeAttribute('data-locale-pending');
+  try{const locale=localStorage.getItem('atlas.language');if(['zh','zh-Hant','en'].includes(locale)){html.dataset.lang=locale;html.lang=locale==='zh'?'zh-CN':locale==='zh-Hant'?'zh-Hant':'en';html.removeAttribute('data-locale-pending');}}catch{}
   try {
     const parsed=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
     const appearance=parsed('atlas_premium_appearance');
