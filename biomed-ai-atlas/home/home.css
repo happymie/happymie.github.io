@@ -1195,3 +1195,36 @@ html:root body[data-kind=home] .hero-intro{display:flex;flex-direction:row;max-w
 
 @media(min-width:701px){html:root body[data-kind=home] .hero-stage{top:76px;height:calc(100svh - 76px);min-height:700px}}
 @media(max-width:700px){html:root body[data-kind=home] .field-controls{max-width:calc(100vw - 24px)}html:root body[data-kind=home] .field-controls button{min-width:0;flex:1;padding-inline:9px;font-size:12px}}
+
+/* Portrait composition: full artwork, readable content and controls in their own rows. */
+@media(max-width:700px){
+ html:root body[data-kind=home] main{padding:0!important}
+ html:root body[data-kind=home] main>.hero{margin:0;min-height:0}
+ html:root body[data-kind=home] .hero-stage{height:max(740px,calc(100svh - 64px));min-height:740px;top:auto}
+ html:root body[data-kind=home] img.hero-art{height:100%!important;min-height:0!important;max-height:none!important;object-fit:cover;object-position:65% center}
+ html:root body[data-kind=home] .hero-stage .hero-top{padding:68px 24px 0}
+ html:root body[data-kind=home] .hero h1{font-size:clamp(38px,10.8vw,48px)!important;line-height:1.18!important;margin-block:24px}
+ html:root body[data-kind=home] .hero h1>span{font-size:.72em;line-height:1.35}
+ html:root body[data-kind=home] .hero-description{width:100%;max-width:none;font-size:16px;line-height:1.8}
+ html:root body[data-kind=home] .hero-intro{display:block;max-width:none}
+ html:root body[data-kind=home] .hero-enter{margin-top:22px;min-height:48px}
+ html:root body[data-kind=home] .hero-bottom{left:24px;right:24px;bottom:20px;border:0;padding:0!important;gap:12px}
+ html:root body[data-kind=home] .hero-bottom>.hero-model-count{display:none}
+ html:root body[data-kind=home] .visual-caption{display:none}
+ html:root body[data-kind=home] .hero-stage .field-controls{bottom:76px;left:50%;width:calc(100% - 48px);max-width:350px}
+ html:root body[data-kind=home] .hero-stage .field-controls button{min-width:0;min-height:44px;flex:1;padding:7px 5px;font-size:12px}
+ html:root body[data-kind=home] .hero-stage .hero-model-peek{left:24px;right:24px;bottom:151px;max-width:none;width:auto;min-height:90px;box-sizing:border-box}
+ html:root body[data-kind=home] .peek-copy{flex:1;min-width:0}.peek-copy>span{line-height:1.6}
+ html:root body[data-kind=home] .compare-images{grid-template-columns:minmax(0,1fr);gap:26px}
+ html:root body[data-kind=home] .compare-images button{height:clamp(230px,65vw,330px);padding:18px}
+ html:root body[data-kind=home] .compare-images strong{font-size:24px}
+ html:root body[data-kind=home] .section-rail{padding-inline:24px}
+ html:root body[data-kind=home] .compare-controls select,html:root body[data-kind=home] #home-search{font-size:16px;min-height:48px}
+ html:root body[data-kind=home] .reading-controls{flex-wrap:wrap;gap:8px}
+ html:root body[data-kind=home] .reading-controls button{flex:1;min-height:44px;padding-inline:10px}
+ html:root body[data-kind=home] .model-dialog{padding:18px;width:calc(100vw - 20px);max-width:calc(100vw - 20px);max-height:calc(100dvh - 24px)}
+ html:root body[data-kind=home] .drawer-layout{grid-template-columns:minmax(0,1fr);gap:22px}
+ html:root body[data-kind=home] .drawer-figure img{max-height:48dvh;min-height:0;width:100%;height:auto;object-fit:contain}
+ html:root body[data-kind=home] .drawer-actions{flex-wrap:wrap;gap:10px}
+}
+@media(max-width:360px){html:root body[data-kind=home] .hero-stage .hero-top{padding-inline:20px;padding-top:48px}html:root body[data-kind=home] .hero-model-peek{left:20px;right:20px}html:root body[data-kind=home] .peek-image{width:86px}}

@@ -88,3 +88,27 @@ html:root:root .xiao-signature img{width:166px;height:44px;object-fit:contain;pa
 @media(max-width:700px){html:root:root .xiao-symbol{width:101px;height:31px;flex-basis:101px}html:root:root .site-header .brand>span{display:none}html:root:root .reference-brand,html:root:root .nav .brand{font-size:0}html:root:root .reference-brand small,html:root:root .nav .brand>span{display:none}}
 
 @media(max-width:700px){html:root:root .reference-brand{flex:0 0 101px;min-width:101px}html:root:root .reference-brand .xiao-symbol{min-width:101px;flex-shrink:0}html:root:root .reference-nav{padding-inline:12px;gap:6px}html:root:root .reference-nav nav{gap:6px}html:root:root .reference-nav .locale-selector{width:100px!important;min-width:100px;max-width:100px}}
+
+/* Mobile reading and teaching chrome. */
+@media(max-width:700px){
+ html:root:root .reference-brand{font-size:0!important;max-width:none!important;flex:0 0 101px;min-width:101px}
+ html:root:root .reference-brand .xiao-symbol{min-width:101px;max-width:101px;flex-shrink:0}
+ html:root:root .reference-nav{padding:8px 12px!important;gap:6px!important;min-height:64px;flex-wrap:nowrap}
+ html:root:root .reference-nav nav{flex-wrap:nowrap;gap:5px!important;min-width:0}
+ html:root:root .reference-nav nav button{padding:6px!important;min-height:44px;white-space:nowrap;font-size:11px}
+ html:root:root .reference-nav .locale-selector{width:100px!important;min-width:100px;max-width:100px;padding-inline:8px 18px}
+ html:root:root .floating-dock{display:flex;flex-direction:row;gap:7px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:5px;border-radius:10px;max-width:calc(100vw - 24px);background:#091a31ee;box-shadow:0 4px 20px #0003}
+ html:root:root .floating-dock .dock-btn{min-height:44px;padding:8px 12px;font-size:11px}
+ html:root:root .lab-hero-art{max-height:none;overflow:visible;width:100%;min-width:0}
+ html:root:root .lab-hero-art .architecture-scene{min-width:0!important;width:100%!important;height:auto!important;max-height:none}
+ html:root:root .studio-control-bar{align-items:stretch}
+ html:root:root .studio-control-bar label{min-width:0!important;flex:1 1 120px}
+ html:root:root .studio-control-bar .button{min-height:46px}
+ html:root:root .studio-tabs button{scroll-margin-inline:18px}
+ html:root:root .nav nav{gap:8px;flex-wrap:wrap}
+ html:root:root .nav .brand{font-size:0!important}
+ html:root:root .nav .locale-selector{min-height:44px;font-size:12px!important}
+ html:root:root .lesson-panel,html:root:root .lesson-dialog{width:calc(100vw - 16px);max-width:calc(100vw - 16px);padding:0}
+ html:root:root .lesson-body{padding:22px 18px!important;overflow-wrap:anywhere}
+ html:root:root :is(input[type=search],input[type=number],textarea){font-size:16px}
+}

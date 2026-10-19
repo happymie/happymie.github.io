@@ -20,7 +20,7 @@
   function translate(){
     document.documentElement.lang=lang==='en'?'en':'zh-CN';
     document.querySelectorAll('[data-zh][data-en]').forEach(n=>n.textContent=n.dataset[lang]);
-    $('#language').textContent=lang==='en'?'中':'EN';
+    if($('#language').tagName==='BUTTON')$('#language').textContent=lang==='en'?'中':'EN';
     $('#search').placeholder=tx('搜索 U-Net、配准、Transformer…','Search U-Net, registration, Transformer…');
     const f=$('#family').value;
     $('#family').innerHTML=`<option value="all">${tx('全部家族','All families')}</option>`+families.map(x=>`<option value="${esc(x.code)}">${esc(lang==='en'?x.en:x.name)}</option>`).join('');$('#family').value=f||'all';
