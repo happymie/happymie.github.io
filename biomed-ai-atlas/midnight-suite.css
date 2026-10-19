@@ -81,3 +81,10 @@ html:root:root :is(.studio-small,.paper-original figcaption,.spec-section-label,
 
 html:root:root .reference-brand,html:root:root .nav .brand{display:inline-flex;align-items:center;gap:8px}html:root:root .reference-brand{white-space:nowrap}
 @media(max-width:700px){html:root:root .nav .brand i{display:none}html:root:root .reference-brand small{display:none}}
+
+/* Final XIAO wordmark: retain the supplied vector proportions. */
+html:root:root .xiao-symbol{width:112px;height:34px;flex:0 0 112px;object-fit:contain;padding:4px 7px;border-radius:5px}
+html:root:root .xiao-signature img{width:166px;height:44px;object-fit:contain;padding:5px 8px}
+@media(max-width:700px){html:root:root .xiao-symbol{width:101px;height:31px;flex-basis:101px}html:root:root .site-header .brand>span{display:none}html:root:root .reference-brand,html:root:root .nav .brand{font-size:0}html:root:root .reference-brand small,html:root:root .nav .brand>span{display:none}}
+
+@media(max-width:700px){html:root:root .reference-brand{flex:0 0 101px;min-width:101px}html:root:root .reference-brand .xiao-symbol{min-width:101px;flex-shrink:0}html:root:root .reference-nav{padding-inline:12px;gap:6px}html:root:root .reference-nav nav{gap:6px}html:root:root .reference-nav .locale-selector{width:100px!important;min-width:100px;max-width:100px}}
