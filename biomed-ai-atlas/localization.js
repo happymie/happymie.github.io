@@ -23,6 +23,10 @@
   const canonical=traditionalSources.get(key)||key;let value=canonical;
   if(locale==='en'){
    value=forward.get(canonical)||canonical;
+   // Home counters and model labels retain live values across all languages.
+   value=value.split(/(\s+·\s+|\s+\/\s+)/).map(part=>forward.get(normalize(part))||part).join('');
+   value=value.replace(/(\d+) 个模型、(\d+) 个家族。/g,'$1 models, $2 families.').replace(/(\d+) 个模型。/g,'$1 models.').replace(/(\d+) 个匹配模型 · 显示 (\d+) 个/g,'$1 matching models · Showing $2').replace(/再探索 (\d+) 个模型/g,'Explore $1 more models').replace(/(\d+) 个图谱模型/g,'$1 atlas models').replace(/窗口位置 (\d+) \/ (\d+)/g,'Window position $1 / $2').replace(/位置 (\d+)/g,'Position $1').replace(/权重之和 =/g,'Sum of weights =').replace(/ 原论文架构图/g,' original paper architecture').replace(/ 原论文图预览/g,' original figure preview').replace(/ 原论文图/g,' original paper figure').replace(/^查看 (.+) 的原图与详情$/,'View the original figure and details of $1').replace(/^放大 (.+) 原图$/,'Enlarge the original figure of $1').replace(/再探索 (\d+) 个模型/g,'Explore $1 more models');
+
    if(/^SOURCE:\s*/.test(value)){const tail=value.replace(/^SOURCE:\s*/,'');value='Source: '+(forward.get(tail)||tail);}
    if(/[\u3400-\u9fff]/.test(value)){
     const parts=value.split(/\s+(?:\/\/|\/|·)\s+/),english=parts.filter(s=>/[a-zA-Z]{2}/.test(s)&&!/[\u3400-\u9fff]/.test(s));

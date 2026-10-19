@@ -1,0 +1,83 @@
+/* Midnight / azure presentation layer. Paper images and quantitative colors retain their source values. */
+:root:root:root,html[data-theme]{color-scheme:dark;--bg:#050f21;--surface:#0a1c34;--surface2:#102844;--ink:#e5edfc;--muted:#a1b5d2;--line:#29415f;--accent:#79aaff;--accent-ink:#9dc2ff;--dark:#06132a;--shadow:0 16px 50px #01071333;--quiet:#9aafcd;--focus:#9bc5ff;--paper:#050f21;--elevated:#112b4a;--soft:#0d223c;--line-strong:#49678a;--lime:#79aaff;--nav-bg:#061329;--code-ink:#b7d2f7;--bg-canvas:#050f21;--bg-surface:#091a31;--bg-elevated:#102844;--bg-subtle:#132f50;--bg-glass:#07162a;--ink-primary:#e5edfc;--ink-secondary:#b6c8e2;--ink-tertiary:#9ab0ce;--rule:#29415f;--rule-strong:#46668f;--accent-primary:#9dc2ff;--accent-soft:#284d8033;--accent-border:#527fb8;--accent-teal:#8cbcf5;--formula-filter:invert(.92) hue-rotate(180deg)}
+html:root:root:root[data-theme=light]{--bg:#0b1a30;--surface:#102640;--surface2:#183553;--bg-canvas:#0b1a30;--bg-surface:#102640;--bg-elevated:#183553;--bg-subtle:#1c3d60}
+html:root:root body{background:var(--bg-canvas);color:var(--ink-primary);-webkit-font-smoothing:antialiased}
+html:root:root .site-header,html:root:root .reference-nav,html:root:root .topbar{background:#061329;border-color:var(--line);box-shadow:none;backdrop-filter:none}
+html:root:root .site-header .brand,html:root:root .reference-brand{font-weight:500;letter-spacing:.1em}
+html:root:root .site-header a,html:root:root .reference-nav a{transition:color .18s}
+html:root:root h1,html:root:root h2,html:root:root h3,html:root:root .spec-model-title{font-weight:500;letter-spacing:-.035em}
+html:root:root .button,html:root:root button,html:root:root input,html:root:root select,html:root:root textarea{accent-color:#79aaff}
+html:root:root .button.primary,html:root:root .button[aria-pressed=true]{background:#285daf;border-color:#5086ce;color:#f1f6ff}
+html:root:root button:focus-visible,html:root:root a:focus-visible,html:root:root input:focus-visible,html:root:root select:focus-visible,html:root:root textarea:focus-visible{outline:2px solid #9dc2ff;outline-offset:4px}
+html:root:root ::selection{background:#366cbb;color:#fff}
+html:root:root .lab-hero,html:root:root .book-banner{background:radial-gradient(ellipse at 85% 15%,#17427a88,transparent 58%),#07172f;border-color:#305074;box-shadow:none;border-radius:12px}
+html:root:root .lab-hero .eyebrow,html:root:root .lab-hero-proof,html:root:root .lab-hero-art>span,html:root:root .lab-signal{color:#a3c5f2}
+html:root:root .lab-hero>div>p{color:#b6c8e2}
+html:root:root .studio-architecture,html:root:root .conv-workspace,html:root:root .attention-workspace,html:root:root .residual-workspace,html:root:root .field-workspace{background:#081a32;border-color:#304b70;border-radius:10px}
+html:root:root .studio-explanation,html:root:root .studio-chart,html:root:root .field-visual{background:#0d2340;border-color:#304b70}
+html:root:root .studio-view-controls,html:root:root .studio-module-buttons,html:root:root .studio-io,html:root:root .studio-control-bar{border-color:#304b70}
+html:root:root .studio-tabs button[aria-selected=true],html:root:root .studio-view-controls button[aria-pressed=true],html:root:root .studio-module-buttons button[aria-pressed=true]{background:#2d5d9c;color:#f0f6ff;border-color:#5f92d6}
+html:root:root .studio-explanation>strong,html:root:root .kernel-calculation output,html:root:root #attention-vector strong{color:#9bc5ff}
+html:root:root .studio-explanation p,html:root:root .studio-io p,html:root:root .kernel-calculation>span,html:root:root .kernel-tile .studio-small,html:root:root .canvas-tile .studio-tile-label,html:root:root .attention-readout>p{color:#b0c6e5}
+html:root:root .kernel-grid input,html:root:root .kernel-grid span,html:root:root .attention-readout input,html:root:root .attention-readout>.button{background:#142e50;border-color:#4a6c98;color:#d4e6ff}
+html:root:root .studio-view-controls button,html:root:root .studio-module-buttons button,html:root:root .studio-explanation .eyebrow,html:root:root .studio-io>span,html:root:root .attention-workspace .eyebrow,html:root:root .attention-cost{color:#a1bce0}
+html:root:root .attention-matrix{background:#061329}
+html:root:root .studio-explanation>a{color:#b4d3ff!important}
+html:root:root .heatmap-scale i{background:linear-gradient(90deg,#2776a9,#0a1830,#9bc5ff)}
+html:root:root .paper-original,html:root:root .paper-image-wrap,html:root:root .overview,html:root:root .viewer-figure,html:root:root .plate-image-wrap{background:#fff}
+html:root:root .paper-original img,html:root:root .paper-image-wrap img,html:root:root .viewer-figure img,html:root:root .plate-image-wrap img{filter:none!important}
+html:root:root .paper-original figcaption,html:root:root .paper-overlay-toggle{background:#0b203a;color:#b6c8e2;border-color:#304b70}
+html:root:root .paper-original figcaption strong{color:#d1e1f7}
+html:root:root .spec-sheet{background:var(--bg-surface);border-color:var(--rule);box-shadow:none;border-radius:10px}
+html:root:root .sidebar-toc,html:root:root .reference-nav,html:root:root .monograph-masthead,html:root:root .family-section-banner{border-color:var(--rule)}
+html:root:root .reference-nav{backdrop-filter:none}
+html:root:root .floating-dock{background:var(--bg-elevated);border-color:var(--rule)}
+html:root:root .pagefind-ui{--pagefind-ui-primary:#9dc2ff;--pagefind-ui-text:#e5edfc;--pagefind-ui-background:#0a1c34;--pagefind-ui-border:#36567e;--pagefind-ui-tag:#173659}
+@media(max-width:700px){
+html:root:root .lab-hero{border-radius:10px}
+html:root:root .studio-architecture,html:root:root .conv-workspace,html:root:root .attention-workspace,html:root:root .residual-workspace,html:root:root .field-workspace{border-radius:8px}
+html:root:root .site-header{box-shadow:none}
+html:root:root .spec-sheet{margin-inline:10px}}
+@media(prefers-reduced-motion:reduce){
+html:root:root html{scroll-behavior:auto}
+html:root:root *,html:root:root *::before,html:root:root *::after{transition-duration:.01ms!important}}/* Native Apple system typography where available; platform system fallbacks elsewhere. */
+:root:root:root:root{--atlas-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","PingFang SC","PingFang TC","Segoe UI","Microsoft YaHei",sans-serif;--sans:var(--atlas-sans);--serif:var(--atlas-sans);--font-sans:var(--atlas-sans);--font-serif:var(--atlas-sans);--font-body:var(--atlas-sans);--mono:"SFMono-Regular","SF Mono",ui-monospace,Menlo,Consolas,monospace;--font-mono:var(--mono);font-family:var(--atlas-sans);font-size:17px}
+html:root:root body{font-family:var(--atlas-sans);font-size:17px;line-height:1.7}
+html:root:root body :not(svg,svg *,math,math *,.katex,.katex *,code,code *,pre,pre *){font-family:var(--atlas-sans)!important}
+html:root:root code,html:root:root pre{font-family:var(--mono)}
+html:root:root h1,html:root:root h2,html:root:root h3{font-weight:600;letter-spacing:-.035em}
+html:root:root .hero h1{font-size:clamp(48px,6.5vw,96px);font-weight:600;line-height:1.12}
+html:root:root .hero-copy>p,html:root:root .hero-description,html:root:root .lab-hero>div>p,html:root:root .masthead-lead,html:root:root .prose-p,html:root:root .bilingual-prose-grid p{font-size:17px;line-height:1.8}
+html:root:root .eyebrow,html:root:root .masthead-kicker,html:root:root .card-meta,html:root:root .studio-small,html:root:root .muted,html:root:root .terminal-bar{font-size:12px;letter-spacing:.025em}
+html:root:root .site-header .main-nav a,html:root:root .desktop-nav a,html:root:root .reference-nav button,html:root:root .reference-nav select,html:root:root .studio-tabs button{font-size:14px}
+html:root:root .terminal{background:linear-gradient(135deg,#102b4a,#091a31);border-color:#365678;color:#d8e7fb;box-shadow:none}
+html:root:root .terminal-bar,html:root:root .terminal-body,html:root:root .terminal-foot,html:root:root .terminal-meta{border-color:#365678;color:#b6cce9}
+html:root:root .terminal p,html:root:root .terminal small,html:root:root .terminal span,html:root:root .hero-note,html:root:root .hero .eyebrow,html:root:root .hero-copy>p{color:#b6cce9}
+html:root:root .terminal code,html:root:root .terminal strong,html:root:root .terminal .prompt{color:#c5ddff}
+html:root:root .terminal-bar i{background:#6a8fb8}
+html:root:root .terminal-bar i:first-child{background:#79aaff}
+html:root:root .btn-outline,html:root:root .button.secondary{border-color:#5d80ae;color:#d8e7fb}
+html:root:root .lab-hero,html:root:root .studio-architecture,html:root:root .conv-workspace,html:root:root .attention-workspace{border-radius:12px}
+@media(max-width:700px){
+html:root:root body{font-size:16px}
+html:root:root .hero h1{font-size:48px}
+html:root:root .hero-copy>p,html:root:root .hero-description,html:root:root .lab-hero>div>p,html:root:root .masthead-lead,html:root:root .prose-p,html:root:root .bilingual-prose-grid p{font-size:16px}
+html:root:root .hero-intro{max-width:100%}
+html:root:root .hero-intro h1{font-size:48px}
+html:root:root .hero-intro h1 span{font-size:.72em}
+html:root:root .studio-tabs button{font-size:12px}
+html:root:root .reference-nav select{font-size:12px}
+html:root:root .terminal-bar{font-size:11px}}
+
+/* Keep locale names readable in the legacy course navigation. */
+html:root:root .nav .locale-selector{width:112px!important;min-width:112px;max-width:112px;flex:0 0 112px;font-size:12px;padding-inline:12px 24px}
+@media(max-width:700px){html:root:root .nav nav{flex:1;gap:8px;min-width:0}html:root:root .nav nav>a{font-size:11px;line-height:1.4;text-align:right;padding:0}html:root:root .nav{gap:10px;backdrop-filter:none}html:root:root .nav .brand{font-size:13px}html:root:root .nav .brand i{margin-left:5px}}
+
+html:root:root .xiao-symbol{width:36px;height:36px;flex:0 0 36px;object-fit:contain;background:#f4f7fd;border-radius:6px;padding:2px}
+html:root:root .xiao-signature img{width:155px;height:48px;object-fit:contain;background:#f4f7fd;border-radius:6px;padding:3px}
+html:root:root :is(.spec-body-copy,.spec-module p,.spec-module li,.prose-p){font-size:17px!important;line-height:1.85}
+html:root:root :is(.studio-small,.paper-original figcaption,.spec-section-label,.archive-foot,.card-meta,.muted){font-size:13px!important;line-height:1.65}
+@media(max-width:700px){html:root:root :is(.spec-body-copy,.spec-module p,.spec-module li,.prose-p){font-size:16px!important}html:root:root .site-header .brand{font-size:11px;gap:8px}html:root:root .xiao-symbol{width:30px;height:30px;flex-basis:30px}}
+
+html:root:root .reference-brand,html:root:root .nav .brand{display:inline-flex;align-items:center;gap:8px}html:root:root .reference-brand{white-space:nowrap}
+@media(max-width:700px){html:root:root .nav .brand i{display:none}html:root:root .reference-brand small{display:none}}

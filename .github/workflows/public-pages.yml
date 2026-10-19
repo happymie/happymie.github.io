@@ -42,7 +42,7 @@ jobs:
           assert manifest['weights']=='ResNet18_Weights.IMAGENET1K_V1'
           assert hashlib.sha256(model.read_bytes()).hexdigest()==manifest['sha256']
           assert not Path('teaching/data').exists()
-          assert '<meta name="atlas-version" content="3.1.3"' in Path('biomed-ai-atlas/index.html').read_text()
+          assert '<meta name="atlas-version" content="3.2.0"' in Path('biomed-ai-atlas/index.html').read_text()
           print('Public artifact verified:',sync['count'],'models, synchronized original compendium, approved official browser model, no private application resources')
           PY
       - name: Remove retired public model previews and source attachments

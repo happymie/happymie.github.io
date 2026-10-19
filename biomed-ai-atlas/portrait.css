@@ -1,10 +1,10 @@
 /* Render page content immediately; optional locale resources load in the background. */
 /* Shared locale controls and portrait reading rhythm, including retained editions. */
 html:is([data-lang=zh],[data-lang=zh-Hant]) :is(.en,.lang-en),html[data-lang=en] :is(.zh,.lang-zh){display:none!important}
-.locale-selector{font:12px/1.4 var(--sans,system-ui);color:inherit;background:var(--surface,#fff);border:1px solid var(--line,#dedfda);border-radius:999px;padding:9px 24px 9px 12px;min-height:42px;max-width:135px;cursor:pointer;width:auto;flex-shrink:0;letter-spacing:0}
-.locale-selector:focus-visible{outline:2px solid var(--accent-ink,#456d1a);outline-offset:3px}
+.locale-selector{font:12px/1.4 var(--sans,system-ui);color:inherit;background:var(--surface,#fff);border:1px solid var(--line,#d5dbe4);border-radius:999px;padding:9px 24px 9px 12px;min-height:42px;max-width:135px;cursor:pointer;width:auto;flex-shrink:0;letter-spacing:0}
+.locale-selector:focus-visible{outline:2px solid var(--accent-ink,#1a3b6d);outline-offset:3px}
 html[data-lang=zh-Hant]{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
-.locale-selector option{background:var(--surface,#fff);color:var(--ink,#151713)}
+.locale-selector option{background:var(--surface,#fff);color:var(--ink,#10141a)}
 html:not([data-lang=en]) :is(p,.lead,.hero-desc,.studio-section-intro){line-break:strict;word-break:normal;overflow-wrap:anywhere}
 @media(max-width:700px){
  html{scroll-padding-top:132px}body{padding-bottom:env(safe-area-inset-bottom)}
