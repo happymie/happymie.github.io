@@ -81,5 +81,7 @@
   document.dispatchEvent(new Event('atlas:locale-ready'));
   window.addEventListener('storage',e=>{if(e.key==='atlas.language'&&valid(e.newValue))setLanguage(e.newValue);});
  }
+ function loadSiteFeatures(){const s=document.createElement('script');s.src=BASE+'site-features.js';s.defer=true;document.head.append(s);}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadSiteFeatures,{once:true});else loadSiteFeatures();
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0),{once:true});else setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0);
 })();
