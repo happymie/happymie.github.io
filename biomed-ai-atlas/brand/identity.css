@@ -1,0 +1,64 @@
+/* Approved 驍 XIAO artwork, shared by every edition and retained reader. */
+html:root:root:root :is(.xiao-brand-image,.xiao-header-logo,.xiao-header-mark,.xiao-footer-logo){
+ display:block;object-fit:contain;object-position:left center;flex-shrink:0;
+ padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+}
+html:root:root:root :is(.site-header,.reference-nav,.nav,.global-nav,.p-header) .xiao-header-logo{
+ width:200px!important;min-width:200px!important;max-width:200px!important;height:52px!important;flex-basis:200px;
+}
+html:root:root:root .xiao-header-mark{display:none!important;width:48px!important;min-width:48px!important;max-width:48px!important;height:48px!important;flex-basis:48px}
+html:root:root:root .xiao-footer-logo{width:200px!important;min-width:200px!important;max-width:100%!important;height:52px!important}
+html:root:root:root .brand-product{display:none!important}
+html:root:root:root :is(.site-header,.reference-nav,.nav,.global-nav) :is(.brand,.reference-brand){flex:0 0 auto;min-width:0;max-width:none}
+html:root:root:root .p-brand{display:inline-flex;align-items:center;flex-shrink:0}
+html:root:root:root .p-identity-top :is(.xiao-brand-image,.xiao-identity-logo){width:232px!important;max-width:100%!important;height:auto!important;padding:0!important;background:transparent!important;border-radius:0!important}
+html:root:root:root [data-brand-tone=ink]{filter:none}
+html:root:root:root[data-theme=dark] [data-brand-tone=ink]{filter:invert(1)}
+@media(min-width:1440px){html:root:root:root .site-header .brand-product{display:inline!important}}
+@media(max-width:480px){
+ html:root:root:root :is(.site-header,.reference-nav,.nav,.global-nav,.p-header) .xiao-header-logo{display:none!important}
+ html:root:root:root :is(.site-header,.reference-nav,.nav,.global-nav,.p-header) .xiao-header-mark{display:block!important}
+ html:root:root:root :is(.site-header,.reference-nav,.nav,.global-nav,.p-header) :is(.brand,.reference-brand,.p-brand){flex:0 0 auto!important;min-width:48px!important;width:auto!important}
+}
+
+/* Stable navigation, readable controls, and focus that remains visible. */
+html{--atlas-header-height:80px;scrollbar-gutter:stable;scroll-padding-top:calc(var(--atlas-header-height) + 20px)}
+html:root:root:root .site-header{height:var(--atlas-header-height)!important;min-height:var(--atlas-header-height);gap:20px}
+html:root:root:root .header-controls{flex-shrink:0}
+html:root:root:root .mobile-nav{position:fixed;top:var(--atlas-header-height);left:0;right:0;z-index:40;max-height:calc(100dvh - var(--atlas-header-height) - env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;box-shadow:0 16px 32px #0003;padding-bottom:max(20px,env(safe-area-inset-bottom))}
+html:root:root:root .mobile-nav[hidden]{display:none!important}
+html:root:root:root .mobile-nav a{min-height:48px;display:flex;align-items:center;line-height:1.5}
+html:root:root:root :is(.site-header button,.reference-nav button,.header-controls .locale-selector){min-height:44px}
+html:root:root:root :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:2px solid #8eb8ff;outline-offset:4px}
+html:root:root:root #main:focus{outline:none}
+html:root:root:root :is(section[id],article[id],h2[id],h3[id]){scroll-margin-top:calc(var(--atlas-header-height) + 24px)}
+html:root:root:root #command-dialog{max-height:calc(100dvh - 32px);overscroll-behavior:contain;scrollbar-gutter:stable}
+html:root:root:root .command-shortcuts{flex-wrap:wrap;row-gap:14px}
+html:root:root:root #command-search[aria-busy=true]{min-height:72px}
+html:root:root:root #command-search>.button{margin:12px 18px 12px 0}
+html:root:root:root :is(.pagefind-ui__search-input,.pagefind-ui__search-clear){min-height:44px;font-size:16px!important}
+html:has(#command-dialog[open]){overflow:hidden}
+@media(max-width:1200px){
+ html{--atlas-header-height:72px}
+ html:root:root:root .site-header{justify-content:space-between}
+ html:root:root:root .site-header .main-nav{display:none!important}
+ html:root:root:root .site-header .menu-toggle{display:grid!important;min-width:40px}
+ html:root:root:root .site-header :is(.search-label,kbd){display:none}
+}
+@media(min-width:1201px){html:root:root:root .site-header .menu-toggle{display:none!important}}
+@media(max-width:700px){
+ html{--atlas-header-height:64px}
+ html:root:root:root .site-header{gap:8px!important;padding-inline:max(12px,env(safe-area-inset-left))!important}
+ html:root:root:root .header-controls .locale-selector{font-size:16px!important;max-width:116px;padding-inline:10px 20px;min-height:44px}
+ html:root:root:root .mobile-nav{padding-inline:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ html:root:root:root .subnav nav{width:max-content;min-width:100%;justify-content:flex-start!important}
+ html:root:root:root #toast{bottom:max(20px,env(safe-area-inset-bottom));overflow-wrap:anywhere}
+ html:root:root:root .feature-band .section{grid-template-columns:minmax(0,1fr)}
+ html:root:root:root .feature-band .section>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+ html:root:root:root .feature-band .button{white-space:normal;line-height:1.5}
+}
+@media(max-height:500px) and (orientation:landscape){
+ html:root:root:root .mobile-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 16px;padding-block:10px}
+ html:root:root:root #command-dialog{max-height:calc(100dvh - 16px);margin-block:8px}
+}
+@media print{html:root:root:root .xiao-brand-image{filter:none!important}}

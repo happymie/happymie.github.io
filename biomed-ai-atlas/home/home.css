@@ -692,8 +692,8 @@ html:root body[data-kind=home] .field-controls button[aria-pressed=true]{color:#
 html:root body[data-kind=home] .space-hint{position:absolute;top:18%;right:17%;font-size:10px;color:#7594c4;z-index:3;pointer-events:none}
 html:root body[data-kind=home] .hero-model-peek{position:absolute;right:6.6%;bottom:134px;display:flex;align-items:center;gap:16px;text-align:left;background:#0d213de8;border:1px solid #31537b;padding:12px 20px 12px 12px;z-index:7;box-shadow:0 12px 60px #01061155;transition:border-color .3s,transform .3s;max-width:370px;color:#e7efff}
 html:root body[data-kind=home] .hero-model-peek:hover{transform:translateY(-4px);border-color:#83a9e0}
-html:root body[data-kind=home] .peek-image{width:110px;height:74px;background:#fff;display:grid;place-items:center;padding:6px;flex-shrink:0}
-html:root body[data-kind=home] .peek-image img{width:100%;height:100%;object-fit:contain}
+html:root body[data-kind=home] .peek-image{width:110px;height:74px;background:#fff;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:center;padding:6px;flex-shrink:0;min-width:0;min-height:0;overflow:hidden;isolation:isolate}
+html:root body[data-kind=home] .peek-image img{display:block;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
 html:root body[data-kind=home] .peek-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
 html:root body[data-kind=home] .peek-copy small{font-size:9px;line-height:1.6;color:#8ea8ce;max-width:185px}
 html:root body[data-kind=home] .peek-copy strong{font:18px Arial,sans-serif;color:#e1ecff;overflow-wrap:anywhere}
@@ -735,8 +735,8 @@ html:root body[data-kind=home] .archive-grid{display:grid;grid-template-columns:
 html:root body[data-kind=home] .archive-card{border:1px solid #253f62;background:#0a1b33;min-width:0;transition:border-color .3s,transform .3s}
 html:root body[data-kind=home] .archive-card:hover{border-color:#668dc2;transform:translateY(-5px)}
 html:root body[data-kind=home] .archive-open{background:transparent;color:inherit;padding:0;text-align:left;width:100%;display:flex;flex-direction:column}
-html:root body[data-kind=home] .archive-image{background:#fff;width:100%;height:220px;display:grid;place-items:center;padding:22px}
-html:root body[data-kind=home] .archive-image img{width:100%;height:100%;object-fit:contain}
+html:root body[data-kind=home] .archive-image{background:#fff;width:100%;height:220px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:center;padding:22px;min-width:0;min-height:0;flex:0 0 auto;overflow:hidden;isolation:isolate}
+html:root body[data-kind=home] .archive-image img{display:block;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
 html:root body[data-kind=home] .archive-meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 22px 0;width:100%}
 html:root body[data-kind=home] .archive-meta strong{font:23px/1.3 Arial,sans-serif;overflow-wrap:anywhere;font-weight:400}
 html:root body[data-kind=home] .archive-meta>span{font:12px Arial,sans-serif;color:#8ba8d3;flex-shrink:0}
@@ -749,9 +749,9 @@ html:root body[data-kind=home] .load-row>a{font-size:12px;color:#8facd3;min-heig
 html:root body[data-kind=home] .outline-button{min-height:46px;padding:12px 24px;border:1px solid #466ba1;background:#0d2544;color:#cbe0ff;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:30px}
 html:root body[data-kind=home] .outline-button:hover{background:#173964}
 html:root body[data-kind=home] .empty-message{text-align:center;border:1px dashed #355274;padding:45px 24px;line-height:2;font-size:15px;color:#a5bcd9}
-html:root body[data-kind=home] .era-story{height:235vh;min-height:1800px;background:#091a34;position:relative;isolation:isolate;border-block:1px solid #29456c}
+html:root body[data-kind=home] .era-story{height:auto;min-height:0;background:#091a34;position:relative;isolation:isolate;border-block:1px solid #29456c}
 html:root body[data-kind=home] .era-story:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 25% 30%,#2965c90c,transparent 65%);z-index:-1}
-html:root body[data-kind=home] .era-sticky{position:sticky;top:72px;height:calc(100svh - 72px);min-height:730px;max-height:1050px;padding-block:48px 34px;display:flex;flex-direction:column}
+html:root body[data-kind=home] .era-sticky{position:relative;top:auto;height:auto;min-height:0;max-height:none;padding-block:48px 34px;display:flex;flex-direction:column}
 html:root body[data-kind=home] .era-heading{display:flex;justify-content:space-between;align-items:center;color:#93b2dd;font-size:11px;margin-bottom:27px}
 html:root body[data-kind=home] .era-nav{display:flex;gap:12px;border-bottom:1px solid #2b486e;padding-bottom:19px;flex-wrap:wrap}
 html:root body[data-kind=home] .era-nav button{background:none;color:#87a5d1;border:1px solid transparent;border-radius:99px;min-height:44px;padding:11px 20px;font:12px Arial,sans-serif}
@@ -1099,7 +1099,7 @@ html:root body[data-kind=home] .era-sticky{position:relative;top:auto;height:aut
 html:root body[data-kind=home] .archive-card{transition:none}}/* Bound grid items by the figure frame rather than their intrinsic paper dimensions. */
 html:root body[data-kind=home] .compare-images button{grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1fr);overflow:hidden;min-width:0;min-height:0}
 html:root body[data-kind=home] .compare-images img{display:block;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain}
-html:root body[data-kind=home] .hero{height:172svh;min-height:1500px;max-height:none;overflow:clip}
+html:root body[data-kind=home] .hero{height:auto;min-height:0;max-height:none;overflow:clip}
 html:root body[data-kind=home] .hero:after{display:none}
 html:root body[data-kind=home] .hero-stage{position:sticky;top:0;height:100svh;min-height:850px;max-height:1200px;isolation:isolate;overflow:hidden;background:#030916}
 html:root body[data-kind=home] .hero-stage:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#030916ee 0%,#030916bf 29%,#03091639 57%,transparent 82%),linear-gradient(0deg,#030916a6,transparent 36%)}
@@ -1228,3 +1228,236 @@ html:root body[data-kind=home] .hero-intro{display:flex;flex-direction:row;max-w
  html:root body[data-kind=home] .drawer-actions{flex-wrap:wrap;gap:10px}
 }
 @media(max-width:360px){html:root body[data-kind=home] .hero-stage .hero-top{padding-inline:20px;padding-top:48px}html:root body[data-kind=home] .hero-model-peek{left:20px;right:20px}html:root body[data-kind=home] .peek-image{width:86px}}
+
+/* Keep native vertical scrolling and pinch zoom available over the spatial index. */
+html:root body[data-kind=home] #model-space{touch-action:pan-y pinch-zoom}
+@media(prefers-reduced-motion:reduce){html:has(body[data-kind=home]){scroll-behavior:auto!important}}
+
+/* The serif introduction needs a real text measure, not the retired 300px column. */
+html:root body[data-kind=home] .hero-intro>.hero-description{min-width:0;max-width:35rem;flex:0 1 35rem;text-wrap:pretty}
+@media(min-width:701px) and (max-width:1100px){
+ html:root body[data-kind=home] .hero-intro{flex-direction:column;align-items:flex-start;gap:20px}
+ html:root body[data-kind=home] .hero-intro>.hero-description{width:min(100%,35rem);flex:none}
+ html:root body[data-kind=home] .hero-intro>.hero-enter{margin-top:0;max-width:100%;width:max-content;flex:none}
+}
+
+/* Three readable peek lines; its lower edge stays clear of the layout switch. */
+@media(max-width:700px){
+ html:root body[data-kind=home] .hero-stage .hero-model-peek{min-height:100px;padding:12px}
+ html:root body[data-kind=home] .hero-model-peek .peek-copy>span{font-size:12px;line-height:1.6}
+}
+/* Keep the original-figure shortcut readable on tablet and desktop as well. */
+@media(min-width:701px){
+ html:root body[data-kind=home] .hero-stage .hero-model-peek{height:auto;min-height:104px}
+ html:root body[data-kind=home] .hero-model-peek .peek-copy>span{font-size:12px;line-height:1.6}
+}
+
+/* Product composition: real content defines height; no pinned scroll runway. */
+html:root body[data-kind=home] main>.hero{height:auto;min-height:0;max-height:none;overflow:clip}
+html:root body[data-kind=home] #hero-stage{
+ position:relative;top:auto;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+ grid-template-areas:"copy visual" "copy peek" "footer modes" "credit credit";
+ grid-template-rows:minmax(210px,1fr) auto auto auto;gap:16px clamp(24px,4vw,64px);align-items:center;
+ height:auto;min-height:min(590px,calc(100svh - var(--atlas-header-height,76px)));max-height:none;padding:34px clamp(24px,5vw,80px) 18px;contain:paint;
+}
+html:root body[data-kind=home] #hero-stage .hero-top{grid-area:copy;position:relative;inset:auto;width:100%;max-width:none;padding:0!important;align-self:center;min-width:0;animation:none}
+html:root body[data-kind=home] #hero-stage .hero-top>.eyebrow{margin:0 0 18px;font-size:13px!important;line-height:1.5!important;letter-spacing:.08em}
+html:root body[data-kind=home] #hero-stage h1{font-size:clamp(44px,4.8vw,74px)!important;line-height:1.18!important;letter-spacing:0!important;margin:0!important;max-width:none}
+html:root body[data-kind=home] #hero-stage h1>span{font-size:.76em;line-height:1.3;white-space:normal}
+html:root body[data-kind=home] #hero-stage .hero-intro{display:flex;flex-direction:column;align-items:flex-start;gap:20px;max-width:none;margin-top:22px}
+html:root body[data-kind=home] #hero-stage .hero-description{width:100%;max-width:35rem;flex:none;font-size:18px!important;line-height:1.7!important;margin:0;text-wrap:pretty}
+html:root body[data-kind=home] #hero-stage .hero-enter{width:max-content;max-width:100%;min-height:48px;margin:0;gap:22px;font-size:16px!important}
+html:root body[data-kind=home] #scene-wrap{grid-area:visual;position:relative;inset:auto;width:100%;height:100%;min-height:210px;max-height:none;overflow:hidden;align-self:stretch}
+html:root body[data-kind=home] #hero-stage .model-space canvas{position:absolute;inset:0;width:100%;height:100%;min-height:0}
+html:root body[data-kind=home] #hero-stage .space-hint{top:8px;right:10px;font-size:12px;max-width:calc(100% - 20px)}
+html:root body[data-kind=home] #hero-stage .hero-model-peek{grid-area:peek;position:relative;inset:auto;width:100%;max-width:none;min-height:96px;height:auto;padding:12px 16px;gap:16px;align-self:stretch;backdrop-filter:none}
+html:root body[data-kind=home] #hero-stage .peek-image{width:100px;height:70px;padding:6px}
+html:root body[data-kind=home] #hero-stage .peek-copy{gap:5px;flex:1;min-width:0}
+html:root body[data-kind=home] #hero-stage .peek-copy strong{font-size:22px!important;line-height:1.25!important}
+html:root body[data-kind=home] #hero-stage .peek-copy small{font-size:14px!important;line-height:1.4!important;max-width:none}
+html:root body[data-kind=home] #hero-stage .peek-copy>span{font-size:13px!important;line-height:1.4!important}
+html:root body[data-kind=home] #hero-stage .field-controls{grid-area:modes;position:relative;inset:auto;transform:none;display:flex;width:100%;max-width:none;margin:0;padding:4px;justify-self:stretch}
+html:root body[data-kind=home] #hero-stage .field-controls button{flex:1;min-width:0;min-height:44px;padding:7px 8px;font-size:14px!important}
+html:root body[data-kind=home] #hero-stage .hero-bottom{grid-area:footer;position:relative;inset:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;min-width:0;padding:0!important;border:0;font-size:13px!important}
+html:root body[data-kind=home] #hero-stage .hero-model-count{font-size:13px;line-height:1.5}
+html:root body[data-kind=home] #hero-stage .scroll-cue{min-height:44px;gap:14px;font-size:14px!important}
+html:root body[data-kind=home] #hero-stage .motion-toggle{min-height:44px;font-size:13px!important}
+html:root body[data-kind=home] #hero-stage .visual-caption{grid-area:credit;position:relative;inset:auto;text-align:right;font-size:11px;line-height:1.4}
+html:root body[data-kind=home] #hero-stage .hero-morph-progress{display:none}
+
+/* Page rhythm is shared by sections instead of large isolated hero-sized gaps. */
+html:root body[data-kind=home] .section-rail{max-width:1640px;padding-inline:clamp(24px,4.5vw,72px)}
+html:root body[data-kind=home] .overview-rail{padding-inline:clamp(20px,4.5vw,72px);grid-template-columns:repeat(4,minmax(0,1fr))}
+html:root body[data-kind=home] .overview-rail>a{min-height:90px;padding:16px 20px;gap:16px;min-width:0}
+html:root body[data-kind=home] .overview-rail small{font-size:14px;line-height:1.5;margin-top:4px}
+html:root body[data-kind=home] .purpose{padding-block:52px}
+html:root body[data-kind=home] #manifesto>.eyebrow{margin-bottom:18px}
+html:root body[data-kind=home] #manifesto>div{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+html:root body[data-kind=home] #manifesto h2{font-size:clamp(28px,2.5vw,38px)!important;line-height:1.45!important;margin:0}
+html:root body[data-kind=home] #manifesto p:not(.eyebrow){max-width:none;padding:0;margin:0;font-size:18px!important;line-height:1.8!important}
+html:root body[data-kind=home] :is(.explorer,.collection,.compare-section,.journal){padding-block:64px}
+html:root body[data-kind=home] .section-heading{gap:32px;margin-bottom:28px}
+html:root body[data-kind=home] .section-heading .eyebrow{margin-bottom:14px}
+html:root body[data-kind=home] .explorer .section-heading{margin-bottom:28px}
+html:root body[data-kind=home] .archive-grid{gap:22px}
+html:root body[data-kind=home] .archive-image{height:200px;padding:18px}
+html:root body[data-kind=home] .archive-meta{padding:18px 18px 0}
+html:root body[data-kind=home] .archive-branch{padding:10px 18px 0}
+html:root body[data-kind=home] .archive-summary{padding:10px 18px 18px;min-height:0;font-size:16px;line-height:1.75}
+html:root body[data-kind=home] .archive-foot{padding-inline:18px}
+html:root body[data-kind=home] .load-row{margin-top:24px}
+html:root body[data-kind=home] .original-stage{height:clamp(280px,32vw,480px);min-height:0;max-height:none;padding:28px 4%}
+/* The figure's grid track must shrink with the frame. An intrinsic auto track
+   kept a 540px image inside a shorter frame and cut off the architecture. */
+html:root body[data-kind=home] #collection .original-stage{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);min-width:0}
+html:root body[data-kind=home] #model-panel{scroll-margin-top:calc(var(--atlas-header-height,80px) + 72px)}
+html:root body[data-kind=home] #original-image{grid-area:1/1;display:block;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;align-self:stretch;justify-self:stretch;object-fit:contain;object-position:center}
+html:root body[data-kind=home] .model-caption{padding-top:22px;gap:32px}
+html:root body[data-kind=home] .reading-guide{margin-top:28px}
+html:root body[data-kind=home] .reading-detail{padding:24px}
+html:root body[data-kind=home] .reading-detail h4{margin-block:14px 10px}
+html:root body[data-kind=home] .reading-detail p{min-height:0}
+html:root body[data-kind=home] .lab-inner{padding-block:64px;gap:48px}
+html:root body[data-kind=home] .experiment-body{margin-block:30px;gap:28px}
+html:root body[data-kind=home] .journal-entry summary{min-height:112px}
+
+/* The chronology is an ordinary, fully visible section with explicit selection. */
+html:root body[data-kind=home] #era{height:auto;min-height:0;max-height:none}
+html:root body[data-kind=home] #era .era-sticky{position:relative;top:auto;height:auto;min-height:0;max-height:none;padding-block:44px}
+html:root body[data-kind=home] #era .era-heading{margin-bottom:18px}
+html:root body[data-kind=home] #era .era-nav{gap:8px;padding-bottom:16px}
+html:root body[data-kind=home] #era .era-nav button{font-size:15px!important;min-height:44px;padding:9px 16px}
+html:root body[data-kind=home] #era .era-content{grid-template-columns:minmax(240px,.84fr) minmax(0,1.7fr);gap:34px;align-items:start;padding-block:26px 20px;flex:none}
+html:root body[data-kind=home] #era .era-number{font-size:clamp(64px,6vw,88px)!important;line-height:1!important;margin-bottom:18px}
+html:root body[data-kind=home] #era .era-copy h2{font-size:clamp(26px,2.2vw,34px)!important;line-height:1.45!important}
+html:root body[data-kind=home] #era .era-copy>p{font-size:17px!important;line-height:1.8!important;margin-top:14px}
+html:root body[data-kind=home] #era .era-count{font-size:14px;margin-top:16px}
+html:root body[data-kind=home] #era .era-copy .text-link{font-size:15px;margin-top:12px}
+html:root body[data-kind=home] #era .era-models{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+html:root body[data-kind=home] #era .era-model{display:flex;flex-direction:column;align-items:stretch;gap:14px;padding:14px;min-width:0}
+html:root body[data-kind=home] #era .era-model>img{width:100%;height:124px;padding:10px}
+html:root body[data-kind=home] #era .era-model small{font-size:13px;line-height:1.5}
+html:root body[data-kind=home] #era .era-model strong{font-size:22px!important;line-height:1.3!important;margin-top:6px}
+html:root body[data-kind=home] #era .era-model>span>span{display:-webkit-box;font-size:16px!important;line-height:1.65!important;margin-top:8px;-webkit-line-clamp:3}
+html:root body[data-kind=home] #era .era-model i{display:none}
+
+@media(max-width:1100px){
+ html:root body[data-kind=home] #hero-stage{gap:14px 28px;padding:28px 32px 16px;min-height:0}
+ html:root body[data-kind=home] #hero-stage h1{font-size:clamp(38px,5vw,56px)!important}
+ html:root body[data-kind=home] #hero-stage .hero-description{font-size:17px!important;line-height:1.65!important}
+ html:root body[data-kind=home] #hero-stage .hero-intro{margin-top:18px;gap:16px}
+ html:root body[data-kind=home] #hero-stage .hero-model-count{display:none}
+ html:root body[data-kind=home] .overview-rail>a{padding-inline:14px;gap:12px}
+ html:root body[data-kind=home] .overview-rail>a>span{font-size:26px}
+ html:root body[data-kind=home] #era .era-content{grid-template-columns:minmax(0,1fr);gap:24px}
+ html:root body[data-kind=home] #era .era-copy{display:grid;grid-template-columns:112px minmax(0,1fr);gap:8px 24px;align-items:start}
+ html:root body[data-kind=home] #era .era-number{grid-column:1;grid-row:1/6;margin:0;font-size:76px!important}
+ html:root body[data-kind=home] #era .era-copy>:not(.era-number){grid-column:2;margin:0}
+}
+
+/* Portrait is a separate reading sequence, with no absolutely placed controls. */
+@media(max-width:700px),(orientation:portrait) and (max-width:1000px){
+ html:root body[data-kind=home] #hero-stage{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "visual" "peek" "modes" "footer";grid-template-rows:auto 150px auto auto auto;gap:14px;padding:28px 24px 18px;min-height:0;height:auto;max-height:none}
+ html:root body[data-kind=home] #hero-stage h1{font-size:clamp(34px,8.5vw,50px)!important;line-height:1.16!important}
+ html:root body[data-kind=home] #hero-stage h1>span{font-size:.76em;line-height:1.25}
+ html:root body[data-kind=home] #hero-stage .hero-top>.eyebrow{margin-bottom:14px;font-size:12px!important;line-height:1.5!important}
+ html:root body[data-kind=home] #hero-stage .hero-intro{margin-top:16px;gap:14px}
+ html:root body[data-kind=home] #hero-stage .hero-description{font-size:16px!important;line-height:1.6!important;max-width:40rem}
+ html:root body[data-kind=home] #hero-stage .hero-enter{min-height:44px;font-size:15px!important;padding:5px 7px 5px 18px;gap:20px}
+ html:root body[data-kind=home] #hero-stage .enter-arrow{width:32px;height:32px;font-size:18px}
+ html:root body[data-kind=home] #scene-wrap{min-height:0;height:150px;max-height:150px}
+ html:root body[data-kind=home] #hero-stage .hero-model-peek{min-height:94px;padding:12px;gap:14px}
+ html:root body[data-kind=home] #hero-stage .peek-image{width:94px;height:66px}
+ html:root body[data-kind=home] #hero-stage .peek-copy strong{font-size:21px!important}
+ html:root body[data-kind=home] #hero-stage .field-controls{max-width:none;width:100%;margin:0}
+ html:root body[data-kind=home] #hero-stage .field-controls button{font-size:14px!important;min-height:44px;padding-inline:7px}
+ html:root body[data-kind=home] #hero-stage .hero-bottom{display:flex;font-size:12px!important;gap:12px}
+ html:root body[data-kind=home] #hero-stage .visual-caption{display:none}
+ html:root body[data-kind=home] .overview-rail{grid-template-columns:repeat(2,minmax(0,1fr));padding-inline:20px}
+ html:root body[data-kind=home] .overview-rail>a{min-height:80px;padding:14px 12px;border-bottom:1px solid #294160;gap:12px}
+ html:root body[data-kind=home] .overview-rail>a:nth-child(3){border-left:1px solid #294160}
+ html:root body[data-kind=home] .overview-rail small{font-size:13px}
+ html:root body[data-kind=home] .section-rail{padding-inline:24px}
+ html:root body[data-kind=home] .purpose{padding-block:36px}
+ html:root body[data-kind=home] #manifesto>div{grid-template-columns:minmax(0,1fr);gap:20px}
+ html:root body[data-kind=home] #manifesto h2{font-size:30px!important;line-height:1.45!important}
+ html:root body[data-kind=home] #manifesto p:not(.eyebrow){font-size:16px!important;line-height:1.8!important}
+ html:root body[data-kind=home] :is(.explorer,.collection,.compare-section,.journal){padding-block:44px}
+ html:root body[data-kind=home] .section-heading{margin-bottom:24px}
+ html:root body[data-kind=home] .section-heading .eyebrow{margin-bottom:12px}
+ html:root body[data-kind=home] .archive-image{height:190px}
+ html:root body[data-kind=home] .original-stage{height:clamp(240px,62vw,400px);padding:20px}
+ html:root body[data-kind=home] .model-caption{padding-top:20px;gap:20px}
+ html:root body[data-kind=home] .lab-inner{padding-block:44px;gap:30px}
+ html:root body[data-kind=home] #era .era-sticky{padding-block:36px}
+ html:root body[data-kind=home] #era .era-copy{display:block}
+ html:root body[data-kind=home] #era .era-number{font-size:64px!important;margin-bottom:16px}
+ html:root body[data-kind=home] #era .era-copy>:not(.era-number){margin-top:12px}
+ html:root body[data-kind=home] #era .era-models{grid-template-columns:minmax(0,1fr);gap:12px}
+ html:root body[data-kind=home] #era .era-model{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;align-items:center;padding:12px}
+ html:root body[data-kind=home] #era .era-model>img{width:84px;height:76px;padding:7px}
+ html:root body[data-kind=home] #era .era-model>span>span{-webkit-line-clamp:2;font-size:16px!important}
+}
+
+/* A short landscape viewport gets a complete work surface, not a tall poster. */
+@media(orientation:landscape) and (max-height:640px){
+ html:root body[data-kind=home] #hero-stage{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);grid-template-areas:"copy visual" "copy peek" "footer modes" "credit credit";grid-template-rows:minmax(72px,1fr) auto auto auto;gap:8px 22px;padding:14px 24px 10px;min-height:0;height:auto;max-height:none}
+ html:root body[data-kind=home] #hero-stage .hero-top>.eyebrow{font-size:12px!important;line-height:1.4!important;margin-bottom:8px}
+ html:root body[data-kind=home] #hero-stage h1{font-size:clamp(30px,4vw,44px)!important;line-height:1.08!important}
+ html:root body[data-kind=home] #hero-stage h1>span{font-size:.76em;line-height:1.2}
+ html:root body[data-kind=home] #hero-stage .hero-intro{margin-top:10px;gap:10px}
+ html:root body[data-kind=home] #hero-stage .hero-description{font-size:16px!important;line-height:1.5!important;max-width:none}
+ html:root body[data-kind=home] #hero-stage .hero-enter{font-size:14px!important;min-height:44px;gap:14px;padding:4px 6px 4px 16px}
+ html:root body[data-kind=home] #hero-stage .enter-arrow{width:28px;height:28px;font-size:17px}
+ html:root body[data-kind=home] #scene-wrap{height:clamp(96px,30svh,150px);min-height:96px;max-height:150px}
+ html:root body[data-kind=home] #hero-stage .hero-model-peek{min-height:82px;padding:8px 10px;gap:12px}
+ html:root body[data-kind=home] #hero-stage .peek-image{width:80px;height:58px;padding:5px}
+ html:root body[data-kind=home] #hero-stage .peek-copy{gap:3px}
+ html:root body[data-kind=home] #hero-stage .peek-copy small{font-size:13px!important;line-height:1.35!important}
+ html:root body[data-kind=home] #hero-stage .peek-copy strong{font-size:20px!important;line-height:1.2!important}
+ html:root body[data-kind=home] #hero-stage .peek-copy>span{font-size:12px!important;line-height:1.4!important}
+ html:root body[data-kind=home] #hero-stage .field-controls button{font-size:13px!important;min-height:44px;padding:6px}
+ html:root body[data-kind=home] #hero-stage .hero-model-count{display:none}
+ html:root body[data-kind=home] #hero-stage .hero-bottom{gap:12px;flex-wrap:nowrap}
+ html:root body[data-kind=home] #hero-stage .scroll-cue{font-size:13px!important}
+ html:root body[data-kind=home] #hero-stage .motion-toggle{font-size:12px!important}
+ html:root body[data-kind=home] #hero-stage .visual-caption{display:block;font-size:10px;line-height:1.3}
+}
+
+/* Original figures keep their full aspect ratio, including in the lightbox. */
+html:root body[data-kind=home] #figure-dialog[open]{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;width:min(1280px,calc(100vw - 40px));height:calc(100dvh - 40px);max-height:calc(100dvh - 40px);padding:20px;gap:16px;overflow:hidden;box-sizing:border-box}
+html:root body[data-kind=home] #figure-dialog .dialog-top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-width:0;min-height:44px}
+html:root body[data-kind=home] #figure-dialog-title{min-width:0;overflow-wrap:anywhere;font-size:18px;line-height:1.5}
+html:root body[data-kind=home] #figure-dialog .dialog-close{min-width:44px;min-height:44px;flex-shrink:0}
+html:root body[data-kind=home] #large-figure{display:block;grid-row:2;min-width:0;min-height:0;width:100%;height:100%;max-width:100%;max-height:100%;margin:0;object-fit:contain;object-position:center;background:#fff}
+html:root body[data-kind=home] #figure-dialog>a{min-width:0;min-height:44px;margin:0;white-space:normal;line-height:1.5}
+@media(min-width:1101px){
+ html:root body[data-kind=home] #model-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.34fr);align-items:stretch;gap:24px}
+ html:root body[data-kind=home] #collection .original-stage{height:clamp(340px,32vw,480px);margin:0;padding:22px}
+ html:root body[data-kind=home] #model-panel .model-caption{display:flex;flex-direction:column;justify-content:center;gap:22px;min-width:0;padding:24px;margin:0;border:1px solid #38527370;border-radius:2px;background:#0b1b30}
+ html:root body[data-kind=home] #model-panel .caption-meta{display:flex;flex-wrap:wrap;gap:8px 16px}
+ html:root body[data-kind=home] #model-panel .model-caption h3{margin-top:16px;font-size:32px!important;line-height:1.35!important}
+ html:root body[data-kind=home] #model-panel .caption-description{min-width:0}
+ html:root body[data-kind=home] #model-panel .caption-description p{font-size:18px!important;line-height:1.8!important;margin:0;overflow-wrap:anywhere}
+ html:root body[data-kind=home] #model-panel .caption-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:24px}
+ html:root body[data-kind=home] #model-panel .caption-actions a{max-width:100%;white-space:normal;line-height:1.5}
+}
+@media(orientation:landscape) and (max-height:640px){
+ html:root body[data-kind=home] #collection .original-stage{height:clamp(180px,calc(100svh - var(--atlas-header-height,56px) - 100px),360px);min-height:0;padding:14px}
+ html:root body[data-kind=home] #figure-dialog[open]{width:calc(100vw - 24px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);padding:12px 16px;gap:8px}
+ html:root body[data-kind=home] #figure-dialog-title{font-size:16px}
+}
+
+html:root body[data-kind=home] .overview-rail>a>div{min-width:0;line-height:1.5}
+@media(max-width:700px),(orientation:portrait) and (max-width:1000px){
+ html:root body[data-kind=home] .overview-rail>a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;min-height:104px;align-content:center}
+ html:root body[data-kind=home] .overview-rail>a>span{grid-column:1;grid-row:1}
+ html:root body[data-kind=home] .overview-rail>a>div{grid-column:1/3;grid-row:2;font-size:15px}
+ html:root body[data-kind=home] .overview-rail>a>i{grid-column:2;grid-row:1;margin:0;align-self:start}
+ html:root body[data-kind=home] #hero-stage:not([data-space-view=art]){grid-template-rows:auto 220px auto auto auto}
+ html:root body[data-kind=home] #hero-stage:not([data-space-view=art]) #scene-wrap{height:220px;max-height:220px}
+}
+@media(orientation:landscape) and (max-height:640px){
+ html:root body[data-kind=home] #hero-stage:not([data-space-view=art]){grid-template-rows:minmax(96px,1fr) auto auto auto}
+ html:root body[data-kind=home] #hero-stage:not([data-space-view=art]) #scene-wrap{height:clamp(96px,30svh,150px);max-height:150px}
+}

@@ -1,0 +1,19 @@
+/* Self-hosted character subsets of Noto Serif CJK, SIL OFL 1.1.
+ * Derivative names: Atlas Song SC / TC. See OFL.txt and NOTICE.txt.
+ * Keep installed Times New Roman / SimSun / Songti first in the type stack;
+ * use these families before generic serif on devices without a Song/Ming face.
+ */
+@font-face {
+  font-family: "Atlas Song SC";
+  src: url("./atlas-song-sc-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atlas Song TC";
+  src: url("./atlas-song-tc-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

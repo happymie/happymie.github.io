@@ -1,0 +1,265 @@
+/*
+ * Final atlas typography. Load AFTER midnight-suite, home-experience, portrait,
+ * learning and legacy styles. The personal-home preview is deliberately scoped
+ * out. System Song/Ming first, with an OFL self-hosted subset as a fallback.
+ *
+ * Times New Roman supplies Latin glyphs; its missing CJK glyphs fall through to
+ * a Song/Ming face. KaTeX and MathML keep their own font families and metrics.
+ * Repeated :root selectors intentionally outrank older !important overrides.
+ */
+html:root:root:root:root body:not([data-personal-home]) {
+  --atlas-latin-serif: "Times New Roman";
+  --atlas-cjk-serif: SimSun, NSimSun, "Songti SC", "Songti TC", STSong, PMingLiU, "Noto Serif CJK SC", "Noto Serif SC", "Atlas Song SC", serif;
+  --atlas-reading-serif: var(--atlas-latin-serif), var(--atlas-cjk-serif);
+  --atlas-sans: var(--atlas-reading-serif) !important;
+  --sans: var(--atlas-reading-serif) !important;
+  --serif: var(--atlas-reading-serif) !important;
+  --font-sans: var(--atlas-reading-serif) !important;
+  --font-serif: var(--atlas-reading-serif) !important;
+  --font-body: var(--atlas-reading-serif) !important;
+  --mono: var(--atlas-reading-serif) !important;
+  --font-mono: var(--atlas-reading-serif) !important;
+  --atlas-prose-size: 18.5px;
+  --atlas-prose-leading: 1.95;
+  --atlas-label-size: 14.5px;
+  --atlas-heading-tracking: .015em;
+  font-family: var(--atlas-reading-serif) !important;
+  font-size: var(--atlas-prose-size) !important;
+  line-height: var(--atlas-prose-leading) !important;
+  font-weight: 400;
+  font-synthesis: none;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: auto;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html:root:root:root:root[data-lang="zh-Hant"] body:not([data-personal-home]),
+html:root:root:root:root[lang="zh-Hant"] body:not([data-personal-home]) {
+  --atlas-cjk-serif: "Songti TC", PMingLiU, SimSun, NSimSun, "Songti SC", STSong, "Noto Serif CJK TC", "Noto Serif TC", "Atlas Song TC", serif;
+}
+
+html:root:root:root:root[data-lang="en"] body:not([data-personal-home]),
+html:root:root:root:root[lang="en"] body:not([data-personal-home]) {
+  --atlas-prose-size: 19px;
+  --atlas-prose-leading: 1.82;
+  --atlas-heading-tracking: -.012em;
+}
+
+/* Include controls, code, generated SVG labels and all nested language spans.
+ * Exclude the complete math subtrees, including their SVG stretch operators.
+ */
+html:root:root:root:root body:not([data-personal-home]) :not(.katex, .katex *, math, math *, .MathJax, .MathJax *, mjx-container, mjx-container *) {
+  font-family: var(--atlas-reading-serif) !important;
+  font-synthesis: none;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(h1, h2, h3, h4, h5, h6, .spec-model-title, .masthead-title-zh, .masthead-title-en) {
+  font-weight: 400 !important;
+  letter-spacing: var(--atlas-heading-tracking) !important;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(h1, .hero h1, .hero-intro h1, .learn-hero h1, .page-intro h1, .model-title h1, .lab-hero h1) {
+  font-size: clamp(44px, 5.6vw, 80px) !important;
+  line-height: 1.3 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.hero h1 > span, .hero-intro h1 > span) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(h2, .section-heading h2, .section-head h2, .intro h2, .lab-copy h2, .compendium-copy h2, .home-learning .learn-hero h2) {
+  font-size: clamp(30px, 3.3vw, 46px) !important;
+  line-height: 1.42 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(h3, .card-main h3, .model-caption h3, .learn-lesson-card h3, .learn-experiment-head h3) {
+  font-size: clamp(23px, 2.05vw, 29px) !important;
+  line-height: 1.5 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(h4, h5, h6) {
+  font-size: 20px !important;
+  line-height: 1.55 !important;
+}
+
+/* Long-form reading: the original chapter text and figures are untouched. */
+html:root:root:root:root body:not([data-personal-home]) :is(p, .prose-p, .spec-body-copy, .spec-module li, .learn-prose li, .lesson-body li, .two-col li, .nodes li, .claims li) {
+  font-size: var(--atlas-prose-size) !important;
+  line-height: var(--atlas-prose-leading) !important;
+  letter-spacing: .012em;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.learn-prose, .bilingual-prose-grid, .spec-body-copy, .lesson-body) {
+  font-size: var(--atlas-prose-size) !important;
+  line-height: var(--atlas-prose-leading) !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.learn-prose > section > p, .learn-prose > section > ul, .learn-prose > section > ol, .spec-body-copy, .bilingual-prose-grid p) {
+  max-width: 43em;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.learn-prose p + p, .spec-module p + p, .bilingual-prose-grid p + p, .lesson-body p + p) {
+  margin-top: 1.15em !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.learn-prose h2, .spec-module h2, .spec-module h3, .lesson-block h3) {
+  margin-bottom: .75em !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(strong, b, .learn-map-row strong, .learn-reading-nav strong) {
+  font-weight: 500;
+}
+
+/* Navigation and control text needs its own compact rhythm. */
+html:root:root:root:root body:not([data-personal-home]) :is(button, .button, .text-button, .text-link, .solid-button, .outline-button, summary, .main-nav a, .desktop-nav a, .mobile-nav a, .subnav a, .reference-nav a, .reference-nav button, .reference-nav select, .reader-dock a, .floating-dock .dock-btn, .studio-tabs button, .studio-module-buttons button, .studio-view-controls button, .reading-controls button, .nav nav a, .platforms button, .lesson-links > a, .lesson-links > button) {
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+  letter-spacing: .015em !important;
+  font-weight: 400 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(input:not([type="range"]):not([type="checkbox"]):not([type="radio"]), select, textarea, .locale-selector) {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.icon-button, .menu-toggle, .menu-button, .search-trigger) {
+  font-size: 20px !important;
+}
+
+/* Metadata and visible diagram labels stay readable without imitating prose. */
+html:root:root:root:root body:not([data-personal-home]) :is(small, label, figcaption, caption, .academy-eyebrow, .ob-eyebrow, .j-eyebrow, .train-eyebrow, .case-eyebrow, .eyebrow, .masthead-kicker, .learn-kicker, .learn-lesson-meta, .learn-frontier-label, .learn-card-bottom, .learn-breadcrumb, .learn-toc, .learn-prerequisites p, .learn-reading-nav small, .learn-metric > span, .learn-note, .learn-formula, .learn-gradient-values, .learn-details, .card-meta, .card-foot, .card-top, .card-bottom, .archive-branch, .archive-foot, .journal-status, .experiment-note, .space-hint, .visual-caption, .peek-copy small, .studio-small, .studio-tile-label, .studio-computation-status, .spec-section-label, .reference-load-status, .terminal-bar, .terminal-foot, .terminal-meta, .inference-source, .inference-source strong, .feature-toolbar label, .lab-hero-proof, .timeline-card-meta, .timeline-card-foot, .timeline-parent, .timeline-results, .breadcrumb, .notice, .badge, .tier, .family-name, .family-code, .maintenance-status, .site-footer nav, .site-footer small) {
+  font-size: var(--atlas-label-size) !important;
+  line-height: 1.72 !important;
+  letter-spacing: .02em !important;
+  font-weight: 400 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.eyebrow > span, .card-meta > span, .spec-section-label > span, .learn-kicker > span, .learn-lesson-meta > span) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(.site-footer p, .learn-equation p, .learn-check details p, .learn-source-list li, .comparison-column p, .studio-io p, .node-inspector p, .contract-box p) {
+  font-size: 17px !important;
+  line-height: 1.88 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(th, td, .field-visual table, .lesson-body td, .lesson-body th, .table-scroll th, .table-scroll td) {
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  font-weight: 400;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(code, pre, kbd, samp, .terminal-body, .setup-code pre, .lesson-command pre, .citation-box pre) {
+  font-size: 16px !important;
+  line-height: 1.85 !important;
+  letter-spacing: 0 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(pre, .citation-box pre, .lesson-command pre) {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+html:root:root:root:root body:not([data-personal-home]) :is(output, .edition-stats strong, .hero-model-count strong, .learn-metric output) {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Dense cell values and SVG coordinates retain their layout; CSS can change
+ * inline SVG text, whereas rasterized canvas text must be set in JavaScript.
+ */
+html:root:root:root:root body:not([data-personal-home]) :is(.attention-matrix button, .learn-axis-label, .learn-threshold-label, .learn-confusion td > span) {
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Compendium hierarchy: preserve its section layout and original image bytes. */
+html:root:root:root:root body:not([data-personal-home]) :is(.masthead-title-zh, .masthead-title-en) {
+  font-size: clamp(42px, 5.5vw, 76px) !important;
+  line-height: 1.35 !important;
+}
+
+html:root:root:root:root body:not([data-personal-home]) .spec-model-title {
+  font-size: clamp(32px, 3.65vw, 50px) !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 760px) {
+  html:root:root:root:root body:not([data-personal-home]) {
+    --atlas-prose-size: 18px;
+    --atlas-label-size: 14px;
+  }
+
+  html:root:root:root:root[data-lang="en"] body:not([data-personal-home]),
+  html:root:root:root:root[lang="en"] body:not([data-personal-home]) {
+    --atlas-prose-size: 18px;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(h1, .hero h1, .hero-intro h1, .learn-hero h1, .page-intro h1, .model-title h1, .lab-hero h1, .masthead-title-zh, .masthead-title-en) {
+    font-size: clamp(38px, 9.5vw, 48px) !important;
+    line-height: 1.38 !important;
+    letter-spacing: .005em !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(h2, .section-heading h2, .section-head h2, .intro h2, .lab-copy h2, .compendium-copy h2, .home-learning .learn-hero h2) {
+    font-size: clamp(28px, 6.8vw, 34px) !important;
+    line-height: 1.5 !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(h3, .card-main h3, .model-caption h3, .learn-lesson-card h3, .learn-experiment-head h3) {
+    font-size: 23px !important;
+    line-height: 1.55 !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) .spec-model-title {
+    font-size: 30px !important;
+    line-height: 1.45 !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(.reference-nav button, .reference-nav select, .floating-dock .dock-btn, .studio-tabs button, .studio-module-buttons button, .field-controls button, .nav nav a) {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(.learn-prose h2, .learn-example h2, .learn-check h2) {
+    font-size: 27px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  html:root:root:root:root body:not([data-personal-home]) :is(h1, .hero h1, .hero-intro h1, .learn-hero h1, .page-intro h1, .model-title h1, .lab-hero h1, .masthead-title-zh, .masthead-title-en) {
+    font-size: 36px !important;
+    line-height: 1.4 !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(.button, .learn-actions .button, .reading-controls button, .reference-nav button) {
+    padding-inline: 10px !important;
+    white-space: normal;
+  }
+}
+
+@media print {
+  html:root:root:root:root body:not([data-personal-home]),
+  html:root:root:root:root[data-lang="en"] body:not([data-personal-home]),
+  html:root:root:root:root[lang="en"] body:not([data-personal-home]) {
+    --atlas-prose-size: 11.5pt;
+    --atlas-prose-leading: 1.65;
+    --atlas-label-size: 9pt;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(h1, .hero h1, .learn-hero h1, .page-intro h1, .model-title h1, .lab-hero h1, .masthead-title-zh, .masthead-title-en) {
+    font-size: 28pt !important;
+  }
+
+  html:root:root:root:root body:not([data-personal-home]) :is(h2, .section-heading h2, .section-head h2, .intro h2, .lab-copy h2, .compendium-copy h2) {
+    font-size: 18pt !important;
+  }
+}

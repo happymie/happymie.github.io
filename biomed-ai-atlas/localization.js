@@ -4,7 +4,7 @@
  // Also release the gate left by older cached preference and CSS files.
  root.removeAttribute('data-locale-pending');
  let inferencePrepared=false;
- let locale='zh',ready=false,convert=s=>s,converter=null,observer,changing=false,scheduled=false;
+ let locale='zh',ready=false,convert=s=>s,converter=null,observer,changing=false,scheduled=false,languageRequest=0;
  const originals=new WeakMap(),attributes=new WeakMap(),forward=new Map(),reverse=new Map(),pending=new Set();
  const skip='script,style,pre,code,.katex,math,#paper-citation,[translate="no"],.locale-selector';
  try{locale=localStorage.getItem('atlas.language')||'zh';}catch{}if(!valid(locale))locale='zh';
@@ -21,6 +21,12 @@
   // Hidden sibling editions retain their own source language, so switching is reversible.
   if(paired&&((locale==='en'&&paired.matches('.zh,.lang-zh'))||(locale!=='en'&&paired.matches('.en,.lang-en'))))return source;
   const canonical=traditionalSources.get(key)||key;let value=canonical;
+  // Paired editions already carry reviewed copy. Only convert the Chinese
+  // edition's script; dictionary synonyms must not rewrite navigation labels.
+  if(paired?.matches('.zh,.en')){
+   if(locale==='zh-Hant')value=convert(canonical);
+   return source.slice(0,source.indexOf(source.trimStart()))+(locale==='en'?source.trim():value)+(/\s$/.test(source)?source.match(/\s+$/)[0]:'');
+  }
   if(locale==='en'){
    value=forward.get(canonical)||canonical;
    // Home counters and model labels retain live values across all languages.
@@ -55,16 +61,18 @@
  function schedule(node){pending.add(node);if(scheduled)return;scheduled=true;queueMicrotask(()=>{scheduled=false;for(const n of pending)if(n.isConnected)apply(n);pending.clear();});}
  function controls(){document.querySelectorAll('.locale-selector').forEach(s=>{s.value=locale;s.setAttribute('aria-label',locale==='en'?'Language':locale==='zh-Hant'?'語言':'语言');});}
  function persist(){try{localStorage.setItem('atlas.language',locale);localStorage.setItem('biomed_atlas_lang_v3',locale==='en'?'en':'zh');localStorage.setItem('atlas_premium_lang',JSON.stringify(locale==='en'?'en':'zh'));localStorage.setItem('biomed_lab_lang',JSON.stringify(locale==='en'?'en':'zh'));}catch{}}
- async function traditional(){if(converter)return converter;converter=new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=BASE+'locales/traditional.js';s.onload=()=>resolve(window.OpenCC.Converter({from:'cn',to:'t'}));s.onerror=()=>reject(Error('Traditional Chinese resources could not load'));document.head.append(s);});return converter;}
+ async function traditional(){if(converter)return converter;converter=new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=BASE+'locales/traditional.js';const fail=()=>{converter=null;s.remove?.();reject(Error('Traditional Chinese resources could not load'));};s.onload=()=>{try{resolve(window.OpenCC.Converter({from:'cn',to:'t'}));}catch{fail();}};s.onerror=fail;document.head.append(s);});return converter;}
  async function setLanguage(next,{notify=true}={}){
-  if(!valid(next))next='zh';changing=true;
-  if(next==='zh-Hant')convert=await traditional();locale=next;
+  if(!valid(next))next='zh';const request=++languageRequest;changing=true;
+  let conversion;try{conversion=next==='zh-Hant'?await traditional():convert;}catch(error){if(request===languageRequest){changing=false;controls();}throw error;}
+  if(request!==languageRequest)return;
+  convert=conversion;locale=next;
   root.dataset.lang=locale;root.lang=locale==='zh'?'zh-CN':locale==='zh-Hant'?'zh-Hant':'en';
   if(window.APP_STATE)window.APP_STATE.lang=locale==='en'?'en':'zh';persist();controls();document.title=localized(originalTitle);
   if(notify)document.dispatchEvent(new CustomEvent('atlas:language',{detail:{language:locale}}));
   root.dataset.lang=locale;root.lang=locale==='zh'?'zh-CN':locale==='zh-Hant'?'zh-Hant':'en';apply();changing=false;root.removeAttribute('data-locale-pending');
  }
- function selector(old){const s=document.createElement('select');s.className='locale-selector'+(old.classList.contains('language-button')?' language-button':'');s.setAttribute('aria-label','Language');s.setAttribute('translate','no');if(old.id)s.id=old.id;for(const [value,label]of [['zh','简体中文'],['zh-Hant','繁體中文'],['en','English']])s.append(new Option(label,value));s.value=locale;s.addEventListener('change',()=>setLanguage(s.value));old.replaceWith(s);return s;}
+ function selector(old){const s=document.createElement('select');s.className='locale-selector'+(old.classList.contains('language-button')?' language-button':'');s.setAttribute('aria-label','Language');s.setAttribute('translate','no');if(old.id)s.id=old.id;for(const [value,label]of [['zh','简体中文'],['zh-Hant','繁體中文'],['en','English']])s.append(new Option(label,value));s.value=locale;s.addEventListener('change',()=>setLanguage(s.value).catch(()=>{s.value=locale;const notice=document.getElementById('toast');if(notice){notice.textContent=locale==='en'?'Language resources could not load. Please try again.':locale==='zh-Hant'?'語言資源暫未載入，請重試。':'语言资源暂未加载，请重试。';notice.hidden=false;setTimeout(()=>notice.hidden=true,3500);}}));old.replaceWith(s);return s;}
  async function init(){
   const response=await fetch(BASE+'locales/dictionary.json');if(!response.ok)throw Error('Language resources unavailable');for(const [zh,en]of await response.json()){forward.set(normalize(zh),en);for(const key of [normalize(en),normalize(en).toLowerCase()]){const previous=reverse.get(key);if(!previous||(zh.match(/[A-Za-z]/g)||[]).length<(previous.match(/[A-Za-z]/g)||[]).length)reverse.set(key,zh);}}
   ready=true;
@@ -85,7 +93,7 @@
   document.dispatchEvent(new Event('atlas:locale-ready'));
   window.addEventListener('storage',e=>{if(e.key==='atlas.language'&&valid(e.newValue))setLanguage(e.newValue);});
  }
- function loadSiteFeatures(){const s=document.createElement('script');s.src=BASE+'site-features.js';s.defer=true;document.head.append(s);}
+ function loadSiteFeatures(){for(const path of ['serif-suite.css','fonts/atlas-song.css'])if(!document.querySelector('link[href$="'+path+'"]')){const fontStyle=document.createElement('link');fontStyle.rel='stylesheet';fontStyle.href=BASE+path;document.head.append(fontStyle);}const s=document.createElement('script');s.src=BASE+'site-features.js';s.defer=true;document.head.append(s);}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadSiteFeatures,{once:true});else loadSiteFeatures();
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0),{once:true});else setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0);
 })();

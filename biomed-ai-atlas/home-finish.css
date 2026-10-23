@@ -1,0 +1,223 @@
+/* Final home surfaces and interaction states. Load after home/layout/serif styles.
+   Deliberately contains no media geometry, clipping, object-fit, or layout tracks. */
+html:root body[data-kind="home"] {
+ --hf-paper:#f2f5fc;
+ --hf-ink:#e0eafa;
+ --hf-muted:#adc0d9;
+ --hf-azure:#91bdf6;
+ --hf-edge:#7fa9df;
+ --hf-line:#385373;
+ --hf-line-soft:#29415e;
+ --hf-surface:#0b1d34;
+ --hf-deep:#061426;
+ background:#061326;
+}
+
+/* Typographic hierarchy is carried by ink, rhythm and deliberate emphasis. */
+html:root body[data-kind="home"] :is(#explore,#collection,#compare,#journal) .section-heading h2 {
+ color:var(--hf-paper);
+ text-wrap:balance;
+}
+html:root body[data-kind="home"] :is(.section-heading,.lab-copy) .eyebrow,
+html:root body[data-kind="home"] #manifesto>.eyebrow,
+html:root body[data-kind="home"] .era-heading .eyebrow {
+ color:var(--hf-azure);
+}
+html:root body[data-kind="home"] .section-heading h2>span {color:#afc9ef}
+html:root body[data-kind="home"] .section-heading>p {color:var(--hf-muted)}
+html:root body[data-kind="home"] #manifesto h2 {color:#e5edf9}
+html:root body[data-kind="home"] #manifesto h2>span {color:#97bbee}
+html:root body[data-kind="home"] #manifesto p:not(.eyebrow) {color:#b3c4dc}
+
+/* A quiet, ordered first impression; the artwork retains its tested geometry. */
+html:root body[data-kind="home"] #hero-stage {box-shadow:inset 0 -1px 0 #7395c438}
+html:root body[data-kind="home"] #hero-stage h1 {color:#f5f7fc;text-shadow:none}
+html:root body[data-kind="home"] #hero-stage h1>span {color:#a4c3ef}
+html:root body[data-kind="home"] #hero-stage .hero-description {color:#c0cee2}
+html:root body[data-kind="home"] #hero-stage .hero-top>.eyebrow {color:#adc9f1}
+html:root body[data-kind="home"] #hero-stage .hero-top>.eyebrow>span {background:#a9ceff;box-shadow:none}
+html:root body[data-kind="home"] #hero-stage .hero-enter {
+ color:#f6f9ff;
+ background:linear-gradient(135deg,#3b71b2,#2b5d9e);
+ border-color:#9bc4f163;
+ border-radius:6px;
+ box-shadow:inset 0 1px 0 #e8f2ff30,0 6px 18px #00091b35;
+}
+html:root body[data-kind="home"] #hero-stage .enter-arrow {color:#dceaff;background:#12365f}
+html:root body[data-kind="home"] #hero-stage .hero-model-peek {
+ border-color:#7696c44d;
+ background:linear-gradient(120deg,#102642,#0a1b31);
+ border-radius:5px;
+ box-shadow:inset 0 1px 0 #c8e1ff0d;
+}
+html:root body[data-kind="home"] #hero-stage .peek-copy strong {color:#f0f5fe}
+html:root body[data-kind="home"] #hero-stage .peek-copy small {color:#a5bbd8}
+html:root body[data-kind="home"] #hero-stage .peek-copy>span {color:#b4d4ff}
+html:root body[data-kind="home"] #hero-stage .field-controls {
+ background:#08192d;
+ border-color:#5c7fa959;
+ border-radius:6px;
+ box-shadow:inset 0 1px 0 #bcd6f40a;
+}
+html:root body[data-kind="home"] #hero-stage .field-controls button {color:#afc4e0;border-radius:3px}
+html:root body[data-kind="home"] #hero-stage .hero-bottom {color:#b0c1da}
+html:root body[data-kind="home"] #hero-stage .motion-toggle>span:first-child {border-color:#54749c;color:#cfe3ff}
+html:root body[data-kind="home"] #hero-stage .visual-caption {color:#91a7c4}
+
+/* The rail connects the hero to the catalogue, rather than starting a new theme. */
+html:root body[data-kind="home"] .overview-rail {background:#0a1c33;border-color:var(--hf-line-soft)}
+html:root body[data-kind="home"] .overview-rail>a {border-color:var(--hf-line-soft)}
+html:root body[data-kind="home"] .overview-rail>a>span {color:#a5c7f4;font-variant-numeric:lining-nums tabular-nums}
+html:root body[data-kind="home"] .overview-rail>a>div {color:#e7eef9}
+html:root body[data-kind="home"] .overview-rail small {color:#a5b9d6}
+html:root body[data-kind="home"] .overview-rail i {color:#b4d1fa}
+html:root body[data-kind="home"] #manifesto {border-color:var(--hf-line-soft)}
+html:root body[data-kind="home"] .explorer-toolbar {border-color:var(--hf-line)}
+html:root body[data-kind="home"] .explorer-status {color:#a3b9d6}
+html:root body[data-kind="home"] .model-search {background:#0b1f38;border-color:#466588;border-radius:5px}
+html:root body[data-kind="home"] .model-search:focus-within {border-color:#a5c8f4;box-shadow:0 0 0 2px #7faef022}
+html:root body[data-kind="home"] .model-search input::placeholder {color:#a1b6d2;opacity:1}
+html:root body[data-kind="home"] .task-filters button {color:#b4c6df;border-color:transparent;border-radius:4px}
+html:root body[data-kind="home"] .task-filters button span {color:#9fbfe9}
+
+/* Original art stays untouched; all finishing is on its separate caption surfaces. */
+html:root body[data-kind="home"] .archive-card {
+ background:linear-gradient(160deg,#0e2440,#0a1b31);
+ border-color:#3e5b7d;
+ border-radius:5px;
+ box-shadow:inset 0 1px 0 #c5ddfa0c,0 9px 24px #00081718;
+}
+html:root body[data-kind="home"] .archive-meta strong {color:#f0f5ff;font-variant-numeric:lining-nums}
+html:root body[data-kind="home"] .archive-meta>span {color:#a8c2e4;font-variant-numeric:tabular-nums}
+html:root body[data-kind="home"] .archive-branch {color:#acc8ed}
+html:root body[data-kind="home"] .archive-summary {color:#b7c8e0}
+html:root body[data-kind="home"] .archive-foot {background:#081a2f;border-color:#365373}
+html:root body[data-kind="home"] .archive-foot :is(a,button) {color:#c3ddff;text-decoration-thickness:1px;text-underline-offset:.25em}
+html:root body[data-kind="home"] .archive-card:focus-within {border-color:#a5c8f7;box-shadow:inset 0 1px 0 #bcd9ff30,0 0 0 1px #789fd54d}
+html:root body[data-kind="home"] .collection-tabs {border-color:#3a5678}
+html:root body[data-kind="home"] .collection-tabs button {color:#b2c5df;border-radius:4px 4px 0 0}
+html:root body[data-kind="home"] .collection-tabs button[aria-selected="true"] {color:#f0f6ff;background:#102a49;box-shadow:inset 0 -2px 0 #a9ceff}
+html:root body[data-kind="home"] .tab-counter {color:#a8bcd9;font-variant-numeric:tabular-nums}
+html:root body[data-kind="home"] #model-panel .model-caption {
+ background:linear-gradient(145deg,#102945,#0b1c32);
+ border-color:#476787;
+ border-radius:5px;
+ box-shadow:inset 0 1px 0 #c3dcfa12;
+}
+html:root body[data-kind="home"] #model-panel .caption-meta {color:#b3c7e3;font-variant-numeric:lining-nums tabular-nums}
+html:root body[data-kind="home"] #model-panel .model-caption h3 {color:#f2f5fb;text-wrap:balance}
+html:root body[data-kind="home"] #model-panel .caption-description p {color:#c0cee1}
+html:root body[data-kind="home"] #model-panel .caption-actions .text-link {
+ color:#e8f2ff;
+ border-color:#88abd14f;
+ border-radius:4px;
+ background:#163759;
+ box-shadow:inset 0 1px 0 #c3e0ff12;
+ padding:8px 12px;
+ gap:16px;
+}
+html:root body[data-kind="home"] #model-panel .caption-actions .source-link {color:#b8d2f5;text-decoration:underline;text-decoration-color:#648dbf80;text-underline-offset:.3em;text-decoration-thickness:1px}
+
+/* The reading guide behaves like a small instrument panel, with a clear current step. */
+html:root body[data-kind="home"] .reading-guide {background:#0a1d35;border-color:#3e5d80;border-radius:5px;box-shadow:inset 0 1px 0 #c4ddfa0c}
+html:root body[data-kind="home"] .reading-heading {color:#bdd3ef;border-color:#365577;background:#0e2744}
+html:root body[data-kind="home"] .reading-steps {border-color:#355373}
+html:root body[data-kind="home"] .reading-steps button {color:#b8cae2;border-color:#355373;background:#0b1f38;transition:color .16s ease,background-color .16s ease,box-shadow .16s ease}
+html:root body[data-kind="home"] .reading-steps button>span:first-child {color:#94b6e3;font-variant-numeric:tabular-nums}
+html:root body[data-kind="home"] .reading-steps button[aria-pressed="true"] {color:#f2f7ff;background:#1a3c63;box-shadow:inset 3px 0 0 #a2c9fc}
+html:root body[data-kind="home"] .reading-steps button[aria-pressed="true"]>span:first-child {color:#e0edff}
+html:root body[data-kind="home"] .reading-numeral {color:#9cbfea;font-variant-numeric:lining-nums tabular-nums}
+html:root body[data-kind="home"] .reading-detail h4 {color:#f0f5fd}
+html:root body[data-kind="home"] .reading-detail p {color:#b9cce6}
+html:root body[data-kind="home"] .reading-controls {border-color:#385779}
+html:root body[data-kind="home"] .reading-controls button {color:#d3e5fc;background:#17395c;border-radius:4px;box-shadow:inset 0 1px 0 #c8e0fc14}
+html:root body[data-kind="home"] .reading-controls button[aria-pressed="true"] {color:#f2f7ff;background:#295483;box-shadow:inset 0 0 0 1px #93bdf099}
+html:root body[data-kind="home"] .reading-controls button:disabled {color:#91a3bb;background:#10253d;opacity:.65;box-shadow:none}
+
+/* Related sections share the same material palette without becoming identical cards. */
+html:root body[data-kind="home"] #era {background:linear-gradient(180deg,#0a1e37,#081a31);border-color:#355273}
+html:root body[data-kind="home"] #era .era-heading {color:#acc1dd}
+html:root body[data-kind="home"] #era .era-number {color:#99bce9;font-variant-numeric:lining-nums tabular-nums}
+html:root body[data-kind="home"] #era .era-copy h2 {color:#edf4ff;text-wrap:balance}
+html:root body[data-kind="home"] #era .era-copy>p {color:#b5c8e1}
+html:root body[data-kind="home"] #era .era-count {color:#abc3e3}
+html:root body[data-kind="home"] #era .era-nav {border-color:#3a587b}
+html:root body[data-kind="home"] #era .era-nav button {color:#b4c8e2;border-radius:4px}
+html:root body[data-kind="home"] #era .era-model {background:#102944;border-color:#436285;border-radius:4px;box-shadow:inset 0 1px 0 #c5defa0d}
+html:root body[data-kind="home"] #era .era-model strong {color:#edf4ff}
+html:root body[data-kind="home"] #era .era-model small {color:#a7bfdf}
+html:root body[data-kind="home"] #era .era-model>span>span {color:#b9cce4}
+html:root body[data-kind="home"] #era .era-progress {background:#304b6d}
+html:root body[data-kind="home"] #era .era-progress i {background:#a2c9fa}
+html:root body[data-kind="home"] #compare {background:#08192e;border-color:#304d70}
+html:root body[data-kind="home"] .compare-controls select {background:#102943;border-color:#4f7094;border-radius:4px;color:#e1ecfa}
+html:root body[data-kind="home"] .compare-fact {border-color:#314f70}
+html:root body[data-kind="home"] .compare-fact[data-different="true"] {background:linear-gradient(90deg,#16345638,transparent)}
+html:root body[data-kind="home"] .compare-fact[data-different="true"] p {color:#d9e9ff}
+html:root body[data-kind="home"] .fact-label {color:#a5bfdf}
+html:root body[data-kind="home"] .compare-footer>span {color:#acc1df}
+html:root body[data-kind="home"] #laboratory {background:#07172c}
+html:root body[data-kind="home"] .lab-object {background:#0c2340;border-color:#3d5d84;border-radius:5px;box-shadow:inset 0 1px 0 #c5ddf90d}
+html:root body[data-kind="home"] .lab-mode-tabs {border-color:#365779}
+html:root body[data-kind="home"] .lab-mode-tabs button {color:#b0c6e2;border-radius:4px 4px 0 0}
+html:root body[data-kind="home"] .lab-mode-tabs button[aria-selected="true"] {color:#edf5ff;background:#173a60;border-color:#a8cfff}
+html:root body[data-kind="home"] .lab-copy>p:not(.eyebrow),
+html:root body[data-kind="home"] .experiment-note {color:#b0c4e0}
+html:root body[data-kind="home"] .lab-topline {color:#b3c9e7}
+html:root body[data-kind="home"] .journal-entry {border-color:#375372}
+html:root body[data-kind="home"] .journal-entry[open] {background:#102741}
+html:root body[data-kind="home"] .journal-title {color:#e7f0ff}
+html:root body[data-kind="home"] .journal-date {color:#b7cbe7}
+html:root body[data-kind="home"] .journal-short {color:#b3c5de}
+html:root body[data-kind="home"] .journal-status {color:#c0d5ef}
+html:root body[data-kind="home"] .journal-detail p {color:#bed0e8}
+html:root body[data-kind="home"] .journal-detail nav a {color:#b9d6ff;text-underline-offset:.25em}
+html:root body[data-kind="home"] .acknowledgement {border-color:#314e6e;color:#b8c9e0}
+
+/* Explicit state language: selected is filled, keyboard focus is outlined. */
+html:root body[data-kind="home"] .task-filters button[aria-pressed="true"],
+html:root body[data-kind="home"] #hero-stage .field-controls button[aria-pressed="true"],
+html:root body[data-kind="home"] #era .era-nav button[aria-pressed="true"] {
+ color:#f3f7fe;
+ background:linear-gradient(150deg,#285585,#1a3e67);
+ border-color:#8bb4e280;
+ box-shadow:inset 0 1px 0 #d6e8ff1f,inset 0 0 0 1px #81ade04d;
+}
+html:root body[data-kind="home"] :is(a,button,input,select,summary):focus-visible {
+ outline:2px solid #a4ceff!important;
+ outline-offset:4px!important;
+}
+html:root body[data-kind="home"] :is(.hero-enter,.hero-model-peek,.archive-card):hover,
+html:root body[data-kind="home"] .hero-enter:hover .enter-arrow {transform:none}
+html:root body[data-kind="home"] :is(.hero-enter,.hero-model-peek,.archive-card,.era-model,.overview-rail>a,.caption-actions a,.reading-controls button,.task-filters button,.era-nav button,.field-controls button) {
+ transition:color .16s ease,background-color .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+html:root body[data-kind="home"] :is(.hero-enter,.hero-model-peek,.archive-open,.era-model,.overview-rail>a,.reading-controls button):active {box-shadow:inset 0 0 0 1px #b5d5ff99}
+html:root body[data-kind="home"] :is(.hero-model-peek,.archive-open,.era-model)[aria-busy="true"] {cursor:progress}
+
+@media(hover:hover) and (pointer:fine) {
+ html:root body[data-kind="home"] .archive-card:hover {border-color:#87afe3;box-shadow:inset 0 1px 0 #d4e7ff2b,0 12px 26px #000a1e28}
+ html:root body[data-kind="home"] #hero-stage .hero-model-peek:hover {border-color:#a0c3ef;background:#16304e}
+ html:root body[data-kind="home"] #hero-stage .hero-enter:hover {background:#3b71b2;box-shadow:inset 0 1px 0 #e5f1ff40,0 6px 20px #00102955}
+ html:root body[data-kind="home"] .overview-rail>a:hover {background:#13304f}
+ html:root body[data-kind="home"] #era .era-model:hover {border-color:#89afe0;background:#173756}
+ html:root body[data-kind="home"] .archive-foot :is(a,button):hover {color:#f0f7ff;text-decoration:underline}
+ html:root body[data-kind="home"] #model-panel .caption-actions .text-link:hover {background:#244d77;border-color:#a0c4ed99}
+ html:root body[data-kind="home"] #model-panel .caption-actions .source-link:hover {color:#e9f3ff;text-decoration-color:#c6ddff}
+ html:root body[data-kind="home"] :is(.task-filters,.era-nav,.field-controls) button:not([aria-pressed="true"]):hover {color:#e6f1ff;background:#173656}
+ html:root body[data-kind="home"] .reading-steps button:not([aria-pressed="true"]):hover {color:#e4f1ff;background:#143251}
+ html:root body[data-kind="home"] .reading-controls button:not(:disabled):hover {background:#28517c;color:#f4f8ff}
+}
+
+@media(hover:none) {
+ html:root body[data-kind="home"] :is(.hero-enter,.hero-model-peek,.archive-card,.era-model,.overview-rail>a):hover {transform:none}
+ html:root body[data-kind="home"] .archive-card:hover {border-color:#3e5b7d}
+ html:root body[data-kind="home"] #era .era-model:hover {background:#102944}
+ html:root body[data-kind="home"] .overview-rail>a:hover {background:#0a1c33}
+}
+@media(prefers-reduced-motion:reduce) {
+ html:root body[data-kind="home"] :is(.hero-enter,.hero-model-peek,.archive-card,.era-model,.overview-rail>a,.caption-actions a,.reading-controls button,.reading-steps button,.task-filters button,.era-nav button,.field-controls button) {transition:none!important}
+}
+@media print {
+ html:root body[data-kind="home"] :is(.archive-card,.reading-guide,.model-caption,.lab-object,.era-model,.journal-entry) {background:transparent;box-shadow:none}
+}

@@ -1,0 +1,6 @@
+Atlas Song SC / TC are modified, character-subsetted Noto Serif CJK fonts.
+Original source: https://github.com/notofonts/noto-cjk
+© 2017-2024 Adobe (http://www.adobe.com/).
+
+Distributed under SIL Open Font License 1.1; see OFL.txt.
+Only regular weight is included. Microsoft fonts are not distributed.

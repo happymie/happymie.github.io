@@ -1,0 +1,49 @@
+/* Final chrome: restrained navy surfaces and clear interactive states. */
+html:root:root:root body:not([data-personal-home]) {--finish-edge:#7294bf45;--finish-edge-strong:#9dc4ff80;--finish-ink:#edf3fd;--finish-muted:#a8bdd9;--finish-blue:#a5caff}
+html:root:root:root body:not([data-personal-home]) .site-header {background:linear-gradient(180deg,#08172c,#071326);border-bottom-color:#7397c83b;box-shadow:0 1px 0 #b8d5ff08}
+html:root:root:root body:not([data-personal-home]) .site-header .brand {transition:opacity .16s ease}
+html:root:root:root body:not([data-personal-home]) .main-nav a {color:#b4c5df;transition:color .16s ease}
+html:root:root:root body:not([data-personal-home]) .main-nav a[aria-current=page] {color:#fff}
+html:root:root:root body:not([data-personal-home]) .main-nav a[aria-current=page]::after {background:#adcfff;box-shadow:0 0 10px #6aa3ff26}
+html:root:root:root body:not([data-personal-home]) .header-controls :is(.search-trigger,.locale-selector) {border-color:#6e91bd40;background:#10223c;color:#e4edfa;box-shadow:inset 0 1px 0 #c8deff08;transition:border-color .16s ease,background-color .16s ease}
+html:root:root:root body:not([data-personal-home]) .header-controls kbd {background:#19314f;border-color:#7598c33b;color:#bcd5f6}
+html:root:root:root body:not([data-personal-home]) .subnav {color:#8fa9cb;border-bottom-color:#5773942b}
+html:root:root:root body:not([data-personal-home]) .subnav a {color:#a8bdd8;text-decoration-thickness:1px;text-underline-offset:5px}
+html:root:root:root body:not([data-personal-home]) .mobile-nav {background:#0c1c33;border-color:#6789b84d;box-shadow:0 18px 35px #02071380}
+html:root:root:root body:not([data-personal-home]) .mobile-nav a {border:1px solid transparent;border-radius:6px;color:#d0dff2;transition:background-color .16s ease,border-color .16s ease}
+html:root:root:root body:not([data-personal-home]) .mobile-nav a[aria-current=page] {background:#1b3d65;border-color:#8ab6f25c;color:#fff}
+html:root:root:root body:not([data-personal-home]) input::placeholder {color:#8ba6c8;opacity:1}
+html:root:root:root body:not([data-personal-home]) :is(input,select,textarea) {accent-color:#8cb9f5}
+html:root:root:root body:not([data-personal-home]) :is(button,input,select,textarea):disabled {cursor:not-allowed}
+html:root:root:root body:not([data-personal-home]) .site-footer {border-top-color:#6888b240;background:linear-gradient(180deg,#0a193000, #08162a)}
+html:root:root:root body:not([data-personal-home]) .site-footer nav a {color:#b4c7e2;min-height:44px;text-underline-offset:5px;text-decoration-thickness:1px}
+html:root:root:root body:not([data-personal-home]) .site-footer small {color:#8ea7c8}
+html:root:root:root body:not([data-personal-home]) #command-dialog {background:linear-gradient(145deg,#10233e,#08182e);border-color:#7399c56b;box-shadow:0 24px 90px #01060ed9,inset 0 1px 0 #d2e5ff12}
+html:root:root:root body:not([data-personal-home]) #command-dialog .command-shortcuts a {background:#17304e;border:1px solid #769cc52b;color:#bed5f1;transition:background-color .16s ease,border-color .16s ease}
+html:root:root:root body:not([data-personal-home]) #command-dialog .pagefind-ui__result {border-bottom-color:#7294bf36}
+html:root:root:root body:not([data-personal-home]) #command-dialog .pagefind-ui__result-link {color:#d8e8ff;text-underline-offset:5px}
+html:root:root:root body:not([data-personal-home]) #command-dialog .pagefind-ui__result mark {background:#adcfff;color:#09172a;border-radius:2px}
+html:root:root:root body:not([data-personal-home]) #toast {color:#edf4ff;background:#1a3658;border:1px solid #94bafa73;box-shadow:0 10px 30px #02071370}
+
+/* Gallery feedback occupies content flow, never the original figure. */
+html:root:root:root body[data-kind=home] #model-panel .figure-feedback {margin-top:14px;min-width:0}
+html:root:root:root body[data-kind=home] #model-panel .figure-feedback:has(#figure-status:empty):has(#figure-retry[hidden]) {display:none}
+html:root:root:root body[data-kind=home] #model-panel #figure-status {font-size:15px!important;line-height:1.65!important;color:#bdd5f5;margin:0}
+html:root:root:root body[data-kind=home] #model-panel #figure-retry {min-height:44px;margin-top:10px;padding:8px 16px;border:1px solid #8eb8ef70;background:#173252;color:#e4efff;border-radius:6px}
+html:root:root:root body[data-kind=home] #model-panel[aria-busy=true] .model-caption {border-color:#8db8f080}
+
+@media(hover:hover) and (pointer:fine) {
+ html:root:root:root body:not([data-personal-home]) .site-header .brand:hover {opacity:.82}
+ html:root:root:root body:not([data-personal-home]) .main-nav a:hover {color:#fff}
+ html:root:root:root body:not([data-personal-home]) .header-controls :is(.search-trigger,.locale-selector):hover {border-color:#a3c6f58c;background:#19314e}
+ html:root:root:root body:not([data-personal-home]) .mobile-nav a:hover {background:#173453;border-color:#8eb6e54d}
+ html:root:root:root body:not([data-personal-home]) .site-footer nav a:hover {color:#fff;text-decoration:underline}
+ html:root:root:root body:not([data-personal-home]) #command-dialog .command-shortcuts a:hover {background:#23476f;border-color:#99bff066}
+}
+@media(prefers-reduced-motion:reduce) {
+ html:root:root:root body:not([data-personal-home]) :is(.brand,.main-nav a,.mobile-nav a,.header-controls .search-trigger,.header-controls .locale-selector,.command-shortcuts a) {transition:none}
+}
+@media(forced-colors:active) {
+ html:root:root:root body:not([data-personal-home]) :is(.site-header,.mobile-nav,#command-dialog,#toast) {background:Canvas;color:CanvasText;box-shadow:none;border-color:CanvasText}
+ html:root:root:root body:not([data-personal-home]) :is(.main-nav a,.mobile-nav a,.site-footer a) {color:LinkText}
+}

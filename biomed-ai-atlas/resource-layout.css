@@ -1,0 +1,326 @@
+/* Resource workspaces: model readers, directory, studio and research indexes.
+ * The home, academy/frontiers, personal site and original compendium are outside
+ * this explicit scope. Font families and original image geometry are retained.
+ */
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]){
+  --resource-width:1560px;
+  --resource-gutter:clamp(18px,3.2vw,50px);
+  --resource-gap:clamp(20px,2.4vw,34px);
+}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main{
+  width:100%;max-width:var(--resource-width);min-height:0;
+  padding:clamp(22px,3.4vh,38px) var(--resource-gutter) 64px;
+}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main :is(.page-intro,.model-header,.section-head,.filter-bar,.model-contract,.two-col,.cards,.feature-grid,.paths,.compare-grid,.table-scroll){min-width:0}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main :is(h1,.page-intro h1,.model-title h1,.lab-hero h1){font-size:clamp(36px,3.9vw,60px)!important;line-height:1.22!important;margin:12px 0 16px}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main h2{font-size:clamp(28px,2.5vw,37px)!important;line-height:1.35!important}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main h3{font-size:clamp(23px,1.8vw,27px)!important;line-height:1.4!important}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main p{line-height:1.8!important}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main .page-intro{padding:4px 0 24px;margin-bottom:24px}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main .section{margin-top:38px}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main .section-head{gap:18px;margin-bottom:18px;flex-wrap:wrap;align-items:center}
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main :is(.section-head h2,.page-intro .lead){max-width:84ch}
+
+/* Catalogues use the available width without shrinking text or paper figures. */
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .model-card{min-height:0;min-width:0;border-radius:12px}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-overview{height:clamp(145px,11.7vw,185px);padding:40px 16px 12px}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-main h3{padding:16px 18px 0;overflow-wrap:anywhere}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-main p{padding:10px 18px 16px;min-height:0;font-size:17.5px!important;line-height:1.72!important}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-foot{padding:12px 18px;gap:12px;flex-wrap:wrap;line-height:1.55!important}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-meta{left:14px;right:12px;top:11px}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .filter-bar{margin:0 0 22px;padding:16px;gap:12px 16px;align-items:end}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .filter-bar label{flex:1 1 165px;min-width:0}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .filter-bar label:first-child{flex:1.7 1 260px}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .filter-bar .check{flex:0 1 auto;min-width:110px}
+body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .filter-bar>span{white-space:normal;line-height:1.5;padding-block:10px}
+body[data-kind="document"] #main .feature-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}
+body[data-kind="document"] #main .feature{padding:24px;min-width:0}
+body[data-kind="document"] #main .feature h2{font-size:27px!important;margin:20px 0 12px}
+body[data-kind="document"] #main .paths{gap:20px;margin-top:24px}
+body[data-kind="document"] #main .path-card{padding:26px;min-width:0}
+body[data-kind="document"] #main .path-card h2{font-size:29px!important;margin:18px 0 14px}
+body[data-kind="document"] #main .chain{margin:18px 0;padding:13px 0;overflow-wrap:anywhere}
+body:is([data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main>p{max-width:86ch}
+
+/* Model readers keep the original figure and guided explanation alongside it. */
+body[data-kind="model"] #main .breadcrumb{margin-bottom:16px}
+body[data-kind="model"] #main .model-header{grid-template-columns:minmax(0,1fr) minmax(245px,290px);gap:var(--resource-gap);padding:4px 0 26px;align-items:start}
+body[data-kind="model"] #main .model-title .lead{max-width:76ch;line-height:1.75!important}
+body[data-kind="model"] #main .model-title .tags{margin-top:14px}
+body[data-kind="model"] #main .model-title .actions{margin-top:18px;gap:8px}
+body[data-kind="model"] #main .model-source{min-width:0;padding-left:22px;margin-top:0}
+body[data-kind="model"] #main .model-source>p{font-size:17.5px!important;line-height:1.62!important;margin:12px 0 16px;overflow-wrap:anywhere}
+body[data-kind="model"] #main .model-source dl{gap:8px}
+body[data-kind="model"] #main .model-source dd{overflow-wrap:anywhere}
+body[data-kind="model"] #main .reader-dock{max-width:none;width:100%;margin:0;gap:24px;padding:8px 14px;border-radius:10px;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-inline:contain;top:var(--atlas-header-height,72px)}
+body[data-kind="model"] #main .reader-dock a{flex:0 0 auto;padding:9px 0}
+body[data-kind="model"] #main .reader-dock button{min-height:44px;flex:0 0 auto;margin-left:auto}
+body[data-kind="model"] #main section[id]{scroll-margin-top:142px}
+body[data-kind="model"] #main .model-contract{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) minmax(0,1.35fr);gap:18px;padding:18px 0 20px}
+body[data-kind="model"] #main .model-contract p{font-size:17px!important;line-height:1.72!important;margin-top:7px}
+body[data-kind="model"] #main .contract-insight{min-width:0;padding-left:18px}
+body[data-kind="model"] #main .structure-workbench{grid-template-columns:minmax(0,1fr) clamp(300px,27vw,380px);border-radius:12px;align-items:stretch}
+body[data-kind="model"] #main :is(.structure-canvas,.paper-figure-panel){min-width:0;min-height:0}
+body[data-kind="model"] #main .paper-figure-panel{flex:0 0 auto;overflow:visible}
+body[data-kind="model"] #main .paper-original{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,auto) auto;min-width:0;min-height:0;max-width:100%;height:auto}
+body[data-kind="model"] #main :is(.workbench-top,.workbench-bottom){padding:11px 16px;gap:12px;flex-wrap:wrap}
+body[data-kind="model"] #main .paper-image-wrap{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,auto);justify-items:center;align-items:center;min-width:0;min-height:0;height:auto;max-height:none;padding:16px;overflow:visible}
+body[data-kind="model"] #main .paper-image-wrap img{display:block;width:auto;height:auto;min-width:0;min-height:0;max-width:100%;max-height:min(58svh,580px);object-fit:contain;object-position:center;margin:0}
+body[data-kind="model"] #main .paper-original figcaption{padding:11px 16px;gap:6px 16px;overflow-wrap:anywhere}
+body[data-kind="model"] #main .node-inspector{padding:22px;min-width:0}
+body[data-kind="model"] #main .inspector-counter{margin:14px 0 18px}
+body[data-kind="model"] #main .inspector-counter strong{font-size:40px}
+body[data-kind="model"] #main .inspector-copy{min-height:0}
+body[data-kind="model"] #main .inspector-copy h3{margin:8px 0 12px;font-size:25px!important}
+body[data-kind="model"] #main .inspector-copy p{line-height:1.72!important}
+body[data-kind="model"] #main .inspector-context{margin-top:16px;padding-top:13px}
+body[data-kind="model"] #main .step-track{margin-top:18px}
+body[data-kind="model"] #main .step-controls{margin:14px 0 12px;gap:8px}
+body[data-kind="model"] #main .step-controls button{min-height:44px;min-width:44px}
+body[data-kind="model"] #main .inspector-note{margin-top:8px}
+body[data-kind="model"] #main .reading-selector{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin}
+body[data-kind="model"] #main .reading-selector button{flex:0 0 clamp(145px,12vw,190px);min-height:48px;padding:10px 12px;line-height:1.5!important}
+body[data-kind="model"] #main .node-transcript{margin:18px 0;padding:16px 0}
+body[data-kind="model"] #main .nodes{gap:0 24px;margin-block:16px}
+body[data-kind="model"] #main .nodes li{min-width:0;padding:15px 10px}
+body[data-kind="model"] #main .nodes p{line-height:1.75!important}
+body[data-kind="model"] #main .two-col{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+body[data-kind="model"] #main .two-col li+li{margin-top:12px}
+body[data-kind="model"] #main :is(.formula,.citation-box){padding:24px;margin-top:30px;min-width:0}
+body[data-kind="model"] #main .claims>div{grid-template-columns:100px minmax(0,1fr) auto auto;gap:16px;padding:18px 0;overflow-wrap:anywhere}
+
+/* Workbench diagrams fit their available space; no graph is distorted. */
+body[data-kind="lab"] #main>.learn-prerequisites{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 18px;padding:8px 0 12px;margin:0 0 18px}
+body[data-kind="lab"] #main>.learn-prerequisites>p{font-size:16px!important;line-height:1.6!important;margin:0}
+body[data-kind="lab"] #main>.learn-prerequisites .learn-chip-links{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0}
+body[data-kind="lab"] #main>.learn-prerequisites .learn-chip-links a{min-height:40px;padding:7px 12px;line-height:1.5}
+body[data-kind="lab"] #main .lab-hero{padding:22px 28px;gap:28px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}
+body[data-kind="lab"] #main .lab-hero h1{font-size:clamp(36px,3.4vw,50px)!important;margin:10px 0 12px}
+body[data-kind="lab"] #main .lab-hero>div>p{max-width:58ch;font-size:17px!important;line-height:1.7!important}
+body[data-kind="lab"] #main .lab-hero-proof{margin-top:14px;gap:8px 18px}
+body[data-kind="lab"] #main .lab-hero-art .architecture-scene{max-height:210px;object-fit:contain}
+body[data-kind="lab"] #main .studio-tabs{top:var(--atlas-header-height,72px);padding:10px 0;margin-bottom:24px;gap:6px;overscroll-behavior-inline:contain}
+body[data-kind="lab"] #main .studio-tabs button{min-height:44px;padding:8px 12px;flex:1 0 auto}
+body[data-kind="lab"] #main .studio-panel{min-height:0;scroll-margin-top:138px}
+body[data-kind="lab"] #main .studio-section-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start;margin-bottom:20px}
+body[data-kind="lab"] #main .studio-section-intro h2{margin-top:10px}
+body[data-kind="lab"] #main .studio-section-intro>p{max-width:70ch;line-height:1.75!important}
+body[data-kind="lab"] #main .studio-architecture{grid-template-columns:minmax(0,1fr) minmax(255px,290px);border-radius:12px}
+body[data-kind="lab"] #main .studio-figure{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,auto) auto;align-content:start;min-width:0;min-height:0}
+body[data-kind="lab"] #main :is(.studio-figure,.studio-explanation,.inference-input,.inference-results,.studio-editor,.field-visual,.studio-chart,.attention-readout){min-width:0}
+body[data-kind="lab"] #main .studio-explanation{padding:22px}
+body[data-kind="lab"] #main .studio-explanation>strong{margin:14px 0;font-size:36px}
+body[data-kind="lab"] #main .studio-explanation>p{line-height:1.72!important}
+body[data-kind="lab"] #main .studio-io{margin:18px 0 14px}
+body[data-kind="lab"] #main .studio-io p{line-height:1.65!important}
+body[data-kind="lab"] #main :is(.studio-view-controls,.studio-module-buttons){padding:12px 16px;gap:8px;flex-wrap:wrap}
+body[data-kind="lab"] #main .studio-view-controls button{min-height:44px;padding:8px 12px}
+body[data-kind="lab"] #main #studio-model-figure{min-height:0;padding:12px}
+body[data-kind="lab"] #main #studio-model-figure.is-paper{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,auto);align-items:center;justify-items:center;min-width:0;min-height:0;height:auto;max-height:none;overflow:visible}
+body[data-kind="lab"] #main #studio-model-figure.is-paper>img{display:block;width:auto;height:auto;min-width:0;min-height:0;max-width:100%;max-height:min(55svh,500px);object-fit:contain;object-position:center;margin:0}
+body[data-kind="lab"] #main #studio-model-figure .paper-image-wrap{padding:6px}
+body[data-kind="lab"] #main #studio-model-figure .paper-image-wrap img{width:auto;height:auto;min-width:0;min-height:0;max-width:100%;max-height:min(55svh,500px);object-fit:contain;object-position:center}
+body[data-kind="lab"] #main .studio-control-bar{padding:16px;gap:12px 16px;margin-bottom:18px}
+body[data-kind="lab"] #main .studio-control-bar label{min-width:0;flex:1 1 135px}
+body[data-kind="lab"] #main .studio-control-bar .studio-check{flex:0 1 auto;min-width:74px}
+body[data-kind="lab"] #main .studio-control-bar .button{min-height:44px}
+body[data-kind="lab"] #main :is(.conv-workspace,.field-workspace,.residual-workspace,.attention-workspace,.inference-workspace,.attention-matrix-section,.studio-comparison){padding:clamp(18px,2vw,28px);gap:24px;border-radius:12px}
+body[data-kind="lab"] #main .conv-workspace{grid-template-columns:minmax(0,1fr) minmax(180px,.65fr) minmax(0,1fr)}
+body[data-kind="lab"] #main .canvas-tile canvas{max-width:330px}
+body[data-kind="lab"] #main :is(.field-workspace,.residual-workspace){grid-template-columns:minmax(230px,280px) minmax(0,1fr)}
+body[data-kind="lab"] #main .field-visual canvas{width:100%;height:auto;max-width:520px;margin-inline:auto}
+body[data-kind="lab"] #main .studio-chart{padding:20px;overflow:hidden}
+body[data-kind="lab"] #main .studio-chart svg{display:block;width:100%;height:auto}
+body[data-kind="lab"] #main .attention-workspace{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(225px,.8fr)}
+body[data-kind="lab"] #main .attention-matrix-section{grid-template-columns:minmax(0,1fr) minmax(280px,.85fr)}
+body[data-kind="lab"] #main .attention-matrix{width:100%;max-width:480px;margin-inline:auto}
+body[data-kind="lab"] #main .inference-workspace{grid-template-columns:minmax(225px,270px) minmax(0,1fr)}
+body[data-kind="lab"] #main .feature-toolbar{gap:12px;flex-wrap:wrap;margin-top:18px;padding-top:18px}
+body[data-kind="lab"] #main .feature-toolbar label{min-width:160px}
+body[data-kind="lab"] #main .activation-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-block:16px;min-height:0}
+body[data-kind="lab"] #main .prediction-empty{min-height:100px;padding:24px}
+body[data-kind="lab"] #main .studio-companion{padding:28px;gap:30px;margin-top:34px;grid-template-columns:minmax(0,1.5fr) minmax(255px,1fr);border-radius:12px}
+
+/* Year groups and additions share a compact, readable index rhythm. */
+body[data-kind="lineage"] #main .timeline-intro{grid-template-columns:minmax(0,1fr) 190px;gap:28px}
+body[data-kind="lineage"] #main .timeline-totals{padding-left:24px}
+body[data-kind="lineage"] #main .timeline-totals strong{font-size:54px}
+body[data-kind="lineage"] #main .timeline-toolbar{padding-bottom:18px;gap:12px}
+body[data-kind="lineage"] #main .timeline-search{min-width:0;flex:1 1 240px}
+body[data-kind="lineage"] #main .timeline-toolbar select{width:225px}
+body[data-kind="lineage"] #main .timeline-workspace{grid-template-columns:150px minmax(0,1fr);gap:26px;padding-top:20px}
+body[data-kind="lineage"] #main .timeline-eras{top:calc(var(--atlas-header-height,72px) + 16px);max-height:calc(100dvh - 110px);overflow-y:auto;scrollbar-width:thin}
+body[data-kind="lineage"] #main .timeline-eras button{min-height:44px;padding:8px 12px}
+body[data-kind="lineage"] #main .timeline-eras p{font-size:16px!important;line-height:1.75!important;margin:14px 6px 0}
+body[data-kind="lineage"] #main .timeline-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-bottom:22px}
+body[data-kind="lineage"] #main .timeline-group summary{padding:16px 0}
+body[data-kind="lineage"] #main .timeline-model{padding:20px;min-width:0;border-radius:12px}
+body[data-kind="lineage"] #main .timeline-card-meta{margin-bottom:12px;gap:12px;overflow-wrap:anywhere}
+body[data-kind="lineage"] #main .timeline-model h3 a{align-items:start;overflow-wrap:anywhere}
+body[data-kind="lineage"] #main .timeline-model>p{font-size:17.5px!important;line-height:1.72!important;margin:11px 0 16px}
+body[data-kind="lineage"] #main .timeline-card-foot{padding-top:12px;flex-wrap:wrap;gap:8px 14px}
+body[data-kind="lineage"] #main .timeline-parent{padding-top:10px;overflow-wrap:anywhere}
+body[data-kind="lineage"] #main .lineage-scroll{max-height:calc(100dvh - 150px);max-width:100%;overscroll-behavior:contain}
+body[data-kind="document"] #main .updates-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,270px);gap:28px;align-items:center}
+body[data-kind="document"] #main .updates-live{min-width:0;padding-left:24px}
+body[data-kind="document"] #main .updates-metrics{margin:26px 0 18px;grid-template-columns:repeat(4,minmax(0,1fr))}
+body[data-kind="document"] #main .updates-metrics>div{padding:20px 24px;min-width:0}
+body[data-kind="document"] #main .updates-process{padding:14px 0 26px;gap:12px;flex-wrap:wrap}
+body[data-kind="document"] #main .updates-toolbar{margin:8px 0 20px;gap:16px;flex-wrap:wrap}
+body[data-kind="document"] #main .updates-toolbar input{max-width:100%;min-width:0}
+body[data-kind="document"] #main .updates-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+body[data-kind="document"] #main .update-card{padding:22px;min-width:0;border-radius:12px}
+body[data-kind="document"] #main .update-card h2{font-size:28px!important;line-height:1.3!important;margin:20px 0 12px;overflow-wrap:anywhere}
+body[data-kind="document"] #main .update-summary{min-height:0;font-size:17.5px!important;line-height:1.75!important}
+body[data-kind="document"] #main .update-next{margin-top:18px;padding-top:15px}
+body[data-kind="document"] #main .update-next p{font-size:17px!important;line-height:1.7!important}
+body[data-kind="document"] #main .update-dates{margin:18px 0;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-kind="document"] #main .update-dates dd{overflow-wrap:anywhere}
+body[data-kind="document"] #main .update-links{padding-top:15px;gap:14px}
+body[data-kind="document"] #main .updates-history{margin:42px 0 20px}
+body[data-kind="document"] #main .scan-row{gap:18px;grid-template-columns:minmax(190px,1.2fr) repeat(3,minmax(0,1fr));overflow-wrap:anywhere;padding-block:16px}
+
+/* Local scrolling belongs to a table/diagram, never the page itself. */
+body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main .table-scroll{max-width:100%;overflow:auto;overscroll-behavior-inline:contain;margin:24px 0;scrollbar-width:thin}
+body:is([data-kind="model"],[data-kind="compare"],[data-kind="lab"],[data-kind="document"]) #main .table-scroll table{min-width:640px}
+body:is([data-kind="model"],[data-kind="compare"],[data-kind="lab"],[data-kind="document"]) #main :is(th,td){padding:12px 14px;overflow-wrap:anywhere}
+body[data-kind="compare"] #main .compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;align-items:start}
+body[data-kind="compare"] #main .comparison-column{padding:22px;min-width:0}
+body[data-kind="compare"] #main .comparison-column>a{overflow-wrap:anywhere}
+body[data-kind="compare"] #main .comparison-column>img{display:block;flex:0 0 auto;min-width:0;min-height:0;height:clamp(180px,30svh,260px);width:100%;max-width:100%;object-fit:contain;object-position:center;padding:8px}
+
+/* initDiagram appends the dialog to body, outside #main. Give the image a
+ * definite middle track after the naturally sized title and control rows.
+ * At 100%/Fit, the entire raster or SVG fits this track; explicit zoom/pan
+ * intentionally explores beyond it. Tiny windows can scroll the dialog chrome.
+ */
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog{width:calc(100vw - 32px);height:calc(100dvh - 32px);max-height:calc(100dvh - 32px);min-width:0;min-height:0;padding:0;border-radius:14px;overflow:auto;overscroll-behavior:contain}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog[open]{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;gap:0}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-top{flex:0 0 auto;padding:12px 18px;gap:16px}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-top strong{min-width:0;overflow-wrap:anywhere}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-top button{min-width:44px;min-height:44px;flex-shrink:0}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-stage{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);min-width:0;min-height:0;overflow:hidden}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-figure{width:100%;height:100%;max-width:none;min-width:0;min-height:0;box-sizing:border-box;padding:12px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:stretch}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-figure :is(img,svg){display:block;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;object-position:center;margin:0}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-controls{flex:0 0 auto;min-width:0;max-width:100%;flex-wrap:wrap;gap:10px;padding:10px 16px}
+body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-controls button{min-height:44px;min-width:44px}
+
+@media(min-width:1440px){
+ body[data-kind="lineage"] #main .timeline-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:2000px){
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"]){--resource-width:1760px;--resource-gutter:52px}
+}
+@media(max-width:1100px){
+ body[data-kind="model"] #main .model-header{grid-template-columns:minmax(0,1fr) 245px;gap:24px}
+ body[data-kind="model"] #main .structure-workbench{grid-template-columns:minmax(0,1fr) 270px}
+ body[data-kind="lab"] #main .lab-hero{padding:24px;gap:22px}
+ body[data-kind="lab"] #main .attention-workspace{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-kind="lab"] #main .attention-readout{grid-column:1/-1}
+ body[data-kind="lab"] #main .studio-architecture{grid-template-columns:minmax(0,1fr) 255px}
+ body[data-kind="lab"] #main .studio-tabs button>span:first-child{display:none}
+ body[data-kind="document"] #main .updates-intro{grid-template-columns:1fr;gap:20px}
+ body[data-kind="document"] #main .updates-live{padding:0;border-left:0}
+}
+@media(max-width:850px){
+ body[data-kind="model"] #main .model-header{grid-template-columns:1fr;padding-bottom:22px}
+ body[data-kind="model"] #main .model-source{padding:16px 0 0;border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.7fr);gap:8px 24px}
+ body[data-kind="model"] #main .model-source>.eyebrow{grid-column:1/-1}
+ body[data-kind="model"] #main .model-source>p{margin:0}
+ body[data-kind="model"] #main .model-contract{grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:14px}
+ body[data-kind="model"] #main .contract-insight{grid-column:1/-1;padding:14px 0 0;border-left:0;border-top:1px solid var(--line)}
+ body[data-kind="model"] #main .structure-workbench{grid-template-columns:1fr}
+ body[data-kind="model"] #main .node-inspector{border-left:0;border-top:1px solid var(--line)}
+ body[data-kind="model"] #main .claims>div{grid-template-columns:110px minmax(0,1fr)}
+ body[data-kind="model"] #main .claims>div>.grade{grid-column:2;justify-self:start}
+ body[data-kind="lab"] #main .studio-architecture{grid-template-columns:1fr}
+ body[data-kind="lab"] #main .studio-explanation{border-left:0;border-top:1px solid var(--line)}
+ body[data-kind="lab"] #main .studio-section-intro{display:block}
+ body[data-kind="lab"] #main .studio-section-intro>p{margin-top:12px}
+ body[data-kind="lab"] #main .studio-companion{grid-template-columns:1fr;gap:22px}
+ body[data-kind="lineage"] #main .timeline-workspace{grid-template-columns:120px minmax(0,1fr);gap:20px}
+ body[data-kind="lineage"] #main .timeline-card-grid{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main{padding-top:22px;padding-bottom:44px}
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main :is(h1,.page-intro h1,.model-title h1,.lab-hero h1){font-size:clamp(33px,7.7vw,44px)!important}
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main .section{margin-top:30px}
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-overview{height:150px;padding-inline:12px}
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-main h3{padding:14px 14px 0;font-size:23px!important}
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-main p{padding:10px 14px 14px;font-size:17px!important}
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-foot{padding:11px 14px}
+ body[data-kind="model"] #main .model-source{grid-template-columns:1fr;gap:12px}
+ body[data-kind="model"] #main .reader-dock{top:var(--atlas-header-height,64px);gap:18px;padding:7px 12px}
+ body[data-kind="model"] #main .reader-dock button{margin-left:0}
+ body[data-kind="model"] #main .two-col{grid-template-columns:1fr;gap:26px}
+ body[data-kind="model"] #main .paper-image-wrap img{max-height:62svh}
+ body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog{width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}
+ body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-hint{display:none}
+ body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-controls{gap:8px;padding:8px}
+ body[data-kind="lab"] #main .lab-hero{grid-template-columns:1fr;padding:24px 20px;gap:16px}
+ body[data-kind="lab"] #main .lab-hero-art .architecture-scene{max-height:180px}
+ body[data-kind="lab"] #main .studio-tabs{top:var(--atlas-header-height,64px);margin-bottom:20px}
+ body[data-kind="lab"] #main .studio-tabs button{flex:0 0 auto}
+ body[data-kind="lab"] #main :is(.conv-workspace,.field-workspace,.residual-workspace,.attention-workspace,.inference-workspace,.attention-matrix-section,.studio-comparison){grid-template-columns:1fr;gap:22px;padding:18px}
+ body[data-kind="lab"] #main .attention-readout{grid-column:auto}
+ body[data-kind="lab"] #main .kernel-tile{max-width:420px;width:100%;margin-inline:auto}
+ body[data-kind="lab"] #main .studio-control-bar label{flex:1 1 120px}
+ body[data-kind="lab"] #main .activation-grid{gap:9px}
+ body[data-kind="lab"] #main .feature-toolbar label{min-width:0;flex-basis:100%}
+ body[data-kind="lineage"] #main .timeline-intro{grid-template-columns:1fr;gap:20px}
+ body[data-kind="lineage"] #main .timeline-workspace{display:flex;flex-direction:column;gap:16px}
+ body[data-kind="lineage"] #main .timeline-eras{position:static;flex-direction:row;max-height:none;overflow-x:auto;padding-bottom:8px;gap:5px}
+ body[data-kind="lineage"] #main .timeline-eras :is(.eyebrow,p){display:none}
+ body[data-kind="lineage"] #main .timeline-eras button{flex:0 0 auto;white-space:nowrap}
+ body[data-kind="lineage"] #main .timeline-card-grid{grid-template-columns:1fr}
+ body[data-kind="lineage"] #main .timeline-toolbar select{width:auto;flex:1;min-width:0}
+ body[data-kind="document"] #main .updates-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-kind="document"] #main .updates-metrics>div{padding:18px}
+ body[data-kind="document"] #main .updates-toolbar :is(label,input){width:100%}
+ body[data-kind="document"] #main .scan-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body[data-kind="document"] #main .paths{grid-template-columns:1fr}
+}
+@media(max-width:440px){
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .cards{grid-template-columns:1fr}
+ body:is([data-kind="catalogue"],[data-kind="tasks"],[data-kind="document"]) #main .card-overview{height:170px}
+ body[data-kind="model"] #main .claims>div{grid-template-columns:1fr;gap:9px}
+ body[data-kind="model"] #main .claims>div :is(.grade,a:last-child){grid-column:auto;justify-self:start}
+ body[data-kind="model"] #main .reader-dock{gap:16px}
+ body[data-kind="document"] #main .update-dates{grid-template-columns:1fr}
+ body[data-kind="document"] #main .updates-live{grid-template-columns:10px minmax(0,1fr)}
+ body[data-kind="document"] #main .updates-live strong{grid-column:1/-1;white-space:normal}
+}
+@media(orientation:landscape) and (max-height:640px){
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main{padding-top:18px;padding-bottom:40px}
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main :is(h1,.page-intro h1,.model-title h1,.lab-hero h1){font-size:clamp(32px,4vw,44px)!important;margin-block:9px 12px}
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main .page-intro{padding-bottom:18px;margin-bottom:18px}
+ body[data-kind="model"] #main .reader-dock,body[data-kind="lab"] #main .studio-tabs{position:relative;top:auto;z-index:1}
+ body[data-kind="model"] #main section[id]{scroll-margin-top:82px}
+ body[data-kind="model"] #main .model-header{grid-template-columns:minmax(0,1fr) 225px;gap:22px;padding-bottom:18px}
+ body[data-kind="model"] #main .model-source{display:block;border-top:0;border-left:1px solid var(--line);padding:0 0 0 18px}
+ body[data-kind="model"] #main .model-source>p{margin:10px 0 14px}
+ body[data-kind="model"] #main .structure-workbench{grid-template-columns:minmax(0,1fr) minmax(245px,.72fr)}
+ body[data-kind="model"] #main .paper-image-wrap img{max-height:360px}
+ body[data-kind="model"] #main .node-inspector{padding:18px;border-top:0;border-left:1px solid var(--line)}
+ body[data-kind="model"] #main .inspector-counter{margin:10px 0 12px}
+ body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-top{padding:7px 14px}
+ body:is([data-kind="model"],[data-kind="lab"],[data-kind="compare"])>.figure-dialog .viewer-controls{padding:7px 10px;gap:8px}
+ body[data-kind="lab"] #main .lab-hero{padding:22px 24px;gap:22px}
+ body[data-kind="lab"] #main .lab-hero-art .architecture-scene{max-height:190px}
+ body[data-kind="lab"] #main .studio-tabs{margin-bottom:18px}
+ body[data-kind="lab"] #main .studio-section-intro{margin-bottom:16px}
+ body[data-kind="lab"] #main>.learn-prerequisites{padding-block:4px 8px;margin-bottom:14px}
+ body[data-kind="lineage"] #main .timeline-workspace{display:grid;grid-template-columns:1fr;gap:16px}
+ body[data-kind="lineage"] #main .timeline-eras{position:static;top:auto;max-height:none;flex-direction:row;flex-wrap:wrap;gap:5px;padding-bottom:0}
+ body[data-kind="lineage"] #main .timeline-eras :is(.eyebrow,p){display:none}
+ body[data-kind="lineage"] #main .timeline-eras button{min-height:40px;padding:7px 12px}
+ body[data-kind="lineage"] #main .timeline-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media print{
+ body:is([data-kind="model"],[data-kind="catalogue"],[data-kind="compare"],[data-kind="lineage"],[data-kind="tasks"],[data-kind="lab"],[data-kind="document"],[data-kind="handout"],[data-kind="search"]) #main{max-width:none;padding:0}
+ body[data-kind="model"] #main .reading-selector{display:none!important}
+ body[data-kind="model"] #main .paper-image-wrap img{max-height:none}
+ body[data-kind="lineage"] #main .timeline-eras{position:static;max-height:none;overflow:visible}
+}
