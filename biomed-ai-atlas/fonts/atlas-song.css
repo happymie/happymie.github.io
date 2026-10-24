@@ -17,3 +17,7 @@
   font-weight: 400;
   font-display: swap;
 }
+
+/* New chapter glyphs; existing font files retained byte for byte. */
+@font-face {font-family: "Atlas Song SC"; src: url("./atlas-song-sc-percival.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+671D, U+8154, U+9047;}
+@font-face {font-family: "Atlas Song TC"; src: url("./atlas-song-tc-percival.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+555F, U+671D, U+70BA, U+8154, U+88E1, U+9047;}
