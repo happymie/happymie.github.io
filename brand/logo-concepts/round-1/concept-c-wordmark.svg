@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+<title id="title">XIAO concept C — Wordmark</title>
+<desc id="desc">An editorial XIAO wordmark with a diagonal interruption in the O. This is an exploratory concept; live type must be outlined before production.</desc>
+<g fill="#111820">
+  <text x="30" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="102" letter-spacing="18">XIA</text>
+  <circle cx="490" cy="96" r="48" fill="none" stroke="#111820" stroke-width="5"/>
+  <path d="M465 68L509 124" fill="none" stroke="#111820" stroke-width="5"/>
+  <path d="M507 123L520 129L514 115Z"/>
+</g>
+<text x="34" y="174" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="5" fill="#62686d">INTELLIGENCE IN MOTION</text>
+</svg>
