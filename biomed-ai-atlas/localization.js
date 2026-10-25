@@ -93,7 +93,11 @@
   document.dispatchEvent(new Event('atlas:locale-ready'));
   window.addEventListener('storage',e=>{if(e.key==='atlas.language'&&valid(e.newValue))setLanguage(e.newValue);});
  }
- function loadSiteFeatures(){for(const path of ['serif-suite.css','fonts/atlas-song.css'])if(!document.querySelector('link[href$="'+path+'"]')){const fontStyle=document.createElement('link');fontStyle.rel='stylesheet';fontStyle.href=BASE+path;document.head.append(fontStyle);}const s=document.createElement('script');s.src=BASE+'site-features.js';s.defer=true;document.head.append(s);}
+ function loadSiteFeatures(){
+  // A new navigation URL avoids reusing a cached previous personal edition.
+  for(const anchor of document.querySelectorAll('a[href="/"]'))if(anchor.querySelector('img[src*="/brand/xiao-"]'))anchor.href='/?v=20261025-quiet08c';
+  for(const path of ['serif-suite.css','fonts/atlas-song.css'])if(!document.querySelector('link[href$="'+path+'"]')){const fontStyle=document.createElement('link');fontStyle.rel='stylesheet';fontStyle.href=BASE+path;document.head.append(fontStyle);}const s=document.createElement('script');s.src=BASE+'site-features.js';s.defer=true;document.head.append(s);
+ }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadSiteFeatures,{once:true});else loadSiteFeatures();
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0),{once:true});else setTimeout(()=>init().catch(e=>{root.removeAttribute('data-locale-pending');console.error(e);}),0);
 })();
