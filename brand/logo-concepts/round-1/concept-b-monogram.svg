@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">XIAO concept B — Monogram</title>
+<desc id="desc">An asymmetric X monogram made from two precise bands. The offset center gives the mark a forward direction.</desc>
+<g fill="#111820">
+  <path d="M48 52H91L208 204H165Z"/>
+  <path d="M165 52H208L91 204H48Z"/>
+</g>
+<path fill="#fff" d="M111 112L128 134L145 112L135 99L128 108L121 99Z"/>
+</svg>
