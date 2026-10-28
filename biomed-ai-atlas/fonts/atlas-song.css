@@ -25,3 +25,7 @@
 /* New chapter glyphs; existing font files retained byte for byte. */
 @font-face {font-family: "Atlas Song SC"; src: url("./atlas-song-sc-medgemma.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+8854;}
 @font-face {font-family: "Atlas Song TC"; src: url("./atlas-song-tc-medgemma.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+70BA, U+929C;}
+
+/* New chapter glyphs; existing font files retained byte for byte. */
+@font-face {font-family: "Atlas Song SC"; src: url("./atlas-song-sc-brain2vec.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+7ECE, U+9885;}
+@font-face {font-family: "Atlas Song TC"; src: url("./atlas-song-tc-brain2vec.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+7E79, U+9871;}
