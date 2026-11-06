@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">XIAO concept A — Aperture</title>
+<desc id="desc">A forward-facing aperture built from three solid planes. Abstract, architectural, and restrained.</desc>
+<g fill="#111820">
+  <path d="M48 48H88V208H48Z"/>
+  <path d="M88 48H136L208 112H160Z"/>
+  <path d="M88 208H136L208 144H160Z"/>
+</g>
+</svg>
